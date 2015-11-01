@@ -1,0 +1,26 @@
+package de.alpharogroup.event.system.service.api;
+
+import java.util.List;
+
+import de.alpharogroup.db.service.jpa.BusinessService;
+import de.alpharogroup.event.system.entities.EventTemplate;
+import de.alpharogroup.event.system.entities.Userevents;
+import de.alpharogroup.event.system.enums.UsereventsRelationType;
+import de.alpharogroup.user.management.entities.Users;
+
+public interface UsereventsService extends
+		BusinessService<Userevents, java.lang.Integer> {
+	/**
+	 * Find user.
+	 * 
+	 * @param eventtemplateToFind
+	 *            the seminar to find
+	 * @param relationtype
+	 *            the relationtype
+	 * @return the users
+	 */
+	Users findUser(final EventTemplate eventtemplateToFind,
+			final UsereventsRelationType relationtype);
+
+	List<Userevents> findUserevents(final EventTemplate event);
+}
