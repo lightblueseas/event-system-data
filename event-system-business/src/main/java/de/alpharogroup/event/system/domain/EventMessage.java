@@ -1,6 +1,6 @@
 package de.alpharogroup.event.system.domain;
 
-import de.alpharogroup.db.domain.BaseBusinessObject;
+import de.alpharogroup.domain.BaseDomainObject;
 import de.alpharogroup.event.system.entities.EventLocations;
 import de.alpharogroup.message.system.domain.Message;
 import de.alpharogroup.message.system.entities.Messages;
@@ -13,7 +13,7 @@ import lombok.ToString;
 @Setter
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class EventMessage extends BaseBusinessObject<Integer>
+public class EventMessage extends BaseDomainObject<Integer>
 {
 	/** The serial Version UID */
 	private static final long serialVersionUID = 1L;

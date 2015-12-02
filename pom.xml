@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-persistence-parent</artifactId>
-		<version>2.2.0</version>
+		<version>2.15.0</version>
 		<relativePath></relativePath>
 	</parent>
 
@@ -37,17 +37,21 @@
 		<system>github</system>
 		<url>https://github.com/lightblueseas/event-system-data/issues</url>
 	</issueManagement>
-
-<!-- 	<modules> -->
-<!-- 		<module>event-system-entities</module> -->
-<!-- 		<module>event-system-business</module> -->
-<!-- 		<module>event-system-init</module> -->
-<!-- 	</modules> -->
+	
+	<modules>
+		<module>event-system-entities</module>
+		<module>event-system-business</module>
+		<module>event-system-init</module>
+	</modules>
 	
 	<properties>
 		<!-- JAULP versions -->
 		<jaulp.core.version>4.2.0</jaulp.core.version>
 		<jaulp.generic.tree.version>${jaulp.core.version}</jaulp.generic.tree.version>
+		
+		<!-- NEW EXTENSIONS LIB versions -->
+		<extensions-lib.version>4.8.0</extensions-lib.version>
+		<gen-tree.version>${extensions-lib.version}</gen-tree.version>
 	</properties>	
 	
 	<dependencyManagement>
@@ -80,6 +84,12 @@
 
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
+				<artifactId>message-system-domain</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
 				<artifactId>user-management-entities</artifactId>
 				<version>${project.version}</version>
 			</dependency>
@@ -87,6 +97,12 @@
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>user-management-business</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>user-management-domain</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			
@@ -99,6 +115,12 @@
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>scheduler-system-business</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>scheduler-system-domain</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			
@@ -116,26 +138,18 @@
 
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
-				<artifactId>jaulp.generic.tree</artifactId>
-				<version>${jaulp.generic.tree.version}</version>
+				<artifactId>rating-system-domain</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>gen-tree</artifactId>
+				<version>${gen-tree.version}</version>
 			</dependency>
 
 		</dependencies>
 
 	</dependencyManagement>
-
-	<dependencies>
-		<!-- LOMBOK DEPENDENCIES -->
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-		</dependency>
-
-	</dependencies>
 	
-	<modules>
-		<module>event-system-entities</module>
-		<module>event-system-business</module>
-		<module>event-system-init</module>
-	</modules>
 </project>

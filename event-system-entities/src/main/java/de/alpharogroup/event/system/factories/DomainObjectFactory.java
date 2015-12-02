@@ -8,7 +8,7 @@ import de.alpharogroup.address.book.entities.Countries;
 import de.alpharogroup.address.book.entities.Federalstates;
 import de.alpharogroup.address.book.entities.Zipcodes;
 import de.alpharogroup.address.book.factories.AddressBookFactory;
-import de.alpharogroup.date.CreateDateUtils;
+import de.alpharogroup.date.CreateDateExtensions;
 import de.alpharogroup.event.system.entities.Categories;
 import de.alpharogroup.event.system.entities.EventLocationData;
 import de.alpharogroup.event.system.entities.EventLocations;
@@ -27,7 +27,7 @@ import de.alpharogroup.event.system.enums.Difficulty;
 import de.alpharogroup.event.system.enums.EventType;
 import de.alpharogroup.event.system.enums.UsereventsRelationType;
 import de.alpharogroup.file.checksum.Algorithm;
-import de.alpharogroup.file.checksum.ChecksumUtils;
+import de.alpharogroup.file.checksum.ChecksumExtensions;
 import de.alpharogroup.message.system.entities.MessageRecipients;
 import de.alpharogroup.message.system.entities.Messages;
 import de.alpharogroup.message.system.enums.MessageState;
@@ -44,8 +44,8 @@ import de.alpharogroup.user.management.entities.Permissions;
 import de.alpharogroup.user.management.entities.ResetPasswords;
 import de.alpharogroup.user.management.entities.Roles;
 import de.alpharogroup.user.management.entities.Users;
-import de.alpharogroup.user.management.enums.Contactmethod;
-import de.alpharogroup.user.management.enums.Gender;
+import de.alpharogroup.user.management.enums.ContactmethodType;
+import de.alpharogroup.user.management.enums.GenderType;
 import de.alpharogroup.user.management.factories.UserManagementFactory;
 
 
@@ -138,7 +138,7 @@ public class DomainObjectFactory implements Serializable {
      * @return the contacts
      */
     public Contactmethods getContactmethods(
-            final Contactmethod contactmethod,
+            final ContactmethodType contactmethod,
             final String contactvalue ) {
         return UserManagementFactory.getInstance().newContactmethods( contactmethod,
                 contactvalue, null );
@@ -325,7 +325,7 @@ public class DomainObjectFactory implements Serializable {
      */
     public Resources getImages( final String description, final String filename,
             final String filesize, final String filetype, final Byte [] image ) {
-        return ResourceSystemFactory.getInstance().newResources(null, description, filename, filesize, filetype, image, CreateDateUtils.now(), false, ChecksumUtils.getChecksumQuietly(image, Algorithm.SHA_256.getAlgorithm()));		
+        return ResourceSystemFactory.getInstance().newResources(null, description, filename, filesize, filetype, image, CreateDateExtensions.now(), false, ChecksumExtensions.getChecksumQuietly(image, Algorithm.SHA_256.getAlgorithm()));		
     }
 
     /**
@@ -552,7 +552,7 @@ public class DomainObjectFactory implements Serializable {
      */
     public Users getUsers( final Boolean active, final String birthname,
             final Date dateofbirth, final String firstname,
-            final Gender gender, final String ipAddress,
+            final GenderType gender, final String ipAddress,
             final String lastname, final String locale, final String pw,
             final String salt, final String username ) {
         return UserManagementFactory.getInstance().newUsers(null, active, pw, salt, username, false, UserManagementFactory.getInstance().newUserData(birthname, dateofbirth, firstname, gender, ipAddress, lastname, locale), null);

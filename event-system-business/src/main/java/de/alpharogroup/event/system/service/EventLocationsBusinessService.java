@@ -11,7 +11,7 @@ import javax.persistence.Query;
 
 import de.alpharogroup.address.book.entities.Addresses;
 import de.alpharogroup.collections.ListExtensions;
-import de.alpharogroup.date.CalculateDateUtils;
+import de.alpharogroup.date.CalculateDateExtensions;
 import de.alpharogroup.db.service.jpa.AbstractBusinessService;
 import de.alpharogroup.event.system.daos.EventLocationsDao;
 import de.alpharogroup.event.system.entities.Categories;
@@ -21,7 +21,7 @@ import de.alpharogroup.event.system.enums.UsereventsRelationType;
 import de.alpharogroup.event.system.service.api.EventLocationsService;
 import de.alpharogroup.jgeohash.GeoHashUtils;
 import de.alpharogroup.user.management.entities.Users;
-import de.alpharogroup.user.management.service.api.UserDataService;
+import de.alpharogroup.user.management.service.api.UserDatasService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,7 +39,7 @@ public class EventLocationsBusinessService
 	private static final long serialVersionUID = 1L;
 	/** The users business service. */
 	@Autowired
-	private UserDataService userDataService;
+	private UserDatasService userDataService;
 
 	@Autowired
 	public void setEventLocationsDao(EventLocationsDao eventLocationsDao)
@@ -197,8 +197,8 @@ public class EventLocationsBusinessService
 	{
 		final StringBuilder sb = new StringBuilder();
 		Date systime = new Date();
-		Date start = CalculateDateUtils.addDays(systime, 0);
-		Date end = CalculateDateUtils.addDays(systime, 30);
+		Date start = CalculateDateExtensions.addDays(systime, 0);
+		Date end = CalculateDateExtensions.addDays(systime, 30);
 
 		sb.append("select el from EventLocations el " + "where el.event.name like :eventname "
 			+ "or el.event.head like :eventname "

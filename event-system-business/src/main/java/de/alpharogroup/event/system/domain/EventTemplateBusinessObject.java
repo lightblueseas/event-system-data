@@ -1,6 +1,6 @@
 package de.alpharogroup.event.system.domain;
 
-import de.alpharogroup.db.domain.BaseBusinessObject;
+import de.alpharogroup.domain.BaseDomainObject;
 import de.alpharogroup.event.system.enums.Difficulty;
 import de.alpharogroup.event.system.enums.EventType;
 import de.alpharogroup.user.management.domain.User;
@@ -13,7 +13,7 @@ import lombok.ToString;
 @Setter
 @ToString(callSuper=true)
 @EqualsAndHashCode(callSuper=true)
-public class EventTemplateBusinessObject extends BaseBusinessObject<Integer> {
+public class EventTemplateBusinessObject extends BaseDomainObject<Integer> {
 	/** The serial Version UID */
 	private static final long serialVersionUID = 1L;
 	/** The category of the event. */

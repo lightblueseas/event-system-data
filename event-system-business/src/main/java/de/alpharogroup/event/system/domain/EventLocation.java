@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import de.alpharogroup.address.book.domain.Address;
-import de.alpharogroup.db.domain.BaseBusinessObject;
+import de.alpharogroup.domain.BaseDomainObject;
 import de.alpharogroup.scheduler.system.domain.Appointment;
 import de.alpharogroup.scheduler.system.entities.Appointments;
 import de.alpharogroup.user.management.domain.User;
@@ -14,7 +14,7 @@ import de.alpharogroup.user.management.domain.User;
 @Setter
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class EventLocation extends BaseBusinessObject<Integer>
+public class EventLocation extends BaseDomainObject<Integer>
 {
 	/** The serial Version UID */
 	private static final long serialVersionUID = 1L;

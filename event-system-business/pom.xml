@@ -24,7 +24,7 @@
 
 		<dependency>
 			<groupId>de.alpharogroup</groupId>
-			<artifactId>jaulp.generic.tree</artifactId>
+			<artifactId>gen-tree</artifactId>
 		</dependency>
 
 		<dependency>
@@ -34,12 +34,32 @@
 
 		<dependency>
 			<groupId>de.alpharogroup</groupId>
+			<artifactId>user-management-domain</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>de.alpharogroup</groupId>
 			<artifactId>scheduler-system-business</artifactId>
 		</dependency>
 
 		<dependency>
 			<groupId>de.alpharogroup</groupId>
+			<artifactId>scheduler-system-domain</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>de.alpharogroup</groupId>
 			<artifactId>message-system-business</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>de.alpharogroup</groupId>
+			<artifactId>message-system-domain</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>de.alpharogroup</groupId>
+			<artifactId>rating-system-domain</artifactId>
 		</dependency>
 
 		<dependency>

@@ -34,8 +34,8 @@ import de.alpharogroup.user.management.service.api.RobinsonsService;
 import de.alpharogroup.user.management.service.api.RolesService;
 import de.alpharogroup.user.management.service.api.RuleViolationsService;
 import de.alpharogroup.user.management.service.api.UserCreditsService;
-import de.alpharogroup.user.management.service.api.UserDataService;
-import de.alpharogroup.user.management.service.api.UserManagementService;
+import de.alpharogroup.user.management.service.api.UserDatasService;
+import de.alpharogroup.user.management.service.api.UsersManagementService;
 import de.alpharogroup.user.management.service.api.UsersService;
 
 
@@ -104,11 +104,11 @@ public class ServiceLocatorImpl implements ServiceLocator {
 
 	/** The users data service. */
 	@Autowired
-	private UserDataService userDataService;
+	private UserDatasService userDataService;
 
 	/** The user management service. */
 	@Autowired
-	private UserManagementService userManagementService;
+	private UsersManagementService userManagementService;
 
 	/** The users service. */
 	@Autowired
@@ -292,20 +292,20 @@ public class ServiceLocatorImpl implements ServiceLocator {
 		this.userCreditsService = userCreditsService;
 	}
 
-	public UserDataService getUserDataService() {
+	public UserDatasService getUserDataService() {
 		return userDataService;
 	}
 
-	public void setUserDataService(UserDataService userDataService) {
+	public void setUserDataService(UserDatasService userDataService) {
 		this.userDataService = userDataService;
 	}
 
-	public UserManagementService getUserManagementService() {
+	public UsersManagementService getUserManagementService() {
 		return userManagementService;
 	}
 
 	public void setUserManagementService(
-			UserManagementService userManagementService) {
+			UsersManagementService userManagementService) {
 		this.userManagementService = userManagementService;
 	}
 
