@@ -24,17 +24,7 @@
 
 		<dependency>
 			<groupId>de.alpharogroup</groupId>
-			<artifactId>gen-tree</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>de.alpharogroup</groupId>
 			<artifactId>user-management-business</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>de.alpharogroup</groupId>
-			<artifactId>user-management-domain</artifactId>
 		</dependency>
 
 		<dependency>
@@ -44,27 +34,17 @@
 
 		<dependency>
 			<groupId>de.alpharogroup</groupId>
-			<artifactId>scheduler-system-domain</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>de.alpharogroup</groupId>
 			<artifactId>message-system-business</artifactId>
 		</dependency>
 
 		<dependency>
 			<groupId>de.alpharogroup</groupId>
-			<artifactId>message-system-domain</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>de.alpharogroup</groupId>
-			<artifactId>rating-system-domain</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>de.alpharogroup</groupId>
 			<artifactId>rating-system-business</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>de.alpharogroup</groupId>
+			<artifactId>gen-tree</artifactId>
 		</dependency>
 
 	</dependencies>

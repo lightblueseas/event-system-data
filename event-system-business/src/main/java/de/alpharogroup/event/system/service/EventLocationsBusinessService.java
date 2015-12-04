@@ -19,7 +19,7 @@ import de.alpharogroup.event.system.entities.EventLocations;
 import de.alpharogroup.event.system.entities.EventTemplate;
 import de.alpharogroup.event.system.enums.UsereventsRelationType;
 import de.alpharogroup.event.system.service.api.EventLocationsService;
-import de.alpharogroup.jgeohash.GeoHashUtils;
+import de.alpharogroup.jgeohash.GeoHashExtensions;
 import de.alpharogroup.user.management.entities.Users;
 import de.alpharogroup.user.management.service.api.UserDatasService;
 
@@ -224,7 +224,7 @@ public class EventLocationsBusinessService
 		Map<String, String> adjacentAreas = null;
 		if (geohash != null && !geohash.isEmpty())
 		{
-			adjacentAreas = GeoHashUtils.getAllAdjacentAreasMap(geohash);
+			adjacentAreas = GeoHashExtensions.getAllAdjacentAreasMap(geohash);
 		}
 		else
 		{

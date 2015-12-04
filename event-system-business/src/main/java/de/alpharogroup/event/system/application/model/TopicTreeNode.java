@@ -3,9 +3,8 @@ package de.alpharogroup.event.system.application.model;
 import de.alpharogroup.event.system.entities.Topics;
 import de.alpharogroup.tree.TreeNode;
 
-
 /**
- * The Class TopicTreeNode.
+ * The class {@link TopicTreeNode}.
  * 
  * @author Asterios Raptis
  */
