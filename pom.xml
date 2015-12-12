@@ -49,9 +49,6 @@
 	</modules>
 
 	<properties>
-		<!-- JAULP versions -->
-		<jaulp.core.version>4.2.0</jaulp.core.version>
-		<jaulp.generic.tree.version>${jaulp.core.version}</jaulp.generic.tree.version>
 
 		<!-- NEW EXTENSIONS LIB versions -->
 		<extensions-lib.version>4.8.0</extensions-lib.version>
@@ -71,6 +68,12 @@
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>event-system-business</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>event-system-domain</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 
