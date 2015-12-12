@@ -52,6 +52,8 @@
 		<!-- NEW EXTENSIONS LIB versions -->
 		<extensions-lib.version>4.8.0</extensions-lib.version>
 		<gen-tree.version>${extensions-lib.version}</gen-tree.version>
+		<!-- RESOURCEBUNDLE-CORE versions -->
+		<resourcebundle-inspector.version>2.7.0</resourcebundle-inspector.version>
 	</properties>
 
 	<dependencyManagement>
@@ -80,6 +82,42 @@
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>event-system-rest-api</artifactId>
 				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>address-book-rest-api</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>resource-system-rest-api</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>user-management-rest-api</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>message-system-rest-api</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>scheduler-system-rest-api</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>resource-bundles-rest-api</artifactId>
+				<version>3.5.0</version>
 			</dependency>
 
 			<dependency>
@@ -158,6 +196,12 @@
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>gen-tree</artifactId>
 				<version>${gen-tree.version}</version>
+			</dependency>
+			<!-- RESOURCEBUNDLE-CORE DEPENDENCIES -->
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>resourcebundle-inspector</artifactId>
+				<version>${resourcebundle-inspector.version}</version>
 			</dependency>
 
 		</dependencies>

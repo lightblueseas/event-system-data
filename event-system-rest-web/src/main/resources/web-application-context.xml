@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+                           http://cxf.apache.org/jaxrs
+                           http://cxf.apache.org/schemas/jaxrs.xsd">
+
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+
+	<jaxrs:server id="service" address="/">
+		<jaxrs:serviceBeans>
+
+			<ref bean="addressesResource" />
+			<ref bean="countriesResource" />
+			<ref bean="federalstatesResource" />
+			<ref bean="zipcodesResource" />
+
+			<ref bean="resourcesResource" />
+
+			<ref bean="contactmethodsResource" />
+			<ref bean="permissionsResource" />
+			<ref bean="recommendationsResource" />
+			<ref bean="relationPermissionsResource" />
+			<ref bean="resetPasswordsResource" />
+			<ref bean="robinsonsResource" />
+			<ref bean="rolesResource" />
+			<ref bean="ruleViolationsResource" />
+			<ref bean="userCreditsResource" />
+			<ref bean="userDatasResource" />
+			<ref bean="usersResource" />
+
+			<ref bean="messagesResource" />
+			<ref bean="messageRecipientsResource" />
+
+			<ref bean="appointmentsResource" />
+
+			<ref bean="categoriesResource" />
+			<ref bean="eventLocationDatasResource" />
+			<ref bean="eventLocationsResource" />
+			<ref bean="eventMessagesResource" />
+			<ref bean="eventRatingsResource" />
+			<ref bean="eventTemplatesResource" />
+			<ref bean="eventTopicsResource" />
+			<ref bean="offeredEventLocationsResource" />
+			<ref bean="profileFederalstatesResource" />
+			<ref bean="profileTopicsResource" />
+			<ref bean="ratingDescriptionsResource" />
+			<ref bean="topicsResource" />
+			<ref bean="userContactsAllowedContactmethodsResource" />
+			<ref bean="usereventsResource" />
+
+		</jaxrs:serviceBeans>
+		<jaxrs:providers>
+			<bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" />
+		</jaxrs:providers>
+	</jaxrs:server>
+
+	<!-- web resources -->
+	<bean id="addressesResource" class="de.alpharogroup.address.book.rest.AddressesRestResource">
+		<property name="domainService" ref="addressesDomainService"></property>
+	</bean>
+	<bean id="countriesResource" class="de.alpharogroup.address.book.rest.CountriesRestResource">
+		<property name="domainService" ref="countriesDomainService"></property>
+	</bean>
+	<bean id="federalstatesResource" class="de.alpharogroup.address.book.rest.FederalstatesRestResource">
+		<property name="domainService" ref="federalstatesDomainService"></property>
+	</bean>
+	<bean id="zipcodesResource" class="de.alpharogroup.address.book.rest.ZipcodesRestResource">
+		<property name="domainService" ref="zipcodesDomainService"></property>
+	</bean>
+
+	<bean id="resourcesResource" class="de.alpharogroup.resource.system.rest.ResourcesRestResource">
+		<property name="domainService" ref="resourceDomainService"></property>
+	</bean>
+
+	<bean id="contactmethodsResource" class="de.alpharogroup.user.management.rest.ContactmethodsRestResource">
+		<property name="domainService" ref="contactmethodDomainService"></property>
+	</bean>
+	<bean id="permissionsResource" class="de.alpharogroup.user.management.rest.PermissionsRestResource">
+		<property name="domainService" ref="permissionDomainService"></property>
+	</bean>
+	<bean id="recommendationsResource" class="de.alpharogroup.user.management.rest.RecommendationsRestResource">
+		<property name="domainService" ref="recommendationDomainService"></property>
+	</bean>
+	<bean id="relationPermissionsResource" class="de.alpharogroup.user.management.rest.RelationPermissionsRestResource">
+		<property name="domainService" ref="relationPermissionDomainService"></property>
+	</bean>
+	<bean id="resetPasswordsResource" class="de.alpharogroup.user.management.rest.ResetPasswordsRestResource">
+		<property name="domainService" ref="resetPasswordDomainService"></property>
+	</bean>
+	<bean id="robinsonsResource" class="de.alpharogroup.user.management.rest.RobinsonsRestResource">
+		<property name="domainService" ref="robinsonDomainService"></property>
+	</bean>
+	<bean id="rolesResource" class="de.alpharogroup.user.management.rest.RolesRestResource">
+		<property name="domainService" ref="roleDomainService"></property>
+	</bean>
+	<bean id="ruleViolationsResource" class="de.alpharogroup.user.management.rest.RuleViolationsRestResource">
+		<property name="domainService" ref="ruleViolationDomainService"></property>
+	</bean>
+	<bean id="userCreditsResource" class="de.alpharogroup.user.management.rest.UserCreditsRestResource">
+		<property name="domainService" ref="userCreditDomainService"></property>
+	</bean>
+	<bean id="userDatasResource" class="de.alpharogroup.user.management.rest.UserDatasRestResource">
+		<property name="domainService" ref="userDataDomainService"></property>
+	</bean>
+	<bean id="usersResource" class="de.alpharogroup.user.management.rest.UsersRestResource">
+		<property name="domainService" ref="userDomainService"></property>
+	</bean>
+
+	<bean id="messagesResource" class="de.alpharogroup.message.system.rest.MessagesRestResource">
+		<property name="domainService" ref="messageDomainService"></property>
+	</bean>
+	<bean id="messageRecipientsResource" class="de.alpharogroup.message.system.rest.MessageRecipientsRestResource">
+		<property name="domainService" ref="messageRecipientDomainService"></property>
+	</bean>
+
+	<bean id="appointmentsResource" class="de.alpharogroup.scheduler.system.rest.AppointmentsRestResource">
+		<property name="domainService" ref="appointmentDomainService"></property>
+	</bean>
+
+	<bean id="categoriesResource" class="de.alpharogroup.event.system.rest.CategoriesRestResource">
+		<property name="domainService" ref="categoryDomainService"></property>
+	</bean>
+	<bean id="eventLocationDatasResource" class="de.alpharogroup.event.system.rest.EventLocationDatasRestResource">
+		<property name="domainService" ref="eventLocationDataDomainService"></property>
+	</bean>
+	<bean id="eventLocationsResource" class="de.alpharogroup.event.system.rest.EventLocationsRestResource">
+		<property name="domainService" ref="eventLocationDomainService"></property>
+	</bean>
+	<bean id="eventMessagesResource" class="de.alpharogroup.event.system.rest.EventMessagesRestResource">
+		<property name="domainService" ref="eventMessageDomainService"></property>
+	</bean>
+	<bean id="eventRatingsResource" class="de.alpharogroup.event.system.rest.EventRatingsRestResource">
+		<property name="domainService" ref="eventRatingDomainService"></property>
+	</bean>
+	<bean id="eventTemplatesResource" class="de.alpharogroup.event.system.rest.EventTemplatesRestResource">
+		<property name="domainService" ref="eventTemplateDomainService"></property>
+	</bean>
+	<bean id="eventTopicsResource" class="de.alpharogroup.event.system.rest.EventTopicsRestResource">
+		<property name="domainService" ref="eventTopicDomainService"></property>
+	</bean>
+	<bean id="offeredEventLocationsResource" class="de.alpharogroup.event.system.rest.OfferedEventLocationsRestResource">
+		<property name="domainService" ref="offeredEventLocationDomainService"></property>
+	</bean>
+	<bean id="profileFederalstatesResource" class="de.alpharogroup.event.system.rest.ProfileFederalstatesRestResource">
+		<property name="domainService" ref="profileFederalstateDomainService"></property>
+	</bean>
+	<bean id="profileTopicsResource" class="de.alpharogroup.event.system.rest.ProfileTopicsRestResource">
+		<property name="domainService" ref="profileTopicDomainService"></property>
+	</bean>
+	<bean id="ratingDescriptionsResource" class="de.alpharogroup.event.system.rest.RatingDescriptionsRestResource">
+		<property name="domainService" ref="ratingDescriptionDomainService"></property>
+	</bean>
+	<bean id="topicsResource" class="de.alpharogroup.event.system.rest.TopicsRestResource">
+		<property name="domainService" ref="topicDomainService"></property>
+	</bean>
+	<bean id="userContactsAllowedContactmethodsResource" class="de.alpharogroup.event.system.rest.UserContactsAllowedContactmethodsRestResource">
+		<property name="domainService" ref="userContactsAllowedContactmethodDomainService"></property>
+	</bean>
+	<bean id="usereventsResource" class="de.alpharogroup.event.system.rest.UsereventsRestResource">
+		<property name="domainService" ref="usereventDomainService"></property>
+	</bean>
+
+</beans>
