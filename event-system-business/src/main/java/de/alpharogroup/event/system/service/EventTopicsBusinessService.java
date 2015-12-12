@@ -7,7 +7,7 @@ import javax.persistence.Query;
 import de.alpharogroup.collections.ListExtensions;
 import de.alpharogroup.db.service.jpa.AbstractBusinessService;
 import de.alpharogroup.event.system.daos.EventTopicsDao;
-import de.alpharogroup.event.system.entities.EventTemplate;
+import de.alpharogroup.event.system.entities.EventTemplates;
 import de.alpharogroup.event.system.entities.EventTopics;
 import de.alpharogroup.event.system.entities.Topics;
 import de.alpharogroup.event.system.service.api.EventTopicsService;
@@ -33,7 +33,7 @@ public class EventTopicsBusinessService extends
 	/**
 	 * {@inheritDoc}
 	 */
-	public boolean contains(final Topics topic, final EventTemplate event) {
+	public boolean contains(final Topics topic, final EventTemplates event) {
 		return findEventTopic(topic, event) != null;
 	}
 
@@ -41,7 +41,7 @@ public class EventTopicsBusinessService extends
 	 * {@inheritDoc}
 	 */
 	@SuppressWarnings("unchecked")
-	public EventTopics findEventTopic(final Topics topic, final EventTemplate event) {
+	public EventTopics findEventTopic(final Topics topic, final EventTemplates event) {
 		final String hqlString = "select et from EventTopics et where et.event=:event and et.topic=:topic";
 		final Query query = getQuery(hqlString);
 		query.setParameter("event", event);
@@ -54,7 +54,7 @@ public class EventTopicsBusinessService extends
 	 * {@inheritDoc}
 	 */
 	@SuppressWarnings("unchecked")
-	public List<EventTopics> findEventTopics(final EventTemplate event) {
+	public List<EventTopics> findEventTopics(final EventTemplates event) {
 		final String hqlString = "select et from EventTopics et where et.event=:event";
 		final Query query = getQuery(hqlString);
 		query.setParameter("event", event);

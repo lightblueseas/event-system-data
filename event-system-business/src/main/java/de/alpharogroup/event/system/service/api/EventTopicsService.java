@@ -3,7 +3,7 @@ package de.alpharogroup.event.system.service.api;
 import java.util.List;
 
 import de.alpharogroup.db.service.jpa.BusinessService;
-import de.alpharogroup.event.system.entities.EventTemplate;
+import de.alpharogroup.event.system.entities.EventTemplates;
 import de.alpharogroup.event.system.entities.EventTopics;
 import de.alpharogroup.event.system.entities.Topics;
 
@@ -19,7 +19,7 @@ public interface EventTopicsService extends
 	 *            the event
 	 * @return true, if successful
 	 */
-	boolean contains(final Topics topic, final EventTemplate event);
+	boolean contains(final Topics topic, final EventTemplates event);
 
 	/**
 	 * Find event topic.
@@ -30,7 +30,7 @@ public interface EventTopicsService extends
 	 *            the event
 	 * @return the event topics
 	 */
-	EventTopics findEventTopic(final Topics topic, final EventTemplate event);
+	EventTopics findEventTopic(final Topics topic, final EventTemplates event);
 
 	/**
 	 * Find event topics.
@@ -39,5 +39,5 @@ public interface EventTopicsService extends
 	 *            the event
 	 * @return the list
 	 */
-	List<EventTopics> findEventTopics(final EventTemplate event);
+	List<EventTopics> findEventTopics(final EventTemplates event);
 }

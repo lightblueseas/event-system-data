@@ -26,7 +26,7 @@ import de.alpharogroup.event.system.enums.EventType;
 import de.alpharogroup.user.management.entities.Users;
 
 /**
- * The Entity class {@link EventTemplate} is keeping the information for the events.
+ * The Entity class {@link EventTemplates} is keeping the information for the events.
  */
 @Entity
 @Table(name = "events")
@@ -37,7 +37,7 @@ import de.alpharogroup.user.management.entities.Users;
 @Getter
 @Setter
 @NoArgsConstructor
-public class EventTemplate extends BaseEntity<Integer> implements Cloneable
+public class EventTemplates extends BaseEntity<Integer> implements Cloneable
 {
 	/** The serial Version UID */
 	private static final long serialVersionUID = 1L;

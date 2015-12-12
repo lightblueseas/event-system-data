@@ -16,7 +16,7 @@ import de.alpharogroup.db.service.jpa.AbstractBusinessService;
 import de.alpharogroup.event.system.daos.EventLocationsDao;
 import de.alpharogroup.event.system.entities.Categories;
 import de.alpharogroup.event.system.entities.EventLocations;
-import de.alpharogroup.event.system.entities.EventTemplate;
+import de.alpharogroup.event.system.entities.EventTemplates;
 import de.alpharogroup.event.system.enums.UsereventsRelationType;
 import de.alpharogroup.event.system.service.api.EventLocationsService;
 import de.alpharogroup.jgeohash.GeoHashExtensions;
@@ -66,7 +66,7 @@ public class EventLocationsBusinessService
 	 * {@inheritDoc}.
 	 */
 	@SuppressWarnings("unchecked")
-	public EventLocations findEvent(final Users provider, final EventTemplate event)
+	public EventLocations findEvent(final Users provider, final EventTemplates event)
 	{
 		final String hqlString = "select el from EventLocations el, Userevents ue "
 			+ " where ue.user=:provider" + " and ue.event=:event" + " and el.event=:event";
@@ -112,7 +112,7 @@ public class EventLocationsBusinessService
 	 * {@inheritDoc}
 	 */
 	@SuppressWarnings("unchecked")
-	public List<EventLocations> findEventLocationsFromEvent(final EventTemplate event)
+	public List<EventLocations> findEventLocationsFromEvent(final EventTemplates event)
 	{
 		final String hqlString = "select ev from EventLocations ev where ev.event=:event";
 		final Query query = getQuery(hqlString);
@@ -140,7 +140,7 @@ public class EventLocationsBusinessService
 	 * {@inheritDoc}.
 	 */
 	@SuppressWarnings("unchecked")
-	public List<EventLocations> findEvents(final EventTemplate event)
+	public List<EventLocations> findEvents(final EventTemplates event)
 	{
 		final String hqlString = "select distinct el from EventLocations el, Userevents ue "
 			+ " where ue.event=:event " + " and el.event=:event";

@@ -13,7 +13,7 @@ import lombok.ToString;
 @Setter
 @ToString(callSuper=true)
 @EqualsAndHashCode(callSuper=true)
-public class EventTemplateBusinessObject extends BaseDomainObject<Integer> {
+public class EventTemplate extends BaseDomainObject<Integer> {
 	/** The serial Version UID */
 	private static final long serialVersionUID = 1L;
 	/** The category of the event. */

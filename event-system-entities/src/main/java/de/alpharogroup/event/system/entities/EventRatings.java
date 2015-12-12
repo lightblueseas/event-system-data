@@ -35,11 +35,11 @@ public class EventRatings extends Ratings
 	@Column(name = "contact")
 	private Integer contact;
 	/**
-	 * The event attribute that references to the Entity class {@link EventTemplate}.
+	 * The event attribute that references to the Entity class {@link EventTemplates}.
 	 */
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "event_id", nullable = true, referencedColumnName = "id", foreignKey = @ForeignKey(name = "FK_EVENT_RATINGS_EVENT_ID"))
-	private EventTemplate event;
+	private EventTemplates event;
 	/** The rating for the event location. */
 	@Column(name = "eventlocation")
 	private Integer eventlocation;

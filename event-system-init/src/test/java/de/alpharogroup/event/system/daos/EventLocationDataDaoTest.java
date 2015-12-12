@@ -7,18 +7,18 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.Test;
 
-import de.alpharogroup.event.system.daos.EventLocationDataDao;
-import de.alpharogroup.event.system.entities.EventLocationData;
+import de.alpharogroup.event.system.daos.EventLocationDatasDao;
+import de.alpharogroup.event.system.entities.EventLocationDatas;
 
 @ContextConfiguration(locations = "classpath:test-applicationContext.xml")
 public class EventLocationDataDaoTest extends AbstractTestNGSpringContextTests {
 
     @Autowired
-	private EventLocationDataDao eventLocationDataDao;
+	private EventLocationDatasDao eventLocationDataDao;
 
 	@Test
 	public void testFindAll() {
-		List<EventLocationData> list = eventLocationDataDao.findAll();
+		List<EventLocationDatas> list = eventLocationDataDao.findAll();
 	}
 
 }

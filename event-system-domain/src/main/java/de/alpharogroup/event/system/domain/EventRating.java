@@ -17,9 +17,9 @@ public class EventRating extends Rating<Integer> {
 	private Integer contact;
 	/**
 	 * The event attribute that references to the domain class
-	 * {@link EventTemplateBusinessObject}.
+	 * {@link EventTemplate}.
 	 */
-	private EventTemplateBusinessObject event;
+	private EventTemplate event;
 	/** The rating for the event location. */
 	private Integer eventlocation;
 	/** The rating for the material. */

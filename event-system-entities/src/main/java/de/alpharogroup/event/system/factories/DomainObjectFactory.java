@@ -10,11 +10,11 @@ import de.alpharogroup.address.book.entities.Zipcodes;
 import de.alpharogroup.address.book.factories.AddressBookFactory;
 import de.alpharogroup.date.CreateDateExtensions;
 import de.alpharogroup.event.system.entities.Categories;
-import de.alpharogroup.event.system.entities.EventLocationData;
+import de.alpharogroup.event.system.entities.EventLocationDatas;
 import de.alpharogroup.event.system.entities.EventLocations;
 import de.alpharogroup.event.system.entities.EventMessages;
 import de.alpharogroup.event.system.entities.EventRatings;
-import de.alpharogroup.event.system.entities.EventTemplate;
+import de.alpharogroup.event.system.entities.EventTemplates;
 import de.alpharogroup.event.system.entities.EventTopics;
 import de.alpharogroup.event.system.entities.OfferedEventLocations;
 import de.alpharogroup.event.system.entities.ProfileFederalstates;
@@ -175,7 +175,7 @@ public class DomainObjectFactory implements Serializable {
      * @param seatsPerRoom the seats per room
      * @return the event location data
      */
-    public EventLocationData getEventLocationData(
+    public EventLocationDatas getEventLocationData(
             final Integer availableRooms, final Integer cateringAbilities,
             final Integer nearByRestaurant, final Boolean offeredEvening,
             final Boolean offeredWeekdays, final Boolean offeredWeekend,
@@ -197,7 +197,7 @@ public class DomainObjectFactory implements Serializable {
      * @return the event locations
      */
     public EventLocations getEventLocations( final Addresses userAddress,
-            final Appointments appointment, final EventTemplate event,
+            final Appointments appointment, final EventTemplates event,
             final Users contactperson ) {
         return EventSystemFactory.getInstance().newEventLocations( appointment,
                 contactperson, event, null, userAddress );
@@ -234,7 +234,7 @@ public class DomainObjectFactory implements Serializable {
      * @return the event ratings
      */
     public EventRatings getEventRatings( final Integer contact,
-            final EventTemplate event, final Integer eventlocation,
+            final EventTemplates event, final Integer eventlocation,
             final Integer material, final Integer presentation,
             final String ratingDescription, final Integer support,
             final String titleRating, final Integer topic, final Users rater,
@@ -267,7 +267,7 @@ public class DomainObjectFactory implements Serializable {
      * @param targetgroup the targetgroup
      * @return the events
      */
-    public EventTemplate getEvents( final Categories categories,
+    public EventTemplates getEvents( final Categories categories,
             final String consultant, final String content,
             final Difficulty difficulty, final Integer duration,
             final EventType eventtype, final String head,
@@ -290,7 +290,7 @@ public class DomainObjectFactory implements Serializable {
      * @param topic the topic
      * @return the event topics
      */
-    public EventTopics getEventTopics( final EventTemplate event, final Topics topic ) {
+    public EventTopics getEventTopics( final EventTemplates event, final Topics topic ) {
         return EventSystemFactory.getInstance().newEventTopics( event,
                 null, topic );
     }
@@ -379,7 +379,7 @@ public class DomainObjectFactory implements Serializable {
      * @return the offered event locations
      */
     public OfferedEventLocations getOfferedEventLocations(
-            final EventLocationData eventLocationData,
+            final EventLocationDatas eventLocationData,
             final String locationDescription,
             final String locationEquipmentDescription,
             final String offeredFromDescriptioin,
@@ -515,7 +515,7 @@ public class DomainObjectFactory implements Serializable {
      * @param user the user
      * @return the user events
      */
-    public Userevents getUserEvents( final EventTemplate event,
+    public Userevents getUserEvents( final EventTemplates event,
             final UsereventsRelationType relationtype, final Users user ) {
         return EventSystemFactory.getInstance().newUserevents( event,
                 null, relationtype,

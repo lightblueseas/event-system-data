@@ -5,11 +5,11 @@ import java.util.Date;
 import de.alpharogroup.address.book.entities.Addresses;
 import de.alpharogroup.address.book.entities.Federalstates;
 import de.alpharogroup.event.system.entities.Categories;
-import de.alpharogroup.event.system.entities.EventLocationData;
+import de.alpharogroup.event.system.entities.EventLocationDatas;
 import de.alpharogroup.event.system.entities.EventLocations;
 import de.alpharogroup.event.system.entities.EventMessages;
 import de.alpharogroup.event.system.entities.EventRatings;
-import de.alpharogroup.event.system.entities.EventTemplate;
+import de.alpharogroup.event.system.entities.EventTemplates;
 import de.alpharogroup.event.system.entities.EventTopics;
 import de.alpharogroup.event.system.entities.OfferedEventLocations;
 import de.alpharogroup.event.system.entities.ProfileFederalstates;
@@ -46,12 +46,12 @@ public class EventSystemFactory {
 		return categories;
 	}
 
-	public EventLocationData newEventLocationData(Integer availableRooms,
+	public EventLocationDatas newEventLocationData(Integer availableRooms,
 			Integer cateringAbilities, Integer id, Integer nearByRestaurant,
 			Boolean offeredEvening, Boolean offeredWeekdays,
 			Boolean offeredWeekend, Integer parkingAbilities, String roomtype,
 			Integer seatsPerRoom) {
-		EventLocationData eventLocationData = new EventLocationData();
+		EventLocationDatas eventLocationData = new EventLocationDatas();
 		eventLocationData.setAvailableRooms(availableRooms);
 		eventLocationData.setCateringAbilities(cateringAbilities);
 		eventLocationData.setId(id);
@@ -66,7 +66,7 @@ public class EventSystemFactory {
 	}
 
 	public EventLocations newEventLocations(Appointments appointment,
-			Users contactperson, EventTemplate event, Integer id,
+			Users contactperson, EventTemplates event, Integer id,
 			Addresses userAddress) {
 		EventLocations eventLocations = new EventLocations();
 		eventLocations.setAppointment(appointment);
@@ -86,7 +86,7 @@ public class EventSystemFactory {
 		return eventMessages;
 	}
 
-	public EventRatings newEventRatings(Integer contact, EventTemplate event,
+	public EventRatings newEventRatings(Integer contact, EventTemplates event,
 			Integer eventlocation, Integer id, Integer material,
 			Integer presentation, Users rater, Date ratingDate,
 			String ratingDescription, Integer support, String titleRating,
@@ -108,14 +108,14 @@ public class EventSystemFactory {
 		return eventRatings;
 	}
 
-	public EventTemplate newEventTemplate(Categories categories,
+	public EventTemplates newEventTemplate(Categories categories,
 			String consultant, String content, Difficulty difficulty,
 			Integer duration, EventType eventtype, String head, Integer id,
 			String introduction, String locale, Boolean material, String name,
 			java.math.BigDecimal price, Users provider,
 			String requirements, Integer subscribermax, Integer subscribermin,
 			String targetgroup) {
-		EventTemplate events = new EventTemplate();
+		EventTemplates events = new EventTemplates();
 		events.setCategories(categories);
 		events.setConsultant(consultant);
 		events.setContent(content);
@@ -137,7 +137,7 @@ public class EventSystemFactory {
 		return events;
 	}
 
-	public EventTopics newEventTopics(EventTemplate event, Integer id,
+	public EventTopics newEventTopics(EventTemplates event, Integer id,
 			Topics topic) {
 		EventTopics eventTopics = new EventTopics();
 		eventTopics.setEvent(event);
@@ -147,7 +147,7 @@ public class EventSystemFactory {
 	}
 
 	public OfferedEventLocations newOfferedEventLocations(
-			EventLocationData eventLocationData, Integer id,
+			EventLocationDatas eventLocationData, Integer id,
 			String locationDescription, String locationEquipmentDescription,
 			String offeredFromDescription, String supportDescription,
 			Addresses userAddress) {
@@ -215,7 +215,7 @@ public class EventSystemFactory {
         return userContactsAllowedContactmethods;
     }
     
-    public Userevents newUserevents( EventTemplate event, Integer id,
+    public Userevents newUserevents( EventTemplates event, Integer id,
     		UsereventsRelationType relationtype, Users user ) {
         Userevents userevents = new Userevents();
         userevents.setEvent( event );

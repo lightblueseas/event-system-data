@@ -4,7 +4,7 @@ import java.util.List;
 
 import de.alpharogroup.db.service.jpa.BusinessService;
 import de.alpharogroup.event.system.entities.EventRatings;
-import de.alpharogroup.event.system.entities.EventTemplate;
+import de.alpharogroup.event.system.entities.EventTemplates;
 import de.alpharogroup.event.system.entities.RatingDescriptions;
 import de.alpharogroup.user.management.entities.Users;
 
@@ -17,7 +17,7 @@ public interface EventRatingsService extends
 	 *            the event
 	 * @return the list
 	 */
-	List<Users> findAllUsersForRatedEvent(EventTemplate event);
+	List<Users> findAllUsersForRatedEvent(EventTemplates event);
 
 	/**
 	 * Find event ratings.
@@ -26,7 +26,7 @@ public interface EventRatingsService extends
 	 *            the event
 	 * @return the list
 	 */
-	List<EventRatings> findEventRatings(final EventTemplate event);
+	List<EventRatings> findEventRatings(final EventTemplates event);
 
 	/**
 	 * Finds the events that was rated from the given subscriber.
@@ -63,7 +63,7 @@ public interface EventRatingsService extends
 	 *            the event
 	 * @return the event ratings for event
 	 */
-	List<EventRatings> getEventRatingsForEvent(EventTemplate event);
+	List<EventRatings> getEventRatingsForEvent(EventTemplates event);
 
 	/**
 	 * Gets the event ratings for event from subscriber.
@@ -74,6 +74,6 @@ public interface EventRatingsService extends
 	 *            the subscriber
 	 * @return the event ratings for event from subscriber
 	 */
-	List<EventRatings> getEventRatingsForEventFromSubscriber(EventTemplate event,
+	List<EventRatings> getEventRatingsForEventFromSubscriber(EventTemplates event,
 			Users subscriber);
 }

@@ -41,11 +41,11 @@ public class EventLocations extends BaseEntity<Integer> implements Cloneable {
 	@JoinColumn(name = "contactperson_id", nullable = true, referencedColumnName = "id", foreignKey = @ForeignKey(name = "FK_EVENTLOCATIONS_CONTACTPERSON_ID"))
 	private Users contactperson;
 	/**
-	 * The event attribute that references to the Entity class {@link EventTemplate}.
+	 * The event attribute that references to the Entity class {@link EventTemplates}.
 	 */
 	@ManyToOne
 	@JoinColumn(name = "event_id", nullable = true, referencedColumnName = "id", foreignKey = @ForeignKey(name = "FK_EVENTLOCATIONS_EVENT_ID"))
-	private EventTemplate event;
+	private EventTemplates event;
 	/**
 	 * The eventLocation attribute that references to the Entity class
 	 * {@link Addresses}.

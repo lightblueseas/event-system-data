@@ -28,9 +28,9 @@ public class EventLocation extends BaseDomainObject<Integer>
 	 */
 	private User contactperson;
 	/**
-	 * The event attribute that references to the domain class {@link EventTemplateBusinessObject}.
+	 * The event attribute that references to the domain class {@link EventTemplate}.
 	 */
-	private EventTemplateBusinessObject event;
+	private EventTemplate event;
 	/**
 	 * The eventLocation attribute that references to the domain class {@link Address}.
 	 */

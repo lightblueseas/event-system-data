@@ -6,11 +6,11 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 
 import de.alpharogroup.db.dao.jpa.JpaEntityManagerDao;
-import de.alpharogroup.event.system.entities.EventTemplate;
+import de.alpharogroup.event.system.entities.EventTemplates;
 
-@Repository("eventTemplateDao")
-public class EventTemplateDao extends
-		JpaEntityManagerDao<EventTemplate, java.lang.Integer> {
+@Repository("eventTemplatesDao")
+public class EventTemplatesDao extends
+		JpaEntityManagerDao<EventTemplates, java.lang.Integer> {
 	/**
 	 * The serialVersionUID.
 	 */

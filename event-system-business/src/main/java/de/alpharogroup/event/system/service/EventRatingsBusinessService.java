@@ -8,7 +8,7 @@ import de.alpharogroup.collections.ListExtensions;
 import de.alpharogroup.db.service.jpa.AbstractBusinessService;
 import de.alpharogroup.event.system.daos.EventRatingsDao;
 import de.alpharogroup.event.system.entities.EventRatings;
-import de.alpharogroup.event.system.entities.EventTemplate;
+import de.alpharogroup.event.system.entities.EventTemplates;
 import de.alpharogroup.event.system.entities.RatingDescriptions;
 import de.alpharogroup.event.system.service.api.EventRatingsService;
 import de.alpharogroup.rating.system.enums.RatingVisibility;
@@ -36,7 +36,7 @@ public class EventRatingsBusinessService
 	 * {@inheritDoc}
 	 */
 	@SuppressWarnings("unchecked")
-	public List<Users> findAllUsersForRatedEvent(final EventTemplate event) {
+	public List<Users> findAllUsersForRatedEvent(final EventTemplates event) {
 		final String hqlString = "select distinct er.rater from EventRatings er where er.event=:event";
 		final Query query = getQuery(hqlString);
 		query.setParameter("event", event);
@@ -48,7 +48,7 @@ public class EventRatingsBusinessService
 	 * {@inheritDoc}
 	 */
 	@SuppressWarnings("unchecked")
-	public List<EventRatings> findEventRatings(final EventTemplate event) {
+	public List<EventRatings> findEventRatings(final EventTemplates event) {
 		final String hqlString = "select er from EventRatings er where er.event=:event";
 		final Query query = getQuery(hqlString);
 		query.setParameter("event", event);
@@ -101,7 +101,7 @@ public class EventRatingsBusinessService
 	 * {@inheritDoc}
 	 */
 	@SuppressWarnings("unchecked")
-	public List<EventRatings> getEventRatingsForEvent(final EventTemplate event) {
+	public List<EventRatings> getEventRatingsForEvent(final EventTemplates event) {
 		final String hqlString = "select distinct er from EventRatings er where er.event=:event";
 		final Query query = getQuery(hqlString);
 		query.setParameter("event", event);
@@ -114,7 +114,7 @@ public class EventRatingsBusinessService
 	 */
 	@SuppressWarnings("unchecked")
 	public List<EventRatings> getEventRatingsForEventFromSubscriber(
-			final EventTemplate event, final Users subscriber) {
+			final EventTemplates event, final Users subscriber) {
 		final String hqlString = "select distinct er from EventRatings er where er.event=:event and er.rater=:subscriber";
 		final Query query = getQuery(hqlString);
 		query.setParameter("event", event);

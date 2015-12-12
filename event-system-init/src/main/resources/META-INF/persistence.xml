@@ -33,11 +33,11 @@
 		
 
 		<class>de.alpharogroup.event.system.entities.Categories</class>
-		<class>de.alpharogroup.event.system.entities.EventLocationData</class>
+		<class>de.alpharogroup.event.system.entities.EventLocationDatas</class>
 		<class>de.alpharogroup.event.system.entities.EventLocations</class>
 		<class>de.alpharogroup.event.system.entities.EventMessages</class>
 		<class>de.alpharogroup.event.system.entities.EventRatings</class>
-		<class>de.alpharogroup.event.system.entities.EventTemplate</class>
+		<class>de.alpharogroup.event.system.entities.EventTemplates</class>
 		<class>de.alpharogroup.event.system.entities.EventTopics</class>
 		<class>de.alpharogroup.event.system.entities.OfferedEventLocations</class>
 		<class>de.alpharogroup.event.system.entities.ProfileFederalstates</class>

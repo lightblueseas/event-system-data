@@ -8,11 +8,11 @@ import de.alpharogroup.address.book.service.api.CountriesService;
 import de.alpharogroup.address.book.service.api.FederalstatesService;
 import de.alpharogroup.address.book.service.api.ZipcodesService;
 import de.alpharogroup.event.system.service.api.CategoriesService;
-import de.alpharogroup.event.system.service.api.EventLocationDataService;
+import de.alpharogroup.event.system.service.api.EventLocationDatasService;
 import de.alpharogroup.event.system.service.api.EventLocationsService;
 import de.alpharogroup.event.system.service.api.EventMessagesService;
 import de.alpharogroup.event.system.service.api.EventRatingsService;
-import de.alpharogroup.event.system.service.api.EventTemplateService;
+import de.alpharogroup.event.system.service.api.EventTemplatesService;
 import de.alpharogroup.event.system.service.api.EventTopicsService;
 import de.alpharogroup.event.system.service.api.OfferedEventLocationsService;
 import de.alpharogroup.event.system.service.api.ProfileFederalstatesService;
@@ -37,13 +37,19 @@ import de.alpharogroup.user.management.service.api.UserCreditsService;
 import de.alpharogroup.user.management.service.api.UserDatasService;
 import de.alpharogroup.user.management.service.api.UsersManagementService;
 import de.alpharogroup.user.management.service.api.UsersService;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 
 /**
  * The Class ServiceLocatorImpl.
- * 
+ *
  * @author Asterios Raptis
  */
+@Getter
+@Setter
+@NoArgsConstructor
 @Service("serviceLocator")
 public class ServiceLocatorImpl implements ServiceLocator {
 	/** The AppointmentsService. */
@@ -88,7 +94,7 @@ public class ServiceLocatorImpl implements ServiceLocator {
 
 	/** The permission service. */
 	@Autowired
-	private PermissionsService permissionService;
+	private PermissionsService permissionsService;
 
 	/** The reset passwords service. */
 	@Autowired
@@ -104,7 +110,7 @@ public class ServiceLocatorImpl implements ServiceLocator {
 
 	/** The users data service. */
 	@Autowired
-	private UserDatasService userDataService;
+	private UserDatasService userDatasService;
 
 	/** The user management service. */
 	@Autowired
@@ -132,7 +138,7 @@ public class ServiceLocatorImpl implements ServiceLocator {
 
 	/** The EventLocationDataService. */
 	@Autowired
-	private EventLocationDataService eventLocationDataService;
+	private EventLocationDatasService eventLocationDatasService;
 
 	/** The EventLocationsService. */
 	@Autowired
@@ -148,7 +154,7 @@ public class ServiceLocatorImpl implements ServiceLocator {
 
 	/** The EventTemplateService. */
 	@Autowired
-	private EventTemplateService eventTemplateService;
+	private EventTemplatesService eventTemplatesService;
 
 	/** The EventTopicsService. */
 	@Autowired
@@ -181,294 +187,5 @@ public class ServiceLocatorImpl implements ServiceLocator {
 	/** The UsereventsService. */
 	@Autowired
 	private UsereventsService usereventsService;
-
-	public RecommendationsService getRecommendationsService() {
-		return recommendationsService;
-	}
-
-	public void setRecommendationsService(
-			RecommendationsService recommendationsService) {
-		this.recommendationsService = recommendationsService;
-	}
-
-	public AddressesService getAddressesService() {
-		return addressesService;
-	}
-
-	public void setAddressesService(AddressesService addressesService) {
-		this.addressesService = addressesService;
-	}
-
-	public RelationPermissionsService getRelationPermissionsService() {
-		return relationPermissionsService;
-	}
-
-	public void setRelationPermissionsService(
-			RelationPermissionsService relationPermissionsService) {
-		this.relationPermissionsService = relationPermissionsService;
-	}
-
-	public ContactmethodsService getContactmethodsService() {
-		return contactmethodsService;
-	}
-
-	public void setContactmethodsService(
-			ContactmethodsService contactmethodsService) {
-		this.contactmethodsService = contactmethodsService;
-	}
-
-	public CountriesService getCountriesService() {
-		return countriesService;
-	}
-
-	public void setCountriesService(CountriesService countriesService) {
-		this.countriesService = countriesService;
-	}
-
-	public FederalstatesService getFederalstatesService() {
-		return federalstatesService;
-	}
-
-	public void setFederalstatesService(
-			FederalstatesService federalstatesService) {
-		this.federalstatesService = federalstatesService;
-	}
-
-	public ResourcesService getResourcesService() {
-		return resourcesService;
-	}
-
-	public void setResourcesService(ResourcesService resourcesService) {
-		this.resourcesService = resourcesService;
-	}
-
-	public MessageRecipientsService getMessageRecipientsService() {
-		return messageRecipientsService;
-	}
-
-	public void setMessageRecipientsService(
-			MessageRecipientsService messageRecipientsService) {
-		this.messageRecipientsService = messageRecipientsService;
-	}
-
-	public MessagesService getMessagesService() {
-		return messagesService;
-	}
-
-	public void setMessagesService(MessagesService messagesService) {
-		this.messagesService = messagesService;
-	}
-
-	public PermissionsService getPermissionService() {
-		return permissionService;
-	}
-
-	public void setPermissionService(PermissionsService permissionService) {
-		this.permissionService = permissionService;
-	}
-
-	public ResetPasswordsService getResetPasswordsService() {
-		return resetPasswordsService;
-	}
-
-	public void setResetPasswordsService(
-			ResetPasswordsService resetPasswordsService) {
-		this.resetPasswordsService = resetPasswordsService;
-	}
-
-	public RolesService getRolesService() {
-		return rolesService;
-	}
-
-	public void setRolesService(RolesService rolesService) {
-		this.rolesService = rolesService;
-	}
-
-	public UserCreditsService getUserCreditsService() {
-		return userCreditsService;
-	}
-
-	public void setUserCreditsService(UserCreditsService userCreditsService) {
-		this.userCreditsService = userCreditsService;
-	}
-
-	public UserDatasService getUserDataService() {
-		return userDataService;
-	}
-
-	public void setUserDataService(UserDatasService userDataService) {
-		this.userDataService = userDataService;
-	}
-
-	public UsersManagementService getUserManagementService() {
-		return userManagementService;
-	}
-
-	public void setUserManagementService(
-			UsersManagementService userManagementService) {
-		this.userManagementService = userManagementService;
-	}
-
-	public UsersService getUsersService() {
-		return usersService;
-	}
-
-	public void setUsersService(UsersService usersService) {
-		this.usersService = usersService;
-	}
-
-	public ZipcodesService getZipcodesService() {
-		return zipcodesService;
-	}
-
-	public void setZipcodesService(ZipcodesService zipcodesService) {
-		this.zipcodesService = zipcodesService;
-	}
-
-	public RuleViolationsService getRuleViolationsService() {
-		return ruleViolationsService;
-	}
-
-	public void setRuleViolationsService(
-			RuleViolationsService ruleViolationsService) {
-		this.ruleViolationsService = ruleViolationsService;
-	}
-
-	public RobinsonsService getRobinsonsService() {
-		return robinsonsService;
-	}
-
-	public void setRobinsonsService(RobinsonsService robinsonsService) {
-		this.robinsonsService = robinsonsService;
-	}
-
-	public CategoriesService getCategoriesService() {
-		return categoriesService;
-	}
-
-	public void setCategoriesService(CategoriesService categoriesService) {
-		this.categoriesService = categoriesService;
-	}
-
-	public EventLocationDataService getEventLocationDataService() {
-		return eventLocationDataService;
-	}
-
-	public void setEventLocationDataService(
-			EventLocationDataService eventLocationDataService) {
-		this.eventLocationDataService = eventLocationDataService;
-	}
-
-	public EventLocationsService getEventLocationsService() {
-		return eventLocationsService;
-	}
-
-	public void setEventLocationsService(
-			EventLocationsService eventLocationsService) {
-		this.eventLocationsService = eventLocationsService;
-	}
-
-	public EventMessagesService getEventMessagesService() {
-		return eventMessagesService;
-	}
-
-	public void setEventMessagesService(
-			EventMessagesService eventMessagesService) {
-		this.eventMessagesService = eventMessagesService;
-	}
-
-	public EventRatingsService getEventRatingsService() {
-		return eventRatingsService;
-	}
-
-	public void setEventRatingsService(EventRatingsService eventRatingsService) {
-		this.eventRatingsService = eventRatingsService;
-	}
-
-	public EventTemplateService getEventTemplateService() {
-		return eventTemplateService;
-	}
-
-	public void setEventTemplateService(
-			EventTemplateService eventTemplateService) {
-		this.eventTemplateService = eventTemplateService;
-	}
-
-	public EventTopicsService getEventTopicsService() {
-		return eventTopicsService;
-	}
-
-	public void setEventTopicsService(EventTopicsService eventTopicsService) {
-		this.eventTopicsService = eventTopicsService;
-	}
-
-	public OfferedEventLocationsService getOfferedEventLocationsService() {
-		return offeredEventLocationsService;
-	}
-
-	public void setOfferedEventLocationsService(
-			OfferedEventLocationsService offeredEventLocationsService) {
-		this.offeredEventLocationsService = offeredEventLocationsService;
-	}
-
-	public ProfileFederalstatesService getProfileFederalstatesService() {
-		return profileFederalstatesService;
-	}
-
-	public void setProfileFederalstatesService(
-			ProfileFederalstatesService profileFederalstatesService) {
-		this.profileFederalstatesService = profileFederalstatesService;
-	}
-
-	public ProfileTopicsService getProfileTopicsService() {
-		return profileTopicsService;
-	}
-
-	public void setProfileTopicsService(
-			ProfileTopicsService profileTopicsService) {
-		this.profileTopicsService = profileTopicsService;
-	}
-
-	public RatingDescriptionsService getRatingDescriptionsService() {
-		return ratingDescriptionsService;
-	}
-
-	public void setRatingDescriptionsService(
-			RatingDescriptionsService ratingDescriptionsService) {
-		this.ratingDescriptionsService = ratingDescriptionsService;
-	}
-
-	public TopicsService getTopicsService() {
-		return topicsService;
-	}
-
-	public void setTopicsService(TopicsService topicsService) {
-		this.topicsService = topicsService;
-	}
-
-	public UserContactsAllowedContactmethodsService getUserContactsAllowedContactmethodsService() {
-		return userContactsAllowedContactmethodsService;
-	}
-
-	public void setUserContactsAllowedContactmethodsService(
-			UserContactsAllowedContactmethodsService userContactsAllowedContactmethodsService) {
-		this.userContactsAllowedContactmethodsService = userContactsAllowedContactmethodsService;
-	}
-
-	public UsereventsService getUsereventsService() {
-		return usereventsService;
-	}
-
-	public void setUsereventsService(UsereventsService usereventsService) {
-		this.usereventsService = usereventsService;
-	}
-
-	public AppointmentsService getAppointmentsService() {
-		return appointmentsService;
-	}
-
-	public void setAppointmentsService(AppointmentsService appointmentsService) {
-		this.appointmentsService = appointmentsService;
-	}
 
 }

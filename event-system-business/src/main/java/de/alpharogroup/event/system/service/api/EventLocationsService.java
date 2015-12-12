@@ -7,7 +7,7 @@ import de.alpharogroup.address.book.entities.Addresses;
 import de.alpharogroup.db.service.jpa.BusinessService;
 import de.alpharogroup.event.system.entities.Categories;
 import de.alpharogroup.event.system.entities.EventLocations;
-import de.alpharogroup.event.system.entities.EventTemplate;
+import de.alpharogroup.event.system.entities.EventTemplates;
 import de.alpharogroup.event.system.enums.UsereventsRelationType;
 import de.alpharogroup.user.management.entities.Users;
 
@@ -36,7 +36,7 @@ public interface EventLocationsService extends
 	 *            the event
 	 * @return the event locations
 	 */
-	EventLocations findEvent(final Users provider, final EventTemplate event);
+	EventLocations findEvent(final Users provider, final EventTemplates event);
 
 	/**
 	 * Find events.
@@ -45,7 +45,7 @@ public interface EventLocationsService extends
 	 *            the event
 	 * @return the list
 	 */
-	List<EventLocations> findEvents(final EventTemplate event);
+	List<EventLocations> findEvents(final EventTemplates event);
 
 	/**
 	 * Find events.
@@ -120,7 +120,7 @@ public interface EventLocationsService extends
 	 *            the event
 	 * @return the list
 	 */
-	public List<EventLocations> findEventLocationsFromEvent(EventTemplate event);
+	public List<EventLocations> findEventLocationsFromEvent(EventTemplates event);
 
 	/**
 	 * Find event locations where the given user address is in use.

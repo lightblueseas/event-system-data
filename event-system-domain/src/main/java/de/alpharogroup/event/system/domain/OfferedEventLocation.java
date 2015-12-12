@@ -3,7 +3,7 @@ package de.alpharogroup.event.system.domain;
 import de.alpharogroup.address.book.domain.Address;
 import de.alpharogroup.address.book.entities.Addresses;
 import de.alpharogroup.domain.BaseDomainObject;
-import de.alpharogroup.event.system.entities.EventLocationData;
+import de.alpharogroup.event.system.entities.EventLocationDatas;
 import de.alpharogroup.user.management.domain.User;
 import de.alpharogroup.user.management.entities.Users;
 import lombok.EqualsAndHashCode;
@@ -20,9 +20,9 @@ public class OfferedEventLocation extends BaseDomainObject<Integer>
 	/** The serial Version UID */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The eventLocationData attribute that references to the Entity class {@link EventLocationData}
+	 * The eventLocationData attribute that references to the Entity class {@link EventLocationDatas}
 	 */
-	private EventLocationDataBusinessObject eventLocationData;
+	private EventLocationData eventLocationData;
 	/** A description from the location and how to get there. */
 	private String locationDescription;
 	/** A description from the equipment from the event location. */

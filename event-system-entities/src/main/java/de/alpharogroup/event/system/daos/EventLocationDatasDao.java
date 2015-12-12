@@ -6,11 +6,11 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 
 import de.alpharogroup.db.dao.jpa.JpaEntityManagerDao;
-import de.alpharogroup.event.system.entities.EventLocationData;
+import de.alpharogroup.event.system.entities.EventLocationDatas;
 
-@Repository("eventLocationDataDao")
-public class EventLocationDataDao extends
-		JpaEntityManagerDao<EventLocationData, java.lang.Integer> {
+@Repository("eventLocationDatasDao")
+public class EventLocationDatasDao extends
+		JpaEntityManagerDao<EventLocationDatas, java.lang.Integer> {
 	/**
 	 * The serialVersionUID.
 	 */

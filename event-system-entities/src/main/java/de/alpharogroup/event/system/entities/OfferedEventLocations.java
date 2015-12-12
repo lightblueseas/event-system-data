@@ -29,11 +29,11 @@ public class OfferedEventLocations extends BaseEntity<Integer> implements Clonea
 	/** The serial Version UID */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The eventLocationData attribute that references to the Entity class {@link EventLocationData}
+	 * The eventLocationData attribute that references to the Entity class {@link EventLocationDatas}
 	 */
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "event_location_data_id", nullable = true, referencedColumnName = "id", foreignKey = @ForeignKey(name = "FK_OFFERED_EVENT_LOCATIONS_EVENT_LOCATION_DATA_ID"))
-	private EventLocationData eventLocationData;
+	private EventLocationDatas eventLocationData;
 	/** A description from the location and how to get there. */
 	@Column(name = "location_description", length = 21845)
 	private String locationDescription;

@@ -1,11 +1,11 @@
 package de.alpharogroup.event.system.service.locator;
 
 import de.alpharogroup.event.system.service.api.CategoriesService;
-import de.alpharogroup.event.system.service.api.EventLocationDataService;
+import de.alpharogroup.event.system.service.api.EventLocationDatasService;
 import de.alpharogroup.event.system.service.api.EventLocationsService;
 import de.alpharogroup.event.system.service.api.EventMessagesService;
 import de.alpharogroup.event.system.service.api.EventRatingsService;
-import de.alpharogroup.event.system.service.api.EventTemplateService;
+import de.alpharogroup.event.system.service.api.EventTemplatesService;
 import de.alpharogroup.event.system.service.api.EventTopicsService;
 import de.alpharogroup.event.system.service.api.OfferedEventLocationsService;
 import de.alpharogroup.event.system.service.api.ProfileFederalstatesService;
@@ -46,15 +46,15 @@ public interface ServiceLocator
 	 *
 	 * @return the event location data service
 	 */
-	EventLocationDataService getEventLocationDataService();
+	EventLocationDatasService getEventLocationDatasService();
 
 	/**
 	 * Sets the event location data service.
 	 *
 	 * @param eventLocationDataService the new event location data service
 	 */
-	void setEventLocationDataService(
-			EventLocationDataService eventLocationDataService);
+	void setEventLocationDatasService(
+			EventLocationDatasService eventLocationDataService);
 
 	/**
 	 * Gets the event locations service.
@@ -103,14 +103,14 @@ public interface ServiceLocator
 	 *
 	 * @return the event template service
 	 */
-	EventTemplateService getEventTemplateService();
+	EventTemplatesService getEventTemplatesService();
 
 	/**
 	 * Sets the event template service.
 	 *
 	 * @param eventTemplateService the new event template service
 	 */
-	void setEventTemplateService(EventTemplateService eventTemplateService);
+	void setEventTemplatesService(EventTemplatesService eventTemplateService);
 
 	/**
 	 * Gets the event topics service.

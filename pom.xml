@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-persistence-parent</artifactId>
-		<version>2.16.0</version>
+		<version>2.18.0</version>
 		<relativePath></relativePath>
 	</parent>
 
@@ -37,7 +37,7 @@
 		<system>github</system>
 		<url>https://github.com/lightblueseas/event-system-data/issues</url>
 	</issueManagement>
-	
+
 	<modules>
 		<module>event-system-entities</module>
 		<module>event-system-business</module>
@@ -47,17 +47,17 @@
 		<module>event-system-rest-client</module>
 		<module>event-system-rest-web</module>
 	</modules>
-	
+
 	<properties>
 		<!-- JAULP versions -->
 		<jaulp.core.version>4.2.0</jaulp.core.version>
 		<jaulp.generic.tree.version>${jaulp.core.version}</jaulp.generic.tree.version>
-		
+
 		<!-- NEW EXTENSIONS LIB versions -->
 		<extensions-lib.version>4.8.0</extensions-lib.version>
 		<gen-tree.version>${extensions-lib.version}</gen-tree.version>
-	</properties>	
-	
+	</properties>
+
 	<dependencyManagement>
 
 		<dependencies>
@@ -73,7 +73,7 @@
 				<artifactId>event-system-business</artifactId>
 				<version>${project.version}</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>message-system-entities</artifactId>
@@ -109,7 +109,7 @@
 				<artifactId>user-management-domain</artifactId>
 				<version>${project.version}</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>scheduler-system-entities</artifactId>
@@ -127,7 +127,7 @@
 				<artifactId>scheduler-system-domain</artifactId>
 				<version>${project.version}</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>rating-system-entities</artifactId>
@@ -155,5 +155,5 @@
 		</dependencies>
 
 	</dependencyManagement>
-	
+
 </project>

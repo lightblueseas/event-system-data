@@ -8,7 +8,7 @@ import de.alpharogroup.collections.ListExtensions;
 import de.alpharogroup.db.service.jpa.AbstractBusinessService;
 import de.alpharogroup.event.system.entities.Userevents;
 import de.alpharogroup.event.system.daos.UsereventsDao;
-import de.alpharogroup.event.system.entities.EventTemplate;
+import de.alpharogroup.event.system.entities.EventTemplates;
 import de.alpharogroup.event.system.enums.UsereventsRelationType;
 import de.alpharogroup.event.system.service.api.UsereventsService;
 import de.alpharogroup.user.management.entities.Users;
@@ -34,7 +34,7 @@ public class UsereventsBusinessService extends
 	 * {@inheritDoc}
 	 */
 	@SuppressWarnings("unchecked")
-	public Users findUser(final EventTemplate eventtemplateToFind,
+	public Users findUser(final EventTemplates eventtemplateToFind,
 			final UsereventsRelationType relationtype) {
 		final String hqlString = "select ue.user from Userevents ue where ue.event=:event";
 		final Query query = getQuery(hqlString);
@@ -44,7 +44,7 @@ public class UsereventsBusinessService extends
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Userevents> findUserevents(final EventTemplate event) {
+	public List<Userevents> findUserevents(final EventTemplates event) {
 		final String hqlString = "select ue from Userevents ue where ue.event=:event";
 		final Query query = getQuery(hqlString);
 		query.setParameter("event", event);
