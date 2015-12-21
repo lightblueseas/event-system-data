@@ -32,21 +32,22 @@ Class-Path: event-system-rest-api.jar rest-api-3.9.0.jar domain-api-3.
  r jgeohash-2.1.0.jar geoip-api-1.2.14.jar address-book-domain-3.1.0.j
  ar crypt-core-4.7.0.jar event-system-business.jar scheduler-system-bu
  siness-3.1.0.jar message-system-business-3.1.0.jar email-tails-4.8.0.
- jar mail-1.4.5.jar activation-1.1.1.jar mime-util-2.1.3.jar net-exten
- sions-4.8.0.jar commons-email-1.4.jar javax.mail-1.5.2.jar rating-sys
- tem-business-3.1.0.jar gen-tree-4.8.0.jar rating-system-domain-3.1.0.
- jar user-management-domain-3.1.0.jar message-system-domain-3.1.0.jar 
- scheduler-system-domain-3.1.0.jar address-book-rest-api-3.1.0.jar res
- ource-system-rest-api-3.1.0.jar user-management-rest-api-3.1.0.jar re
- source-bundles-rest-api-3.5.0.jar resource-bundles-domain-3.5.0.jar r
- esource-bundles-business-3.5.0.jar resource-bundles-entities-3.5.0.ja
- r javax.servlet-api-3.1.0.jar spring-web-4.1.5.RELEASE.jar cxf-rt-fro
- ntend-jaxrs-3.1.4.jar cxf-core-3.1.4.jar woodstox-core-asl-4.4.1.jar 
- stax2-api-3.1.4.jar xmlschema-core-2.2.1.jar javax.annotation-api-1.2
- .jar cxf-rt-transports-http-3.1.4.jar jackson-jaxrs-json-provider-2.6
- .3.jar jackson-jaxrs-base-2.6.3.jar jackson-module-jaxb-annotations-2
- .6.3.jar hibernate-entitymanager-4.3.8.Final.jar hibernate-ehcache-4.
- 3.8.Final.jar ehcache-core-2.4.3.jar hibernate-validator-5.1.3.Final.
- jar validation-api-1.1.0.Final.jar classmate-1.0.0.jar cglib-2.2.2.ja
- r asm-3.3.1.jar h2-1.4.190.jar jetty-jmx-9.3.6.v20151106.jar
+ jar mail-1.4.5.jar activation-1.1.jar mime-util-2.1.3.jar net-extensi
+ ons-4.8.0.jar commons-email-1.4.jar javax.mail-1.5.2.jar rating-syste
+ m-business-3.1.0.jar gen-tree-4.8.0.jar rating-system-domain-3.1.0.ja
+ r user-management-domain-3.1.0.jar message-system-domain-3.1.0.jar sc
+ heduler-system-domain-3.1.0.jar address-book-rest-api-3.1.0.jar resou
+ rce-system-rest-api-3.1.0.jar cxf-rt-frontend-jaxrs-3.1.4.jar cxf-cor
+ e-3.1.4.jar woodstox-core-asl-4.4.1.jar stax2-api-3.1.4.jar xmlschema
+ -core-2.2.1.jar javax.annotation-api-1.2.jar cxf-rt-transports-http-3
+ .1.4.jar javax.servlet-api-3.1.0.jar message-system-rest-api-3.1.0.ja
+ r user-management-rest-api-3.1.0.jar resource-bundles-rest-api-3.5.0.
+ jar resource-bundles-domain-3.5.0.jar resource-bundles-business-3.5.0
+ .jar resource-bundles-entities-3.5.0.jar scheduler-system-rest-api-3.
+ 1.0.jar spring-web-4.1.5.RELEASE.jar jackson-jaxrs-json-provider-2.6.
+ 3.jar jackson-jaxrs-base-2.6.3.jar jackson-module-jaxb-annotations-2.
+ 6.3.jar hibernate-entitymanager-4.3.8.Final.jar hibernate-ehcache-4.3
+ .8.Final.jar ehcache-core-2.4.3.jar hibernate-validator-5.1.3.Final.j
+ ar validation-api-1.1.0.Final.jar classmate-1.0.0.jar cglib-2.2.2.jar
+  asm-3.3.1.jar h2-1.4.190.jar jetty-jmx-9.3.0.v20150612.jar
 
