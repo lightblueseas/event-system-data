@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>event-system-data</artifactId>
-		<version>3.1.0</version>
+		<version>3.6.0</version>
 	</parent>
 
 	<artifactId>event-system-business</artifactId>
@@ -35,11 +35,6 @@
 		<dependency>
 			<groupId>de.alpharogroup</groupId>
 			<artifactId>message-system-business</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>de.alpharogroup</groupId>
-			<artifactId>rating-system-business</artifactId>
 		</dependency>
 
 		<dependency>

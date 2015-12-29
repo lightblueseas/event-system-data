@@ -5,13 +5,13 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-persistence-parent</artifactId>
-		<version>2.23.0</version>
+		<version>2.25.0</version>
 		<relativePath></relativePath>
 	</parent>
 
 	<artifactId>event-system-data</artifactId>
 	<packaging>pom</packaging>
-	<version>3.1.0</version>
+	<version>3.6.0</version>
 	<inceptionYear>2015</inceptionYear>
 
 	<name>${project.artifactId}</name>
@@ -50,10 +50,40 @@
 
 	<properties>
 		<!-- NEW EXTENSIONS LIB versions -->
-		<extensions-lib.version>4.8.0</extensions-lib.version>
 		<gen-tree.version>${extensions-lib.version}</gen-tree.version>
-		<!-- RESOURCEBUNDLE-CORE versions -->
-		<resourcebundle-inspector.version>2.7.0</resourcebundle-inspector.version>
+		<!-- USER-MANAGEMENT-DATA versions -->
+		<user-management-data.version>${project.version}</user-management-data.version>
+		<user-management-entities.version>${user-management-data.version}</user-management-entities.version>
+		<user-management-business.version>${user-management-data.version}</user-management-business.version>
+		<user-management-domain.version>${user-management-data.version}</user-management-domain.version>
+		<user-management-rest-api.version>${user-management-data.version}</user-management-rest-api.version>
+		<!-- RATING-SYSTEM-DATA versions -->
+		<rating-system-data.version>${project.version}</rating-system-data.version>
+		<rating-system-entities.version>${rating-system-data.version}</rating-system-entities.version>
+		<rating-system-domain.version>${rating-system-data.version}</rating-system-domain.version>
+		<!-- MESSAGE-SYSTEM-DATA versions -->
+		<message-system-data.version>${project.version}</message-system-data.version>
+		<message-system-entities.version>${message-system-data.version}</message-system-entities.version>
+		<message-system-business.version>${message-system-data.version}</message-system-business.version>
+		<message-system-domain.version>${message-system-data.version}</message-system-domain.version>
+		<message-system-rest-api.version>${message-system-data.version}</message-system-rest-api.version>
+		<!-- ADDRESS-BOOK-DATA versions -->
+		<address-book-data.version>${project.version}</address-book-data.version>
+		<address-book-rest-api.version>${address-book-data.version}</address-book-rest-api.version>
+		<!-- RESOURCE-SYSTEM-DATA versions -->
+		<resource-system-data.version>${project.version}</resource-system-data.version>
+		<resource-system-domain.version>${resource-system-data.version}</resource-system-domain.version>
+		<resource-system-rest-api.version>${resource-system-data.version}</resource-system-rest-api.version>
+		<!-- RESOURCE-SYSTEM-DATA versions -->
+		<resource-bundles-data.version>${project.version}</resource-bundles-data.version>
+		<resource-bundles-business.version>${resource-bundles-data.version}</resource-bundles-business.version>
+		<resource-bundles-rest-api.version>${resource-bundles-data.version}</resource-bundles-rest-api.version>
+		<!-- SCHEDULER-SYSTEM-DATA versions -->
+		<scheduler-system-data.version>${project.version}</scheduler-system-data.version>
+		<scheduler-system-entities.version>${scheduler-system-data.version}</scheduler-system-entities.version>
+		<scheduler-system-domain.version>${scheduler-system-data.version}</scheduler-system-domain.version>
+		<scheduler-system-business.version>${scheduler-system-data.version}</scheduler-system-business.version>
+		<scheduler-system-rest-api.version>${scheduler-system-data.version}</scheduler-system-rest-api.version>
 	</properties>
 
 	<dependencyManagement>
@@ -83,125 +113,119 @@
 				<artifactId>event-system-rest-api</artifactId>
 				<version>${project.version}</version>
 			</dependency>
-
+			<!-- ADDRESS-BOOK-DATA DEPENDENCIES -->
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>address-book-rest-api</artifactId>
-				<version>${project.version}</version>
+				<version>${address-book-rest-api.version}</version>
+			</dependency>
+			<!-- RESOURCE-SYSTEM-DATA DEPENDENCIES -->
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>resource-system-domain</artifactId>
+				<version>${resource-system-domain.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>resource-system-rest-api</artifactId>
-				<version>${project.version}</version>
+				<version>${resource-system-rest-api.version}</version>
 			</dependency>
-
-			<dependency>
-				<groupId>de.alpharogroup</groupId>
-				<artifactId>user-management-rest-api</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>de.alpharogroup</groupId>
-				<artifactId>message-system-rest-api</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>de.alpharogroup</groupId>
-				<artifactId>scheduler-system-rest-api</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>de.alpharogroup</groupId>
-				<artifactId>resource-bundles-rest-api</artifactId>
-				<version>3.5.0</version>
-			</dependency>
-
-			<dependency>
-				<groupId>de.alpharogroup</groupId>
-				<artifactId>message-system-entities</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>de.alpharogroup</groupId>
-				<artifactId>message-system-business</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>de.alpharogroup</groupId>
-				<artifactId>message-system-domain</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
+			<!-- USER-MANAGEMENT-DATA DEPENDENCIES -->
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>user-management-entities</artifactId>
-				<version>${project.version}</version>
+				<version>${user-management-entities.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>user-management-business</artifactId>
-				<version>${project.version}</version>
+				<version>${user-management-business.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>user-management-domain</artifactId>
-				<version>${project.version}</version>
+				<version>${user-management-domain.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>user-management-rest-api</artifactId>
+				<version>${user-management-rest-api.version}</version>
+			</dependency>
+			<!-- MESSAGE-SYSTEM-DATA DEPENDENCIES -->
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>message-system-entities</artifactId>
+				<version>${message-system-entities.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>message-system-business</artifactId>
+				<version>${message-system-business.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>message-system-domain</artifactId>
+				<version>${message-system-domain.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>message-system-rest-api</artifactId>
+				<version>${message-system-rest-api.version}</version>
+			</dependency>
+			<!-- SCHEDULER-SYSTEM-DATA DEPENDENCIES -->
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>scheduler-system-rest-api</artifactId>
+				<version>${scheduler-system-rest-api.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>scheduler-system-entities</artifactId>
-				<version>${project.version}</version>
+				<version>${scheduler-system-entities.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>scheduler-system-business</artifactId>
-				<version>${project.version}</version>
+				<version>${scheduler-system-business.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>scheduler-system-domain</artifactId>
-				<version>${project.version}</version>
+				<version>${scheduler-system-domain.version}</version>
 			</dependency>
-
+			<!-- RESOURCE-BUNDLES-DATA DEPENDENCIES -->
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>resource-bundles-rest-api</artifactId>
+				<version>${resource-bundles-rest-api.version}</version>
+			</dependency>
+			<!-- RATING-SYSTEM-DATA DEPENDENCIES -->
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>rating-system-entities</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>de.alpharogroup</groupId>
-				<artifactId>rating-system-business</artifactId>
-				<version>${project.version}</version>
+				<version>${rating-system-entities.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>rating-system-domain</artifactId>
-				<version>${project.version}</version>
+				<version>${rating-system-domain.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>gen-tree</artifactId>
 				<version>${gen-tree.version}</version>
-			</dependency>
-			<!-- RESOURCEBUNDLE-CORE DEPENDENCIES -->
-			<dependency>
-				<groupId>de.alpharogroup</groupId>
-				<artifactId>resourcebundle-inspector</artifactId>
-				<version>${resourcebundle-inspector.version}</version>
 			</dependency>
 
 		</dependencies>
