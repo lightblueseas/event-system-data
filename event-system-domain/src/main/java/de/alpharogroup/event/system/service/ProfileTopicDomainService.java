@@ -1,5 +1,6 @@
 package de.alpharogroup.event.system.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,5 +23,16 @@ ProfileTopicsMapper>
 implements
 ProfileTopicService
 {
+	/**
+	 * Sets the specific {@link ProfileTopicsMapper}.
+	 *
+	 * @param mapper
+	 *            the new {@link ProfileTopicsMapper}.
+	 */
+	@Autowired
+	public void setProfileTopicsMapper(ProfileTopicsMapper mapper) {
+		setMapper(mapper);
+	}
+
 
 }

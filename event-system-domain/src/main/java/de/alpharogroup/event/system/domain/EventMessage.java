@@ -4,8 +4,11 @@ import de.alpharogroup.domain.BaseDomainObject;
 import de.alpharogroup.event.system.entities.EventLocations;
 import de.alpharogroup.message.system.domain.Message;
 import de.alpharogroup.message.system.entities.Messages;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -13,6 +16,9 @@ import lombok.ToString;
 @Setter
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class EventMessage extends BaseDomainObject<Integer>
 {
 	/** The serial Version UID */

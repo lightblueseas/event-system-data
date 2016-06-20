@@ -1,5 +1,6 @@
 package de.alpharogroup.event.system.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,5 +23,16 @@ UsereventsMapper>
 implements
 UsereventService
 {
+	/**
+	 * Sets the specific {@link UsereventsMapper}.
+	 *
+	 * @param mapper
+	 *            the new {@link UsereventsMapper}.
+	 */
+	@Autowired
+	public void setUsereventsMapper(UsereventsMapper mapper) {
+		setMapper(mapper);
+	}
+
 
 }

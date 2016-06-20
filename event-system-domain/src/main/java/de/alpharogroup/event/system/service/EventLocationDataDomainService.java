@@ -1,5 +1,6 @@
 package de.alpharogroup.event.system.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,5 +23,16 @@ EventLocationDatasMapper>
 implements
 EventLocationDataService
 {
+	/**
+	 * Sets the specific {@link EventLocationDatasMapper}.
+	 *
+	 * @param mapper
+	 *            the new {@link EventLocationDatasMapper}.
+	 */
+	@Autowired
+	public void setEventLocationDatasMapper(EventLocationDatasMapper mapper) {
+		setMapper(mapper);
+	}
+
 
 }

@@ -1,5 +1,6 @@
 package de.alpharogroup.event.system.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,5 +23,18 @@ CategoriesMapper>
 implements
 CategoryService
 {
+	
+
+	/**
+	 * Sets the specific {@link CategoriesMapper}.
+	 *
+	 * @param mapper
+	 *            the new {@link CategoriesMapper}.
+	 */
+	@Autowired
+	public void setResourcesMapper(CategoriesMapper mapper) {
+		setMapper(mapper);
+	}
+
 
 }
