@@ -7,6 +7,8 @@ import org.springframework.stereotype.Repository;
 
 import de.alpharogroup.db.dao.jpa.JpaEntityManagerDao;
 import de.alpharogroup.event.system.entities.EventTemplates;
+import lombok.Getter;
+import lombok.Setter;
 
 @Repository("eventTemplatesDao")
 public class EventTemplatesDao extends
@@ -16,16 +18,9 @@ public class EventTemplatesDao extends
 	 */
 	private static final long serialVersionUID = 1L;
 
+	/** The entity manager. */
 	@PersistenceContext
+	@Getter
+	@Setter
 	private EntityManager entityManager;
-
-	@Override
-	public EntityManager getEntityManager() {
-		return entityManager;
-	}
-
-	@Override
-	public void setEntityManager(EntityManager entityManager) {
-		this.entityManager = entityManager;
-	}
 }
