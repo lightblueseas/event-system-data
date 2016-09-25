@@ -2,7 +2,7 @@ package de.alpharogroup.event.system.service.api;
 
 import java.util.List;
 
-import de.alpharogroup.db.service.jpa.BusinessService;
+import de.alpharogroup.db.service.api.BusinessService;
 import de.alpharogroup.event.system.entities.EventRatings;
 import de.alpharogroup.event.system.entities.EventTemplates;
 import de.alpharogroup.event.system.entities.RatingDescriptions;

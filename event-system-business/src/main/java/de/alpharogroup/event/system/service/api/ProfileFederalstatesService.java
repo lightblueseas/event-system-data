@@ -3,7 +3,7 @@ package de.alpharogroup.event.system.service.api;
 import java.util.List;
 
 import de.alpharogroup.address.book.entities.Federalstates;
-import de.alpharogroup.db.service.jpa.BusinessService;
+import de.alpharogroup.db.service.api.BusinessService;
 import de.alpharogroup.event.system.entities.ProfileFederalstates;
 import de.alpharogroup.user.management.entities.Users;
 

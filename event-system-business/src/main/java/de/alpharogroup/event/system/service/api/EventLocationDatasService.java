@@ -1,6 +1,6 @@
 package de.alpharogroup.event.system.service.api;
 
-import de.alpharogroup.db.service.jpa.BusinessService;
+import de.alpharogroup.db.service.api.BusinessService;
 import de.alpharogroup.event.system.entities.EventLocationDatas;
 
 public interface EventLocationDatasService extends
