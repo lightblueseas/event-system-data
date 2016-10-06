@@ -1,5 +1,6 @@
 package de.alpharogroup.event.system.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,5 +23,16 @@ UserContactsAllowedContactmethodsMapper>
 implements
 UserContactsAllowedContactmethodService
 {
+	/**
+	 * Sets the specific {@link UserContactsAllowedContactmethodsMapper}.
+	 *
+	 * @param mapper
+	 *            the new {@link UserContactsAllowedContactmethodsMapper}.
+	 */
+	@Autowired
+	public void setUserContactsAllowedContactmethodsMapper(UserContactsAllowedContactmethodsMapper mapper) {
+		setMapper(mapper);
+	}
+
 
 }

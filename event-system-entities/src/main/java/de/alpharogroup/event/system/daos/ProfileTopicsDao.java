@@ -7,6 +7,8 @@ import org.springframework.stereotype.Repository;
 
 import de.alpharogroup.db.dao.jpa.JpaEntityManagerDao;
 import de.alpharogroup.event.system.entities.ProfileTopics;
+import lombok.Getter;
+import lombok.Setter;
 
 @Repository("profileTopicsDao")
 public class ProfileTopicsDao extends
@@ -16,16 +18,9 @@ public class ProfileTopicsDao extends
 	 */
 	private static final long serialVersionUID = 1L;
 
+	/** The entity manager. */
 	@PersistenceContext
+	@Getter
+	@Setter
 	private EntityManager entityManager;
-
-	@Override
-	public EntityManager getEntityManager() {
-		return entityManager;
-	}
-
-	@Override
-	public void setEntityManager(EntityManager entityManager) {
-		this.entityManager = entityManager;
-	}
 }

@@ -1,5 +1,6 @@
 package de.alpharogroup.event.system.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,5 +23,16 @@ RatingDescriptionsMapper>
 implements
 RatingDescriptionService
 {
+
+	/**
+	 * Sets the specific {@link RatingDescriptionsMapper}.
+	 *
+	 * @param mapper
+	 *            the new {@link RatingDescriptionsMapper}.
+	 */
+	@Autowired
+	public void setRatingDescriptionsMapper(RatingDescriptionsMapper mapper) {
+		setMapper(mapper);
+	}
 
 }

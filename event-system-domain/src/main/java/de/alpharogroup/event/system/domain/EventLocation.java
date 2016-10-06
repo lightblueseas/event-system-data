@@ -1,19 +1,25 @@
 package de.alpharogroup.event.system.domain;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
 import de.alpharogroup.address.book.domain.Address;
 import de.alpharogroup.domain.BaseDomainObject;
 import de.alpharogroup.scheduler.system.domain.Appointment;
 import de.alpharogroup.scheduler.system.entities.Appointments;
 import de.alpharogroup.user.management.domain.User;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class EventLocation extends BaseDomainObject<Integer>
 {
 	/** The serial Version UID */

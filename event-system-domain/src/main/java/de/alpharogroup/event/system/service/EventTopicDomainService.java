@@ -1,5 +1,6 @@
 package de.alpharogroup.event.system.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,5 +23,16 @@ EventTopicsMapper>
 implements
 EventTopicService
 {
+
+	/**
+	 * Sets the specific {@link EventTopicsMapper}.
+	 *
+	 * @param mapper
+	 *            the new {@link EventTopicsMapper}.
+	 */
+	@Autowired
+	public void setEventTopicsMapper(EventTopicsMapper mapper) {
+		setMapper(mapper);
+	}
 
 }

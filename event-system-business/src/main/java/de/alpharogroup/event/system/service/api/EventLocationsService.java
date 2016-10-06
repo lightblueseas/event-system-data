@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import de.alpharogroup.address.book.entities.Addresses;
-import de.alpharogroup.db.service.jpa.BusinessService;
+import de.alpharogroup.db.service.api.BusinessService;
 import de.alpharogroup.event.system.entities.Categories;
 import de.alpharogroup.event.system.entities.EventLocations;
 import de.alpharogroup.event.system.entities.EventTemplates;

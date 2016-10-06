@@ -5,8 +5,11 @@ import de.alpharogroup.event.system.entities.EventTemplates;
 import de.alpharogroup.event.system.enums.UsereventsRelationType;
 import de.alpharogroup.user.management.domain.User;
 import de.alpharogroup.user.management.entities.Users;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -14,6 +17,9 @@ import lombok.ToString;
 @Setter
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Userevent extends BaseDomainObject<Integer>
 {
 	/** The serial Version UID */
