@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import de.alpharogroup.address.book.entities.Countries;
 import de.alpharogroup.address.book.entities.Federalstates;
+import de.alpharogroup.collections.ListExtensions;
 import de.alpharogroup.db.service.jpa.AbstractBusinessService;
 import de.alpharogroup.event.system.daos.ProfileFederalstatesDao;
 import de.alpharogroup.event.system.entities.ProfileFederalstates;
@@ -60,10 +61,7 @@ public class ProfileFederalstatesBusinessService
 		query.setParameter("user", user);
 		query.setParameter("federalstate", federalstate);
 		List<ProfileFederalstates> profileFederalstates = query.getResultList();
-		if (profileFederalstates != null && !profileFederalstates.isEmpty()) {
-			return profileFederalstates.get(0);
-		}
-		return null;
+		return ListExtensions.getFirst(profileFederalstates);
 	}
 
 	/**
