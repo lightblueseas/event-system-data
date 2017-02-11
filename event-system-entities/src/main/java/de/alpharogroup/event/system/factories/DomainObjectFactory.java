@@ -43,6 +43,7 @@ import de.alpharogroup.user.management.entities.Contactmethods;
 import de.alpharogroup.user.management.entities.Permissions;
 import de.alpharogroup.user.management.entities.ResetPasswords;
 import de.alpharogroup.user.management.entities.Roles;
+import de.alpharogroup.user.management.entities.UserDatas;
 import de.alpharogroup.user.management.entities.Users;
 import de.alpharogroup.user.management.enums.ContactmethodType;
 import de.alpharogroup.user.management.enums.GenderType;
@@ -529,9 +530,9 @@ public class DomainObjectFactory implements Serializable {
      * @param user the user
      * @return the user images
      */
-    public Users getUserImages( final Resources image, final Users user ) {
-    	user.getUserData().getResources().add(image);
-        return user;
+    public Users getUserImages( final Resources image, final UserDatas user ) {
+    	user.getResources().add(image);
+        return null;
     }
 
     /**
@@ -549,14 +550,14 @@ public class DomainObjectFactory implements Serializable {
      * @param salt the salt
      * @param username the username
      * @return the users
-     */
-    public Users getUsers( final Boolean active, final String birthname,
-            final Date dateofbirth, final String firstname,
-            final GenderType gender, final String ipAddress,
-            final String lastname, final String locale, final String pw,
-            final String salt, final String username ) {
-        return UserManagementFactory.getInstance().newUsers(null, active, pw, salt, username, false, UserManagementFactory.getInstance().newUserData(birthname, dateofbirth, firstname, gender, ipAddress, lastname, locale), null);
-    }
+     */ // TODO check if this method is called and if not remove...
+//    public Users getUsers( final Boolean active, final String birthname,
+//            final Date dateofbirth, final String firstname,
+//            final GenderType gender, final String ipAddress,
+//            final String lastname, final String locale, final String pw,
+//            final String salt, final String username ) {
+//        return UserManagementFactory.getInstance().newUsers(null, active, pw, salt, username, false, UserManagementFactory.getInstance().newUserData(birthname, dateofbirth, firstname, gender, ipAddress, lastname, locale), null);
+//    }
 
     /**
      * Gets the zipcodes.

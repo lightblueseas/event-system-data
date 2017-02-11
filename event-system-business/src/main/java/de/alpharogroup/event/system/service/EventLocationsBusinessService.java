@@ -20,6 +20,7 @@ import de.alpharogroup.event.system.entities.EventTemplates;
 import de.alpharogroup.event.system.enums.UsereventsRelationType;
 import de.alpharogroup.event.system.service.api.EventLocationsService;
 import de.alpharogroup.jgeohash.GeoHashExtensions;
+import de.alpharogroup.user.management.entities.UserDatas;
 import de.alpharogroup.user.management.entities.Users;
 import de.alpharogroup.user.management.service.api.UserDatasService;
 
@@ -131,8 +132,9 @@ public class EventLocationsBusinessService
 		// "select ev.eventLocation from EventLocations ev where ev.event.provider=:provider";
 		// final Query query = getQuery(hqlString);
 		// query.setParameter("provider", provider);
-		final List<Addresses> userAdresses = new ArrayList<Addresses>(userDataService.get(
-			provider.getUserData().getId()).getAddresses());
+		UserDatas userData = 
+				userDataService.findBy(provider);
+		final List<Addresses> userAdresses = new ArrayList<Addresses>(userData.getAddresses());
 		return userAdresses;
 	}
 

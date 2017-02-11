@@ -108,7 +108,7 @@ public class EventSystemRestClient extends AbstractRestClient
 	 */
 	public EventSystemRestClient()
 	{
-		this(DEFAULT_BASE_URL);
+		this(DEFAULT_BASE_HTTPS_URL);
 	}
 
 	/**
