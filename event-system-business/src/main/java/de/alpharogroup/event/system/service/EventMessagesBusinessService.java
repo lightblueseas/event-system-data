@@ -14,7 +14,7 @@ import de.alpharogroup.event.system.service.api.EventMessagesService;
 import de.alpharogroup.event.system.service.util.HqlStringCreator;
 import de.alpharogroup.message.system.entities.Messages;
 import de.alpharogroup.message.system.enums.MessageState;
-import de.alpharogroup.user.management.entities.Users;
+import de.alpharogroup.user.entities.Users;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

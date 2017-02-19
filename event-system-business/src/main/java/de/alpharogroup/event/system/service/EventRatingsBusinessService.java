@@ -12,7 +12,7 @@ import de.alpharogroup.event.system.entities.EventTemplates;
 import de.alpharogroup.event.system.entities.RatingDescriptions;
 import de.alpharogroup.event.system.service.api.EventRatingsService;
 import de.alpharogroup.rating.system.enums.RatingVisibility;
-import de.alpharogroup.user.management.entities.Users;
+import de.alpharogroup.user.entities.Users;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -25,7 +25,7 @@ import de.alpharogroup.message.system.entities.Messages;
 import de.alpharogroup.rating.system.enums.RatingVisibility;
 import de.alpharogroup.scheduler.system.entities.Appointments;
 import de.alpharogroup.user.management.entities.Contactmethods;
-import de.alpharogroup.user.management.entities.Users;
+import de.alpharogroup.user.entities.Users;
 
 public class EventSystemFactory {
 

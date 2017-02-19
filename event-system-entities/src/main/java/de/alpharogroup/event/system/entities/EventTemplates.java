@@ -23,7 +23,7 @@ import org.hibernate.annotations.TypeDefs;
 import de.alpharogroup.db.entity.BaseEntity;
 import de.alpharogroup.event.system.enums.Difficulty;
 import de.alpharogroup.event.system.enums.EventType;
-import de.alpharogroup.user.management.entities.Users;
+import de.alpharogroup.user.entities.Users;
 
 /**
  * The Entity class {@link EventTemplates} is keeping the information for the events.

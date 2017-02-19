@@ -6,7 +6,7 @@ import de.alpharogroup.db.service.api.BusinessService;
 import de.alpharogroup.event.system.entities.EventTemplates;
 import de.alpharogroup.event.system.entities.Userevents;
 import de.alpharogroup.event.system.enums.UsereventsRelationType;
-import de.alpharogroup.user.management.entities.Users;
+import de.alpharogroup.user.entities.Users;
 
 public interface UsereventsService extends
 		BusinessService<Userevents, java.lang.Integer> {

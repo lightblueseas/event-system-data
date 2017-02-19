@@ -1,7 +1,7 @@
 package de.alpharogroup.event.system.domain;
 
 import de.alpharogroup.domain.BaseDomainObject;
-import de.alpharogroup.user.management.domain.User;
+import de.alpharogroup.user.domain.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;

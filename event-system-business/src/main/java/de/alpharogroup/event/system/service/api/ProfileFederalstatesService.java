@@ -5,7 +5,7 @@ import java.util.List;
 import de.alpharogroup.address.book.entities.Federalstates;
 import de.alpharogroup.db.service.api.BusinessService;
 import de.alpharogroup.event.system.entities.ProfileFederalstates;
-import de.alpharogroup.user.management.entities.Users;
+import de.alpharogroup.user.entities.Users;
 
 /**
  * The Interface ProfileFederalstatesService.

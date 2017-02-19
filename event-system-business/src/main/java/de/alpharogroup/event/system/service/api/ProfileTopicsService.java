@@ -5,7 +5,7 @@ import java.util.List;
 import de.alpharogroup.db.service.api.BusinessService;
 import de.alpharogroup.event.system.entities.ProfileTopics;
 import de.alpharogroup.event.system.entities.Topics;
-import de.alpharogroup.user.management.entities.Users;
+import de.alpharogroup.user.entities.Users;
 
 /**
  * The Interface ProfileTopicsService.

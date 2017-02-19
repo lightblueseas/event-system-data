@@ -5,7 +5,7 @@ import java.util.List;
 import de.alpharogroup.db.service.api.BusinessService;
 import de.alpharogroup.event.system.entities.Categories;
 import de.alpharogroup.event.system.entities.EventTemplates;
-import de.alpharogroup.user.management.entities.Users;
+import de.alpharogroup.user.entities.Users;
 
 public interface EventTemplatesService extends
 		BusinessService<EventTemplates, java.lang.Integer> {

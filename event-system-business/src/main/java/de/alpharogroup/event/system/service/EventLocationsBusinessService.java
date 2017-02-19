@@ -21,7 +21,7 @@ import de.alpharogroup.event.system.enums.UsereventsRelationType;
 import de.alpharogroup.event.system.service.api.EventLocationsService;
 import de.alpharogroup.jgeohash.GeoHashExtensions;
 import de.alpharogroup.user.management.entities.UserDatas;
-import de.alpharogroup.user.management.entities.Users;
+import de.alpharogroup.user.entities.Users;
 import de.alpharogroup.user.management.service.api.UserDatasService;
 
 import org.springframework.beans.factory.annotation.Autowired;

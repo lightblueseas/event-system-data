@@ -13,7 +13,7 @@ import de.alpharogroup.db.service.jpa.AbstractBusinessService;
 import de.alpharogroup.event.system.daos.OfferedEventLocationsDao;
 import de.alpharogroup.event.system.entities.OfferedEventLocations;
 import de.alpharogroup.event.system.service.api.OfferedEventLocationsService;
-import de.alpharogroup.user.management.entities.Users;
+import de.alpharogroup.user.entities.Users;
 
 @Transactional
 @Service("offeredEventLocationsService")

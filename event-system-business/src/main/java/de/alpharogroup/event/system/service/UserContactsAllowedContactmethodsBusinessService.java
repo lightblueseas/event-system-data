@@ -14,7 +14,7 @@ import de.alpharogroup.event.system.entities.UserContactsAllowedContactmethods;
 import de.alpharogroup.event.system.factories.DomainObjectFactory;
 import de.alpharogroup.event.system.service.api.UserContactsAllowedContactmethodsService;
 import de.alpharogroup.user.management.entities.Contactmethods;
-import de.alpharogroup.user.management.entities.Users;
+import de.alpharogroup.user.entities.Users;
 
 @Transactional
 @Service("userContactsAllowedContactmethodsService")

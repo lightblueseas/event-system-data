@@ -9,7 +9,7 @@ import de.alpharogroup.event.system.entities.Categories;
 import de.alpharogroup.event.system.entities.EventLocations;
 import de.alpharogroup.event.system.entities.EventTemplates;
 import de.alpharogroup.event.system.enums.UsereventsRelationType;
-import de.alpharogroup.user.management.entities.Users;
+import de.alpharogroup.user.entities.Users;
 
 public interface EventLocationsService extends
 		BusinessService<EventLocations, java.lang.Integer> {

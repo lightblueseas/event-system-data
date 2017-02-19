@@ -10,7 +10,7 @@ import de.alpharogroup.event.system.daos.ProfileTopicsDao;
 import de.alpharogroup.event.system.entities.ProfileTopics;
 import de.alpharogroup.event.system.entities.Topics;
 import de.alpharogroup.event.system.service.api.ProfileTopicsService;
-import de.alpharogroup.user.management.entities.Users;
+import de.alpharogroup.user.entities.Users;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

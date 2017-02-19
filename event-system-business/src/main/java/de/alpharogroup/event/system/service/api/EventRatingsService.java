@@ -6,7 +6,7 @@ import de.alpharogroup.db.service.api.BusinessService;
 import de.alpharogroup.event.system.entities.EventRatings;
 import de.alpharogroup.event.system.entities.EventTemplates;
 import de.alpharogroup.event.system.entities.RatingDescriptions;
-import de.alpharogroup.user.management.entities.Users;
+import de.alpharogroup.user.entities.Users;
 
 public interface EventRatingsService extends
 		BusinessService<EventRatings, java.lang.Integer> {

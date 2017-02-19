@@ -12,7 +12,7 @@ import lombok.Setter;
 import de.alpharogroup.address.book.entities.Addresses;
 import de.alpharogroup.db.entity.BaseEntity;
 import de.alpharogroup.scheduler.system.entities.Appointments;
-import de.alpharogroup.user.management.entities.Users;
+import de.alpharogroup.user.entities.Users;
 
 /**
  * The Entity class {@link EventLocations} is keeping the

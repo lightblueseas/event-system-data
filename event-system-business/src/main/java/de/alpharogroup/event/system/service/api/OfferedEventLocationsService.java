@@ -4,7 +4,7 @@ import java.util.List;
 
 import de.alpharogroup.db.service.api.BusinessService;
 import de.alpharogroup.event.system.entities.OfferedEventLocations;
-import de.alpharogroup.user.management.entities.Users;
+import de.alpharogroup.user.entities.Users;
 
 public interface OfferedEventLocationsService extends
 		BusinessService<OfferedEventLocations, java.lang.Integer> {

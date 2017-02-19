@@ -7,7 +7,7 @@ import de.alpharogroup.event.system.entities.EventLocations;
 import de.alpharogroup.event.system.entities.EventMessages;
 import de.alpharogroup.message.system.entities.Messages;
 import de.alpharogroup.message.system.enums.MessageState;
-import de.alpharogroup.user.management.entities.Users;
+import de.alpharogroup.user.entities.Users;
 
 public interface EventMessagesService extends
 		BusinessService<EventMessages, java.lang.Integer> {

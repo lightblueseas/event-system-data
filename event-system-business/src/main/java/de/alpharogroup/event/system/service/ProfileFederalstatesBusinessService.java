@@ -16,7 +16,7 @@ import de.alpharogroup.db.service.jpa.AbstractBusinessService;
 import de.alpharogroup.event.system.daos.ProfileFederalstatesDao;
 import de.alpharogroup.event.system.entities.ProfileFederalstates;
 import de.alpharogroup.event.system.service.api.ProfileFederalstatesService;
-import de.alpharogroup.user.management.entities.Users;
+import de.alpharogroup.user.entities.Users;
 
 @Transactional
 @Service("profileFederalstatesService")

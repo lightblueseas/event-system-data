@@ -30,7 +30,7 @@ import de.alpharogroup.event.system.service.api.RatingDescriptionsService;
 import de.alpharogroup.event.system.service.api.UsereventsService;
 import de.alpharogroup.scheduler.system.entities.Appointments;
 import de.alpharogroup.scheduler.system.service.api.AppointmentsService;
-import de.alpharogroup.user.management.entities.Users;
+import de.alpharogroup.user.entities.Users;
 
 @Transactional
 @Service("eventTemplatesService")
