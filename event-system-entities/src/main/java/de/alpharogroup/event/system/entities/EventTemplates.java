@@ -1,3 +1,27 @@
+/**
+ * The MIT License
+ *
+ * Copyright (C) 2015 Asterios Raptis
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *  *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *  *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+ * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
 package de.alpharogroup.event.system.entities;
 
 import javax.persistence.CascadeType;
@@ -6,14 +30,10 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
+import javax.persistence.ForeignKey;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.ForeignKey;
-
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import org.hibernate.annotations.Parameter;
 import org.hibernate.annotations.Type;
@@ -24,21 +44,26 @@ import de.alpharogroup.db.entity.BaseEntity;
 import de.alpharogroup.event.system.enums.Difficulty;
 import de.alpharogroup.event.system.enums.EventType;
 import de.alpharogroup.user.entities.Users;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
- * The Entity class {@link EventTemplates} is keeping the information for the events.
+ * The Entity class {@link EventTemplates} is keeping the information for the
+ * events.
  */
 @Entity
 @Table(name = "events")
 @TypeDefs({
-		@TypeDef(name = "difficultyConverter", typeClass = de.alpharogroup.db.postgres.usertype.PGEnumUserType.class, parameters = { @Parameter(name = "enumClassName", value = "de.alpharogroup.event.system.enums.Difficulty") }),
+		@TypeDef(name = "difficultyConverter", typeClass = de.alpharogroup.db.postgres.usertype.PGEnumUserType.class, parameters = {
+				@Parameter(name = "enumClassName", value = "de.alpharogroup.event.system.enums.Difficulty") }),
 
-		@TypeDef(name = "eventtypeConverter", typeClass = de.alpharogroup.db.postgres.usertype.PGEnumUserType.class, parameters = { @Parameter(name = "enumClassName", value = "de.alpharogroup.event.system.enums.EventType") }) })
+		@TypeDef(name = "eventtypeConverter", typeClass = de.alpharogroup.db.postgres.usertype.PGEnumUserType.class, parameters = {
+				@Parameter(name = "enumClassName", value = "de.alpharogroup.event.system.enums.EventType") }) })
 @Getter
 @Setter
 @NoArgsConstructor
-public class EventTemplates extends BaseEntity<Integer> implements Cloneable
-{
+public class EventTemplates extends BaseEntity<Integer> implements Cloneable {
 	/** The serial Version UID */
 	private static final long serialVersionUID = 1L;
 	/** The category of the event. */
@@ -73,7 +98,8 @@ public class EventTemplates extends BaseEntity<Integer> implements Cloneable
 	@Column(name = "locale", length = 64)
 	private String locale;
 	/**
-	 * A flag that signals if the provider have material for the event like books etc.
+	 * A flag that signals if the provider have material for the event like
+	 * books etc.
 	 */
 	@Column(name = "material")
 	private Boolean material;
@@ -89,7 +115,9 @@ public class EventTemplates extends BaseEntity<Integer> implements Cloneable
 	/** A description for the requirements from the event. */
 	@Column(name = "requirements", length = 21845)
 	private String requirements;
-	/** The minimum that have to subscribe to this event so it can be executed. */
+	/**
+	 * The minimum that have to subscribe to this event so it can be executed.
+	 */
 	@Column(name = "subscribermax")
 	private Integer subscribermax;
 	/** The maximum that can subscribe to this event. */

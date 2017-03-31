@@ -1,3 +1,27 @@
+/**
+ * The MIT License
+ *
+ * Copyright (C) 2015 Asterios Raptis
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *  *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *  *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+ * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
 package de.alpharogroup.event.system.service;
 
 import java.util.ArrayList;
@@ -21,17 +45,10 @@ import de.alpharogroup.user.entities.Users;
 @Transactional
 @Service("profileFederalstatesService")
 public class ProfileFederalstatesBusinessService
-		extends
-		AbstractBusinessService<ProfileFederalstates, java.lang.Integer, ProfileFederalstatesDao>
+		extends AbstractBusinessService<ProfileFederalstates, java.lang.Integer, ProfileFederalstatesDao>
 		implements ProfileFederalstatesService {
 
 	private static final long serialVersionUID = 1L;
-
-	@Autowired
-	public void setProfileFederalstatesDao(
-			ProfileFederalstatesDao profileFederalstatesDao) {
-		setDao(profileFederalstatesDao);
-	}	
 
 	/**
 	 * {@inheritDoc}
@@ -39,7 +56,7 @@ public class ProfileFederalstatesBusinessService
 	public boolean contains(final Federalstates federalstate, final Users user) {
 		return findProfileFederalstate(federalstate, user) != null;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -54,8 +71,7 @@ public class ProfileFederalstatesBusinessService
 	 * {@inheritDoc}
 	 */
 	@SuppressWarnings("unchecked")
-	public ProfileFederalstates findProfileFederalstate(
-			final Federalstates federalstate, final Users user) {
+	public ProfileFederalstates findProfileFederalstate(final Federalstates federalstate, final Users user) {
 		final String hqlString = "select pf from ProfileFederalstates pf where pf.user=:user and pf.federalstate=:federalstate";
 		final Query query = getQuery(hqlString);
 		query.setParameter("user", user);
@@ -76,11 +92,15 @@ public class ProfileFederalstatesBusinessService
 		return profileFederalstates;
 	}
 
+	@Autowired
+	public void setProfileFederalstatesDao(ProfileFederalstatesDao profileFederalstatesDao) {
+		setDao(profileFederalstatesDao);
+	}
+
 	/**
 	 * {@inheritDoc}
 	 */
-	public List<String> toStringList(
-			final List<ProfileFederalstates> profileFederalstates) {
+	public List<String> toStringList(final List<ProfileFederalstates> profileFederalstates) {
 		List<String> selectedFederalstates = new ArrayList<String>();
 		for (ProfileFederalstates profileFederalstate : profileFederalstates) {
 			Federalstates federalstate = profileFederalstate.getFederalstate();
