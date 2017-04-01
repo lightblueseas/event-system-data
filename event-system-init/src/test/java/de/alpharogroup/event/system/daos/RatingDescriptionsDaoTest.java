@@ -39,7 +39,7 @@ public class RatingDescriptionsDaoTest extends AbstractTestNGSpringContextTests 
 	@Autowired
 	private RatingDescriptionsDao ratingDescriptionsDao;
 
-	@Test
+	@Test(enabled=false)
 	public void testFindAll() {
 		List<RatingDescriptions> list = ratingDescriptionsDao.findAll();
 	}

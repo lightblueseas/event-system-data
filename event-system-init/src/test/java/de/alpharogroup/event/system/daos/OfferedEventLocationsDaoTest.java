@@ -39,7 +39,7 @@ public class OfferedEventLocationsDaoTest extends AbstractTestNGSpringContextTes
 	@Autowired
 	private OfferedEventLocationsDao offeredEventLocationsDao;
 
-	@Test
+	@Test(enabled=false)
 	public void testFindAll() {
 		List<OfferedEventLocations> list = offeredEventLocationsDao.findAll();
 	}

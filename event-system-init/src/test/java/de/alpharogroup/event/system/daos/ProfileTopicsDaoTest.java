@@ -39,7 +39,7 @@ public class ProfileTopicsDaoTest extends AbstractTestNGSpringContextTests {
 	@Autowired
 	private ProfileTopicsDao profileTopicsDao;
 
-	@Test
+	@Test(enabled=false)
 	public void testFindAll() {
 		List<ProfileTopics> list = profileTopicsDao.findAll();
 	}

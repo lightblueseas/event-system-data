@@ -39,7 +39,7 @@ public class EventTemplateDaoTest extends AbstractTestNGSpringContextTests {
 	@Autowired
 	private EventTemplatesDao eventTemplateDao;
 
-	@Test
+	@Test(enabled=false)
 	public void testFindAll() {
 		List<EventTemplates> list = eventTemplateDao.findAll();
 	}

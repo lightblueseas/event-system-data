@@ -39,7 +39,7 @@ public class ProfileFederalstatesDaoTest extends AbstractTestNGSpringContextTest
 	@Autowired
 	private ProfileFederalstatesDao profileFederalstatesDao;
 
-	@Test
+	@Test(enabled=false)
 	public void testFindAll() {
 		List<ProfileFederalstates> list = profileFederalstatesDao.findAll();
 	}

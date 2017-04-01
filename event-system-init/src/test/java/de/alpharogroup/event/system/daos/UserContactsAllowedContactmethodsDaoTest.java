@@ -39,7 +39,7 @@ public class UserContactsAllowedContactmethodsDaoTest extends AbstractTestNGSpri
 	@Autowired
 	private UserContactsAllowedContactmethodsDao userContactsAllowedContactmethodsDao;
 
-	@Test
+	@Test(enabled=false)
 	public void testFindAll() {
 		List<UserContactsAllowedContactmethods> list = userContactsAllowedContactmethodsDao.findAll();
 	}

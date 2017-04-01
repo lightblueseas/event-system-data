@@ -39,7 +39,7 @@ public class CategoriesDaoTest extends AbstractTestNGSpringContextTests {
 	@Autowired
 	private CategoriesDao categoriesDao;
 
-	@Test
+	@Test(enabled=false)
 	public void testFindAll() {
 		List<Categories> list = categoriesDao.findAll();
 	}
