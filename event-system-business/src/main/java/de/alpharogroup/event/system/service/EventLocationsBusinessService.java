@@ -1,3 +1,27 @@
+/**
+ * The MIT License
+ *
+ * Copyright (C) 2015 Asterios Raptis
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *  *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *  *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+ * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
 package de.alpharogroup.event.system.service;
 
 import java.util.ArrayList;
@@ -8,6 +32,10 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import javax.persistence.Query;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import de.alpharogroup.address.book.entities.Addresses;
 import de.alpharogroup.collections.ListExtensions;
@@ -20,12 +48,9 @@ import de.alpharogroup.event.system.entities.EventTemplates;
 import de.alpharogroup.event.system.enums.UsereventsRelationType;
 import de.alpharogroup.event.system.service.api.EventLocationsService;
 import de.alpharogroup.jgeohash.GeoHashExtensions;
-import de.alpharogroup.user.management.entities.Users;
+import de.alpharogroup.user.entities.Users;
+import de.alpharogroup.user.management.entities.UserDatas;
 import de.alpharogroup.user.management.service.api.UserDatasService;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Transactional
 @Service("eventLocationsService")
@@ -41,12 +66,6 @@ public class EventLocationsBusinessService
 	@Autowired
 	private UserDatasService userDataService;
 
-	@Autowired
-	public void setEventLocationsDao(EventLocationsDao eventLocationsDao)
-	{
-		setDao(eventLocationsDao);
-	}
-
 	/**
 	 * {@inheritDoc}
 	 */
@@ -57,8 +76,8 @@ public class EventLocationsBusinessService
 			+ "where ue.user=:provider and el.event.id=ue.event.id";
 		final Query query = getQuery(hqlString);
 		query.setParameter("provider", provider);
-		final List<Users> contactPersons = new ArrayList<Users>(new HashSet<Users>(
-			query.getResultList()));
+		final List<Users> contactPersons = new ArrayList<Users>(
+			new HashSet<Users>(query.getResultList()));
 		return contactPersons;
 	}
 
@@ -128,11 +147,12 @@ public class EventLocationsBusinessService
 	public List<Addresses> findEventLocationsFromProvider(final Users provider)
 	{
 		// String hqlString =
-		// "select ev.eventLocation from EventLocations ev where ev.event.provider=:provider";
+		// "select ev.eventLocation from EventLocations ev where
+		// ev.event.provider=:provider";
 		// final Query query = getQuery(hqlString);
 		// query.setParameter("provider", provider);
-		final List<Addresses> userAdresses = new ArrayList<Addresses>(userDataService.get(
-			provider.getUserData().getId()).getAddresses());
+		UserDatas userData = userDataService.findBy(provider);
+		final List<Addresses> userAdresses = new ArrayList<Addresses>(userData.getAddresses());
 		return userAdresses;
 	}
 
@@ -149,6 +169,31 @@ public class EventLocationsBusinessService
 		final List<EventLocations> eventLocations = new ArrayList<EventLocations>(
 			new HashSet<EventLocations>(query.getResultList()));
 		return eventLocations;
+	}
+
+	/**
+	 * {@inheritDoc}.
+	 */
+	@SuppressWarnings("unchecked")
+	public List<EventLocations> findEvents(final String eventname)
+	{
+		final StringBuilder sb = new StringBuilder();
+		Date systime = new Date();
+		Date start = CalculateDateExtensions.addDays(systime, 0);
+		Date end = CalculateDateExtensions.addDays(systime, 30);
+
+		sb.append("select el from EventLocations el " + "where el.event.name like :eventname "
+			+ "or el.event.head like :eventname "
+			+ "and el.appointment.starttime between :start and :end");
+		String hqlString = sb.toString();
+		final Query query = getQuery(hqlString);
+		query.setParameter("eventname", "%" + eventname + "%");
+		query.setParameter("start", start);
+		query.setParameter("end", end);
+		List<EventLocations> result = query.getResultList();
+		final List<EventLocations> foundEventLocations = new ArrayList<EventLocations>(
+			new HashSet<EventLocations>(result));
+		return foundEventLocations;
 	}
 
 	/**
@@ -193,33 +238,8 @@ public class EventLocationsBusinessService
 	 * {@inheritDoc}.
 	 */
 	@SuppressWarnings("unchecked")
-	public List<EventLocations> findEvents(final String eventname)
-	{
-		final StringBuilder sb = new StringBuilder();
-		Date systime = new Date();
-		Date start = CalculateDateExtensions.addDays(systime, 0);
-		Date end = CalculateDateExtensions.addDays(systime, 30);
-
-		sb.append("select el from EventLocations el " + "where el.event.name like :eventname "
-			+ "or el.event.head like :eventname "
-			+ "and el.appointment.starttime between :start and :end");
-		String hqlString = sb.toString();
-		final Query query = getQuery(hqlString);
-		query.setParameter("eventname", "%" + eventname + "%");
-		query.setParameter("start", start);
-		query.setParameter("end", end);
-		List<EventLocations> result = query.getResultList();
-		final List<EventLocations> foundEventLocations = new ArrayList<EventLocations>(
-			new HashSet<EventLocations>(result));
-		return foundEventLocations;
-	}
-
-	/**
-	 * {@inheritDoc}.
-	 */
-	@SuppressWarnings("unchecked")
-	public List<EventLocations> findEvents(final String eventname, final Date start,
-		final Date end, final String geohash)
+	public List<EventLocations> findEvents(final String eventname, final Date start, final Date end,
+		final String geohash)
 	{
 		Map<String, String> adjacentAreas = null;
 		if (geohash != null && !geohash.isEmpty())
@@ -232,19 +252,19 @@ public class EventLocationsBusinessService
 		}
 
 		final StringBuilder hqlString = new StringBuilder();
-		hqlString.append("select el from EventLocations el "
-			+ "where el.event.name like :eventname "
-			+ "and el.appointment.starttime between :start and :end "
-			+ "and el.userAddress.address.geohash in ("
-			+
-			// Subselect start...
-			"select address.geohash from Addresses address " + "where address.geohash like :top "
-			+ "or address.geohash like :topright " + "or address.geohash like :right "
-			+ "or address.geohash like :bottomright " + "or address.geohash like :bottom "
-			+ "or address.geohash like :bottomleft " + "or address.geohash like :left "
-			+ "or address.geohash like :topleft " + "or address.geohash like :center " +
-			// Subselect end...
-			")");
+		hqlString
+			.append("select el from EventLocations el " + "where el.event.name like :eventname "
+				+ "and el.appointment.starttime between :start and :end "
+				+ "and el.userAddress.address.geohash in (" +
+				// Subselect start...
+				"select address.geohash from Addresses address "
+				+ "where address.geohash like :top " + "or address.geohash like :topright "
+				+ "or address.geohash like :right " + "or address.geohash like :bottomright "
+				+ "or address.geohash like :bottom " + "or address.geohash like :bottomleft "
+				+ "or address.geohash like :left " + "or address.geohash like :topleft "
+				+ "or address.geohash like :center " +
+				// Subselect end...
+				")");
 		String queryString = hqlString.toString();
 		final Query query = getQuery(queryString);
 		query.setParameter("eventname", "%" + eventname + "%");
@@ -272,6 +292,12 @@ public class EventLocationsBusinessService
 		final List<EventLocations> eventLocations = new ArrayList<EventLocations>(
 			new HashSet<EventLocations>(query.getResultList()));
 		return eventLocations;
+	}
+
+	@Autowired
+	public void setEventLocationsDao(EventLocationsDao eventLocationsDao)
+	{
+		setDao(eventLocationsDao);
 	}
 
 }

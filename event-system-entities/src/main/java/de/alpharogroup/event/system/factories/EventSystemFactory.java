@@ -1,3 +1,27 @@
+/**
+ * The MIT License
+ *
+ * Copyright (C) 2015 Asterios Raptis
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *  *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *  *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+ * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
 package de.alpharogroup.event.system.factories;
 
 import java.util.Date;
@@ -24,22 +48,26 @@ import de.alpharogroup.event.system.enums.UsereventsRelationType;
 import de.alpharogroup.message.system.entities.Messages;
 import de.alpharogroup.rating.system.enums.RatingVisibility;
 import de.alpharogroup.scheduler.system.entities.Appointments;
+import de.alpharogroup.user.entities.Users;
 import de.alpharogroup.user.management.entities.Contactmethods;
-import de.alpharogroup.user.management.entities.Users;
 
-public class EventSystemFactory {
+public class EventSystemFactory
+{
 
 	/** The Constant instance. */
 	private static final EventSystemFactory instance = new EventSystemFactory();
 
-	public static EventSystemFactory getInstance() {
+	public static EventSystemFactory getInstance()
+	{
 		return instance;
 	}
 
-	private EventSystemFactory() {
+	private EventSystemFactory()
+	{
 	}
 
-	public Categories newCategories(Integer id, String name) {
+	public Categories newCategories(Integer id, String name)
+	{
 		Categories categories = new Categories();
 		categories.setId(id);
 		categories.setName(name);
@@ -47,10 +75,10 @@ public class EventSystemFactory {
 	}
 
 	public EventLocationDatas newEventLocationData(Integer availableRooms,
-			Integer cateringAbilities, Integer id, Integer nearByRestaurant,
-			Boolean offeredEvening, Boolean offeredWeekdays,
-			Boolean offeredWeekend, Integer parkingAbilities, String roomtype,
-			Integer seatsPerRoom) {
+		Integer cateringAbilities, Integer id, Integer nearByRestaurant, Boolean offeredEvening,
+		Boolean offeredWeekdays, Boolean offeredWeekend, Integer parkingAbilities, String roomtype,
+		Integer seatsPerRoom)
+	{
 		EventLocationDatas eventLocationData = new EventLocationDatas();
 		eventLocationData.setAvailableRooms(availableRooms);
 		eventLocationData.setCateringAbilities(cateringAbilities);
@@ -65,9 +93,9 @@ public class EventSystemFactory {
 		return eventLocationData;
 	}
 
-	public EventLocations newEventLocations(Appointments appointment,
-			Users contactperson, EventTemplates event, Integer id,
-			Addresses userAddress) {
+	public EventLocations newEventLocations(Appointments appointment, Users contactperson,
+		EventTemplates event, Integer id, Addresses userAddress)
+	{
 		EventLocations eventLocations = new EventLocations();
 		eventLocations.setAppointment(appointment);
 		eventLocations.setContactperson(contactperson);
@@ -77,8 +105,9 @@ public class EventSystemFactory {
 		return eventLocations;
 	}
 
-	public EventMessages newEventMessages(EventLocations eventLocation,
-			Integer id, Messages message) {
+	public EventMessages newEventMessages(EventLocations eventLocation, Integer id,
+		Messages message)
+	{
 		EventMessages eventMessages = new EventMessages();
 		eventMessages.setEventLocation(eventLocation);
 		eventMessages.setId(id);
@@ -87,10 +116,10 @@ public class EventSystemFactory {
 	}
 
 	public EventRatings newEventRatings(Integer contact, EventTemplates event,
-			Integer eventlocation, Integer id, Integer material,
-			Integer presentation, Users rater, Date ratingDate,
-			String ratingDescription, Integer support, String titleRating,
-			Integer topic, RatingVisibility visibility) {
+		Integer eventlocation, Integer id, Integer material, Integer presentation, Users rater,
+		Date ratingDate, String ratingDescription, Integer support, String titleRating,
+		Integer topic, RatingVisibility visibility)
+	{
 		EventRatings eventRatings = new EventRatings();
 		eventRatings.setContact(contact);
 		eventRatings.setEvent(event);
@@ -108,13 +137,12 @@ public class EventSystemFactory {
 		return eventRatings;
 	}
 
-	public EventTemplates newEventTemplate(Categories categories,
-			String consultant, String content, Difficulty difficulty,
-			Integer duration, EventType eventtype, String head, Integer id,
-			String introduction, String locale, Boolean material, String name,
-			java.math.BigDecimal price, Users provider,
-			String requirements, Integer subscribermax, Integer subscribermin,
-			String targetgroup) {
+	public EventTemplates newEventTemplate(Categories categories, String consultant, String content,
+		Difficulty difficulty, Integer duration, EventType eventtype, String head, Integer id,
+		String introduction, String locale, Boolean material, String name,
+		java.math.BigDecimal price, Users provider, String requirements, Integer subscribermax,
+		Integer subscribermin, String targetgroup)
+	{
 		EventTemplates events = new EventTemplates();
 		events.setCategories(categories);
 		events.setConsultant(consultant);
@@ -137,8 +165,8 @@ public class EventSystemFactory {
 		return events;
 	}
 
-	public EventTopics newEventTopics(EventTemplates event, Integer id,
-			Topics topic) {
+	public EventTopics newEventTopics(EventTemplates event, Integer id, Topics topic)
+	{
 		EventTopics eventTopics = new EventTopics();
 		eventTopics.setEvent(event);
 		eventTopics.setId(id);
@@ -146,17 +174,15 @@ public class EventSystemFactory {
 		return eventTopics;
 	}
 
-	public OfferedEventLocations newOfferedEventLocations(
-			EventLocationDatas eventLocationData, Integer id,
-			String locationDescription, String locationEquipmentDescription,
-			String offeredFromDescription, String supportDescription,
-			Addresses userAddress) {
+	public OfferedEventLocations newOfferedEventLocations(EventLocationDatas eventLocationData,
+		Integer id, String locationDescription, String locationEquipmentDescription,
+		String offeredFromDescription, String supportDescription, Addresses userAddress)
+	{
 		OfferedEventLocations offeredEventLocations = new OfferedEventLocations();
 		offeredEventLocations.setEventLocationData(eventLocationData);
 		offeredEventLocations.setId(id);
 		offeredEventLocations.setLocationDescription(locationDescription);
-		offeredEventLocations
-				.setLocationEquipmentDescription(locationEquipmentDescription);
+		offeredEventLocations.setLocationEquipmentDescription(locationEquipmentDescription);
 		offeredEventLocations.setOfferedFromDescription(offeredFromDescription);
 		offeredEventLocations.setSupportDescription(supportDescription);
 		offeredEventLocations.setUserAddress(userAddress);
@@ -164,8 +190,9 @@ public class EventSystemFactory {
 		return offeredEventLocations;
 	}
 
-	public ProfileFederalstates newProfileFederalstates(
-			Federalstates federalstate, Integer id, Users user) {
+	public ProfileFederalstates newProfileFederalstates(Federalstates federalstate, Integer id,
+		Users user)
+	{
 		ProfileFederalstates profileFederalstates = new ProfileFederalstates();
 		profileFederalstates.setFederalstate(federalstate);
 		profileFederalstates.setId(id);
@@ -173,7 +200,8 @@ public class EventSystemFactory {
 		return profileFederalstates;
 	}
 
-	public ProfileTopics newProfileTopics(Integer id, Topics topic, Users user) {
+	public ProfileTopics newProfileTopics(Integer id, Topics topic, Users user)
+	{
 		ProfileTopics profileTopics = new ProfileTopics();
 		profileTopics.setId(id);
 		profileTopics.setTopic(topic);
@@ -182,9 +210,10 @@ public class EventSystemFactory {
 		return profileTopics;
 	}
 
-	public RatingDescriptions newRatingDescriptions(EventRatings eventRatings,
-			Integer id, String lessLikeRating, String mostLikeRating,
-			String recommendConsultant, String recommendEvent) {
+	public RatingDescriptions newRatingDescriptions(EventRatings eventRatings, Integer id,
+		String lessLikeRating, String mostLikeRating, String recommendConsultant,
+		String recommendEvent)
+	{
 		RatingDescriptions ratingDescriptions = new RatingDescriptions();
 		ratingDescriptions.setEventRatings(eventRatings);
 		ratingDescriptions.setId(id);
@@ -196,7 +225,8 @@ public class EventSystemFactory {
 		return ratingDescriptions;
 	}
 
-	public Topics newTopics(Integer id, String name, Boolean node, Topics parent) {
+	public Topics newTopics(Integer id, String name, Boolean node, Topics parent)
+	{
 		Topics topics = new Topics();
 		topics.setId(id);
 		topics.setName(name);
@@ -204,25 +234,26 @@ public class EventSystemFactory {
 		topics.setParent(parent);
 		return topics;
 	}
-	
-    public UserContactsAllowedContactmethods newUserContactsAllowedContactmethods(
-            Integer id, Users userContact,
-            Contactmethods userContactmethod ) {
-        UserContactsAllowedContactmethods userContactsAllowedContactmethods = new UserContactsAllowedContactmethods();
-        userContactsAllowedContactmethods.setId( id );
-        userContactsAllowedContactmethods.setUserContact( userContact );
-        userContactsAllowedContactmethods.setUserContactmethod( userContactmethod );
-        return userContactsAllowedContactmethods;
-    }
-    
-    public Userevents newUserevents( EventTemplates event, Integer id,
-    		UsereventsRelationType relationtype, Users user ) {
-        Userevents userevents = new Userevents();
-        userevents.setEvent( event );
-        userevents.setId( id );
-        userevents.setRelationtype( relationtype );
-        userevents.setUser( user );
-        return userevents;
-    }
+
+	public UserContactsAllowedContactmethods newUserContactsAllowedContactmethods(Integer id,
+		Users userContact, Contactmethods userContactmethod)
+	{
+		UserContactsAllowedContactmethods userContactsAllowedContactmethods = new UserContactsAllowedContactmethods();
+		userContactsAllowedContactmethods.setId(id);
+		userContactsAllowedContactmethods.setUserContact(userContact);
+		userContactsAllowedContactmethods.setUserContactmethod(userContactmethod);
+		return userContactsAllowedContactmethods;
+	}
+
+	public Userevents newUserevents(EventTemplates event, Integer id,
+		UsereventsRelationType relationtype, Users user)
+	{
+		Userevents userevents = new Userevents();
+		userevents.setEvent(event);
+		userevents.setId(id);
+		userevents.setRelationtype(relationtype);
+		userevents.setUser(user);
+		return userevents;
+	}
 
 }

@@ -1,3 +1,27 @@
+/**
+ * The MIT License
+ *
+ * Copyright (C) 2015 Asterios Raptis
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *  *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *  *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+ * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
 package de.alpharogroup.event.system.service.locator;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,21 +50,20 @@ import de.alpharogroup.message.system.service.api.MessagesService;
 import de.alpharogroup.resource.system.service.api.ResourcesService;
 import de.alpharogroup.scheduler.system.service.api.AppointmentsService;
 import de.alpharogroup.user.management.service.api.ContactmethodsService;
-import de.alpharogroup.user.management.service.api.PermissionsService;
 import de.alpharogroup.user.management.service.api.RecommendationsService;
-import de.alpharogroup.user.management.service.api.RelationPermissionsService;
-import de.alpharogroup.user.management.service.api.ResetPasswordsService;
 import de.alpharogroup.user.management.service.api.RobinsonsService;
-import de.alpharogroup.user.management.service.api.RolesService;
 import de.alpharogroup.user.management.service.api.RuleViolationsService;
 import de.alpharogroup.user.management.service.api.UserCreditsService;
 import de.alpharogroup.user.management.service.api.UserDatasService;
 import de.alpharogroup.user.management.service.api.UsersManagementService;
 import de.alpharogroup.user.management.service.api.UsersService;
+import de.alpharogroup.user.service.api.PermissionsService;
+import de.alpharogroup.user.service.api.RelationPermissionsService;
+import de.alpharogroup.user.service.api.ResetPasswordsService;
+import de.alpharogroup.user.service.api.RolesService;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 
 /**
  * The Class ServiceLocatorImpl.
@@ -51,7 +74,8 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Service("serviceLocator")
-public class ServiceLocatorImpl implements ServiceLocator {
+public class ServiceLocatorImpl implements ServiceLocator
+{
 	/** The AppointmentsService. */
 	@Autowired
 	private AppointmentsService appointmentsService;
