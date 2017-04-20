@@ -30,7 +30,10 @@ import de.alpharogroup.db.dao.jpa.JpaEntityManagerDao;
 import de.alpharogroup.event.system.entities.ProfileFederalstates;
 
 @Repository("profileFederalstatesDao")
-public class ProfileFederalstatesDao extends JpaEntityManagerDao<ProfileFederalstates, java.lang.Integer> {
+public class ProfileFederalstatesDao
+	extends
+		JpaEntityManagerDao<ProfileFederalstates, java.lang.Integer>
+{
 	/**
 	 * The serialVersionUID.
 	 */

@@ -44,8 +44,12 @@ import de.alpharogroup.user.entities.Users;
 
 @Transactional
 @Service("eventRatingsService")
-public class EventRatingsBusinessService extends
-		AbstractBusinessService<EventRatings, java.lang.Integer, EventRatingsDao> implements EventRatingsService {
+public class EventRatingsBusinessService
+	extends
+		AbstractBusinessService<EventRatings, java.lang.Integer, EventRatingsDao>
+	implements
+		EventRatingsService
+{
 
 	private static final long serialVersionUID = 1L;
 
@@ -53,7 +57,8 @@ public class EventRatingsBusinessService extends
 	 * {@inheritDoc}
 	 */
 	@SuppressWarnings("unchecked")
-	public List<Users> findAllUsersForRatedEvent(final EventTemplates event) {
+	public List<Users> findAllUsersForRatedEvent(final EventTemplates event)
+	{
 		final String hqlString = "select distinct er.rater from EventRatings er where er.event=:event";
 		final Query query = getQuery(hqlString);
 		query.setParameter("event", event);
@@ -65,7 +70,8 @@ public class EventRatingsBusinessService extends
 	 * {@inheritDoc}
 	 */
 	@SuppressWarnings("unchecked")
-	public List<EventRatings> findEventRatings(final EventTemplates event) {
+	public List<EventRatings> findEventRatings(final EventTemplates event)
+	{
 		final String hqlString = "select er from EventRatings er where er.event=:event";
 		final Query query = getQuery(hqlString);
 		query.setParameter("event", event);
@@ -77,7 +83,8 @@ public class EventRatingsBusinessService extends
 	 * {@inheritDoc}
 	 */
 	@SuppressWarnings("unchecked")
-	public List<EventRatings> findEventRatings(final Users subscriber) {
+	public List<EventRatings> findEventRatings(final Users subscriber)
+	{
 		final String hqlString = "select er from EventRatings er where er.rater=:rater";
 		final Query query = getQuery(hqlString);
 		query.setParameter("rater", subscriber);
@@ -89,9 +96,10 @@ public class EventRatingsBusinessService extends
 	 * {@inheritDoc}
 	 */
 	@SuppressWarnings("unchecked")
-	public List<EventRatings> findRatedEvents(final Users provider) {
-		final String hqlString = "select er from EventRatings er " + "where er.event.provider=:provider "
-				+ "and er.visibility=:visibility";
+	public List<EventRatings> findRatedEvents(final Users provider)
+	{
+		final String hqlString = "select er from EventRatings er "
+			+ "where er.event.provider=:provider " + "and er.visibility=:visibility";
 		final Query query = getQuery(hqlString);
 		query.setParameter("provider", provider);
 		query.setParameter("visibility", RatingVisibility.INVISIBLE);
@@ -103,7 +111,8 @@ public class EventRatingsBusinessService extends
 	 * {@inheritDoc}
 	 */
 	@SuppressWarnings("unchecked")
-	public RatingDescriptions findRatingDescription(final EventRatings eventRating) {
+	public RatingDescriptions findRatingDescription(final EventRatings eventRating)
+	{
 		final String hqlString = "select rd from RatingDescriptions rd where rd.eventRatings=:eventRating";
 		final Query query = getQuery(hqlString);
 		query.setParameter("eventRating", eventRating);
@@ -116,7 +125,8 @@ public class EventRatingsBusinessService extends
 	 * {@inheritDoc}
 	 */
 	@SuppressWarnings("unchecked")
-	public List<EventRatings> getEventRatingsForEvent(final EventTemplates event) {
+	public List<EventRatings> getEventRatingsForEvent(final EventTemplates event)
+	{
 		final String hqlString = "select distinct er from EventRatings er where er.event=:event";
 		final Query query = getQuery(hqlString);
 		query.setParameter("event", event);
@@ -129,7 +139,8 @@ public class EventRatingsBusinessService extends
 	 */
 	@SuppressWarnings("unchecked")
 	public List<EventRatings> getEventRatingsForEventFromSubscriber(final EventTemplates event,
-			final Users subscriber) {
+		final Users subscriber)
+	{
 		final String hqlString = "select distinct er from EventRatings er where er.event=:event and er.rater=:subscriber";
 		final Query query = getQuery(hqlString);
 		query.setParameter("event", event);
@@ -139,7 +150,8 @@ public class EventRatingsBusinessService extends
 	}
 
 	@Autowired
-	public void setEventRatingsDao(EventRatingsDao eventRatingsDao) {
+	public void setEventRatingsDao(EventRatingsDao eventRatingsDao)
+	{
 		setDao(eventRatingsDao);
 	}
 

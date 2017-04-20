@@ -38,16 +38,16 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * The Entity class {@link ProfileTopics} is keeping the information for the
- * connection between the Entity class {@link Users} and the Entity class
- * {@link Topics}.
+ * The Entity class {@link ProfileTopics} is keeping the information for the connection between the
+ * Entity class {@link Users} and the Entity class {@link Topics}.
  */
 @Entity
 @Table(name = "profile_topics")
 @Getter
 @Setter
 @NoArgsConstructor
-public class ProfileTopics extends BaseEntity<Integer> implements Cloneable {
+public class ProfileTopics extends BaseEntity<Integer> implements Cloneable
+{
 	/** The serial Version UID */
 	private static final long serialVersionUID = 1L;
 	/**

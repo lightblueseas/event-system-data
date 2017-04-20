@@ -38,8 +38,11 @@ import de.alpharogroup.service.domain.AbstractDomainService;
 @Transactional
 @Service("categoryDomainService")
 public class CategoryDomainService
-		extends AbstractDomainService<Integer, Category, Categories, CategoriesDao, CategoriesMapper>
-		implements CategoryService {
+	extends
+		AbstractDomainService<Integer, Category, Categories, CategoriesDao, CategoriesMapper>
+	implements
+		CategoryService
+{
 
 	/**
 	 * Sets the specific {@link CategoriesMapper}.
@@ -48,7 +51,8 @@ public class CategoryDomainService
 	 *            the new {@link CategoriesMapper}.
 	 */
 	@Autowired
-	public void setResourcesMapper(CategoriesMapper mapper) {
+	public void setResourcesMapper(CategoriesMapper mapper)
+	{
 		setMapper(mapper);
 	}
 

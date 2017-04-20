@@ -38,16 +38,17 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * The Entity class {@link Topics} is keeping the information for all the topics
- * that events can have. The table 'topics' has a tree structure so every topic
- * has a parent. The root topic has no parent.
+ * The Entity class {@link Topics} is keeping the information for all the topics that events can
+ * have. The table 'topics' has a tree structure so every topic has a parent. The root topic has no
+ * parent.
  */
 @Entity
 @Table(name = "topics")
 @Getter
 @Setter
 @NoArgsConstructor
-public class Topics extends BaseEntity<Integer> implements Cloneable {
+public class Topics extends BaseEntity<Integer> implements Cloneable
+{
 	/** The serial Version UID */
 	private static final long serialVersionUID = 1L;
 	/** The name from the topic. */

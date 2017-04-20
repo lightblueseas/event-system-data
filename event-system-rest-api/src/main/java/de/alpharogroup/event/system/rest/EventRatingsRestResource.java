@@ -29,7 +29,11 @@ import de.alpharogroup.event.system.rest.api.EventRatingsResource;
 import de.alpharogroup.event.system.service.api.EventRatingService;
 import de.alpharogroup.service.rs.AbstractRestfulResource;
 
-public class EventRatingsRestResource extends AbstractRestfulResource<Integer, EventRating, EventRatingService>
-		implements EventRatingsResource {
+public class EventRatingsRestResource
+	extends
+		AbstractRestfulResource<Integer, EventRating, EventRatingService>
+	implements
+		EventRatingsResource
+{
 
 }

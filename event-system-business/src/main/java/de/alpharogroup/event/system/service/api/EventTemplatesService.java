@@ -31,7 +31,8 @@ import de.alpharogroup.event.system.entities.Categories;
 import de.alpharogroup.event.system.entities.EventTemplates;
 import de.alpharogroup.user.entities.Users;
 
-public interface EventTemplatesService extends BusinessService<EventTemplates, java.lang.Integer> {
+public interface EventTemplatesService extends BusinessService<EventTemplates, java.lang.Integer>
+{
 
 	/**
 	 * Delete event and all references.
@@ -64,7 +65,8 @@ public interface EventTemplatesService extends BusinessService<EventTemplates, j
 	 *            the condition
 	 * @return the list
 	 */
-	List<EventTemplates> findEvents(final String eventname, final Categories category, final boolean condition);
+	List<EventTemplates> findEvents(final String eventname, final Categories category,
+		final boolean condition);
 
 	/**
 	 * Find seminars.

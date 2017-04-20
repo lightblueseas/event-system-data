@@ -34,16 +34,16 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * The Entity class {@link EventLocationDatas} is keeping the information for
- * the data from the location. It is used if a provider wants to offer an event
- * location.
+ * The Entity class {@link EventLocationDatas} is keeping the information for the data from the
+ * location. It is used if a provider wants to offer an event location.
  */
 @Entity
 @Table(name = "event_location_data")
 @Getter
 @Setter
 @NoArgsConstructor
-public class EventLocationDatas extends BaseEntity<Integer> implements Cloneable {
+public class EventLocationDatas extends BaseEntity<Integer> implements Cloneable
+{
 	/** The serial Version UID */
 	private static final long serialVersionUID = 1L;
 	/** The quantity of the available rooms or places. */

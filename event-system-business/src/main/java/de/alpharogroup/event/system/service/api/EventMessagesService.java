@@ -33,7 +33,8 @@ import de.alpharogroup.message.system.entities.Messages;
 import de.alpharogroup.message.system.enums.MessageState;
 import de.alpharogroup.user.entities.Users;
 
-public interface EventMessagesService extends BusinessService<EventMessages, java.lang.Integer> {
+public interface EventMessagesService extends BusinessService<EventMessages, java.lang.Integer>
+{
 
 	List<EventMessages> find(Messages message, EventLocations eventLocation);
 

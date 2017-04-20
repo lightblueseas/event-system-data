@@ -42,8 +42,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * The Entity class {@link EventRatings} is keeping the information for the
- * ratings from the events.
+ * The Entity class {@link EventRatings} is keeping the information for the ratings from the events.
  */
 @Entity
 @Table(name = "event_ratings")
@@ -53,15 +52,15 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class EventRatings extends Ratings {
+public class EventRatings extends Ratings
+{
 	/** The serial Version UID */
 	private static final long serialVersionUID = 1L;
 	/** The rating for the contact. */
 	@Column(name = "contact")
 	private Integer contact;
 	/**
-	 * The event attribute that references to the Entity class
-	 * {@link EventTemplates}.
+	 * The event attribute that references to the Entity class {@link EventTemplates}.
 	 */
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "event_id", nullable = true, referencedColumnName = "id", foreignKey = @ForeignKey(name = "FK_EVENT_RATINGS_EVENT_ID"))

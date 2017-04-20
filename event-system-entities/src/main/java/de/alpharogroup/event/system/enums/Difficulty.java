@@ -24,7 +24,8 @@
  */
 package de.alpharogroup.event.system.enums;
 
-public enum Difficulty {
+public enum Difficulty
+{
 
 	BEGINNER, ADVANCED, EXPERT;
 
@@ -36,7 +37,8 @@ public enum Difficulty {
 	 * 
 	 * @return the id
 	 */
-	public String getId() {
+	public String getId()
+	{
 		return this.name();
 	}
 
@@ -45,7 +47,8 @@ public enum Difficulty {
 	 * 
 	 * @return the level
 	 */
-	public String getLevel() {
+	public String getLevel()
+	{
 		return this.name();
 	}
 
@@ -54,7 +57,8 @@ public enum Difficulty {
 	 * 
 	 * @return the resource key
 	 */
-	public String getResourceKey() {
+	public String getResourceKey()
+	{
 		return resourceKey;
 	}
 }

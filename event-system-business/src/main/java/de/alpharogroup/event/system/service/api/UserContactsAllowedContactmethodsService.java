@@ -35,7 +35,9 @@ import de.alpharogroup.user.management.entities.Contactmethods;
  * The Interface UserContactsAllowedContactmethodsService.
  */
 public interface UserContactsAllowedContactmethodsService
-		extends BusinessService<UserContactsAllowedContactmethods, java.lang.Integer> {
+	extends
+		BusinessService<UserContactsAllowedContactmethods, java.lang.Integer>
+{
 
 	/**
 	 * Saves for the given user the list from the given allowed contactmethods.
@@ -47,5 +49,5 @@ public interface UserContactsAllowedContactmethodsService
 	 * @return the list
 	 */
 	List<UserContactsAllowedContactmethods> saveUserContactsAllowedContactmethods(
-			List<Contactmethods> userContactmethods, Users userContact);
+		List<Contactmethods> userContactmethods, Users userContact);
 }

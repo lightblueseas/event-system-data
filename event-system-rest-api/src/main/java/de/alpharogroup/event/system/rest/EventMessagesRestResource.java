@@ -29,7 +29,11 @@ import de.alpharogroup.event.system.rest.api.EventMessagesResource;
 import de.alpharogroup.event.system.service.api.EventMessageService;
 import de.alpharogroup.service.rs.AbstractRestfulResource;
 
-public class EventMessagesRestResource extends AbstractRestfulResource<Integer, EventMessage, EventMessageService>
-		implements EventMessagesResource {
+public class EventMessagesRestResource
+	extends
+		AbstractRestfulResource<Integer, EventMessage, EventMessageService>
+	implements
+		EventMessagesResource
+{
 
 }

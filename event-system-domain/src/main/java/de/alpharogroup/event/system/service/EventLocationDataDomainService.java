@@ -37,9 +37,12 @@ import de.alpharogroup.service.domain.AbstractDomainService;
 
 @Transactional
 @Service("eventLocationDataDomainService")
-public class EventLocationDataDomainService extends
+public class EventLocationDataDomainService
+	extends
 		AbstractDomainService<Integer, EventLocationData, EventLocationDatas, EventLocationDatasDao, EventLocationDatasMapper>
-		implements EventLocationDataService {
+	implements
+		EventLocationDataService
+{
 	/**
 	 * Sets the specific {@link EventLocationDatasMapper}.
 	 *
@@ -47,7 +50,8 @@ public class EventLocationDataDomainService extends
 	 *            the new {@link EventLocationDatasMapper}.
 	 */
 	@Autowired
-	public void setEventLocationDatasMapper(EventLocationDatasMapper mapper) {
+	public void setEventLocationDatasMapper(EventLocationDatasMapper mapper)
+	{
 		setMapper(mapper);
 	}
 

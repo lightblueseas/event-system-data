@@ -42,12 +42,12 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class EventTopic extends BaseDomainObject<Integer> {
+public class EventTopic extends BaseDomainObject<Integer>
+{
 	/** The serial Version UID */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The event attribute that references to the Entity class
-	 * {@link EventTemplates}.
+	 * The event attribute that references to the Entity class {@link EventTemplates}.
 	 */
 	private EventTemplate event;
 

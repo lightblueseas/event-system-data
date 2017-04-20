@@ -44,12 +44,12 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ProfileFederalstate extends BaseDomainObject<Integer> {
+public class ProfileFederalstate extends BaseDomainObject<Integer>
+{
 	/** The serial Version UID */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The federalstate attribute that references to the Entity class
-	 * {@link Federalstates}.
+	 * The federalstate attribute that references to the Entity class {@link Federalstates}.
 	 */
 	private Federalstate federalstate;
 	/** The user attribute that references to the Entity class {@link Users}. */

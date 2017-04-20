@@ -30,7 +30,8 @@ package de.alpharogroup.event.system.enums;
  * @author auto-generated
  *
  */
-public enum EventType {
+public enum EventType
+{
 
 	INHOUSE, EVENTLOCATION;
 

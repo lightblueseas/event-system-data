@@ -43,17 +43,16 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class EventMessage extends BaseDomainObject<Integer> {
+public class EventMessage extends BaseDomainObject<Integer>
+{
 	/** The serial Version UID */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The eventLocation attribute that references to the Entity class
-	 * {@link EventLocations}.
+	 * The eventLocation attribute that references to the Entity class {@link EventLocations}.
 	 */
 	private EventLocation eventLocation;
 	/**
-	 * The message attribute that references to the Entity class
-	 * {@link Messages}.
+	 * The message attribute that references to the Entity class {@link Messages}.
 	 */
 	private Message message;
 }

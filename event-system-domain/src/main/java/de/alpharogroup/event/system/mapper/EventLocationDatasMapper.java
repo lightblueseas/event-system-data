@@ -34,6 +34,9 @@ import de.alpharogroup.event.system.entities.EventLocationDatas;
  * The class {@link EventLocationDatasMapper}.
  */
 @Component
-public class EventLocationDatasMapper extends AbstractEntityDOMapper<EventLocationDatas, EventLocationData> {
+public class EventLocationDatasMapper
+	extends
+		AbstractEntityDOMapper<EventLocationDatas, EventLocationData>
+{
 
 }

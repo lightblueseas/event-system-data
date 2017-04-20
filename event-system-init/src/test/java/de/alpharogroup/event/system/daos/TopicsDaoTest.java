@@ -34,13 +34,15 @@ import org.testng.annotations.Test;
 import de.alpharogroup.event.system.entities.Topics;
 
 @ContextConfiguration(locations = "classpath:test-applicationContext.xml")
-public class TopicsDaoTest extends AbstractTestNGSpringContextTests {
+public class TopicsDaoTest extends AbstractTestNGSpringContextTests
+{
 
 	@Autowired
 	private TopicsDao topicsDao;
 
-	@Test(enabled=false)
-	public void testFindAll() {
+	@Test(enabled = false)
+	public void testFindAll()
+	{
 		List<Topics> list = topicsDao.findAll();
 	}
 

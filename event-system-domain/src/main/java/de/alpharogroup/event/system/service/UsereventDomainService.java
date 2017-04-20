@@ -38,8 +38,11 @@ import de.alpharogroup.service.domain.AbstractDomainService;
 @Transactional
 @Service("usereventDomainService")
 public class UsereventDomainService
-		extends AbstractDomainService<Integer, Userevent, Userevents, UsereventsDao, UsereventsMapper>
-		implements UsereventService {
+	extends
+		AbstractDomainService<Integer, Userevent, Userevents, UsereventsDao, UsereventsMapper>
+	implements
+		UsereventService
+{
 	/**
 	 * Sets the specific {@link UsereventsMapper}.
 	 *
@@ -47,7 +50,8 @@ public class UsereventDomainService
 	 *            the new {@link UsereventsMapper}.
 	 */
 	@Autowired
-	public void setUsereventsMapper(UsereventsMapper mapper) {
+	public void setUsereventsMapper(UsereventsMapper mapper)
+	{
 		setMapper(mapper);
 	}
 

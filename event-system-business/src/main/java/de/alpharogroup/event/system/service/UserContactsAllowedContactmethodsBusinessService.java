@@ -42,9 +42,12 @@ import de.alpharogroup.user.management.entities.Contactmethods;
 
 @Transactional
 @Service("userContactsAllowedContactmethodsService")
-public class UserContactsAllowedContactmethodsBusinessService extends
+public class UserContactsAllowedContactmethodsBusinessService
+	extends
 		AbstractBusinessService<UserContactsAllowedContactmethods, java.lang.Integer, UserContactsAllowedContactmethodsDao>
-		implements UserContactsAllowedContactmethodsService {
+	implements
+		UserContactsAllowedContactmethodsService
+{
 
 	private static final long serialVersionUID = 1L;
 
@@ -52,12 +55,15 @@ public class UserContactsAllowedContactmethodsBusinessService extends
 	 * {@inheritDoc}
 	 */
 	public List<UserContactsAllowedContactmethods> saveUserContactsAllowedContactmethods(
-			final List<Contactmethods> userContactmethods, final Users userContact) {
+		final List<Contactmethods> userContactmethods, final Users userContact)
+	{
 		List<UserContactsAllowedContactmethods> userContactsAllowedContactmethods = new ArrayList<UserContactsAllowedContactmethods>();
-		for (final Iterator<Contactmethods> iterator = userContactmethods.iterator(); iterator.hasNext();) {
+		for (final Iterator<Contactmethods> iterator = userContactmethods.iterator(); iterator
+			.hasNext();)
+		{
 			final Contactmethods userContactmethod = iterator.next();
-			UserContactsAllowedContactmethods userContactsAllowedContactmethod = DomainObjectFactory.getInstance()
-					.getUserContactsAllowedContactmethods(userContact, userContactmethod);
+			UserContactsAllowedContactmethods userContactsAllowedContactmethod = DomainObjectFactory
+				.getInstance().getUserContactsAllowedContactmethods(userContact, userContactmethod);
 			userContactsAllowedContactmethod = merge(userContactsAllowedContactmethod);
 			userContactsAllowedContactmethods.add(userContactsAllowedContactmethod);
 		}
@@ -66,7 +72,8 @@ public class UserContactsAllowedContactmethodsBusinessService extends
 
 	@Autowired
 	public void setUserContactsAllowedContactmethodsDao(
-			UserContactsAllowedContactmethodsDao userContactsAllowedContactmethodsDao) {
+		UserContactsAllowedContactmethodsDao userContactsAllowedContactmethodsDao)
+	{
 		setDao(userContactsAllowedContactmethodsDao);
 	}
 

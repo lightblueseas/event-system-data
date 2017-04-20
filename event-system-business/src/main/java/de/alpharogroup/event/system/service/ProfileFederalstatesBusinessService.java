@@ -45,22 +45,27 @@ import de.alpharogroup.user.entities.Users;
 @Transactional
 @Service("profileFederalstatesService")
 public class ProfileFederalstatesBusinessService
-		extends AbstractBusinessService<ProfileFederalstates, java.lang.Integer, ProfileFederalstatesDao>
-		implements ProfileFederalstatesService {
+	extends
+		AbstractBusinessService<ProfileFederalstates, java.lang.Integer, ProfileFederalstatesDao>
+	implements
+		ProfileFederalstatesService
+{
 
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public boolean contains(final Federalstates federalstate, final Users user) {
+	public boolean contains(final Federalstates federalstate, final Users user)
+	{
 		return findProfileFederalstate(federalstate, user) != null;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public void deleteWithAllReferences(ProfileFederalstates profileFederalstate) {
+	public void deleteWithAllReferences(ProfileFederalstates profileFederalstate)
+	{
 		profileFederalstate.setUser(null);
 		profileFederalstate.setFederalstate(null);
 		profileFederalstate = merge(profileFederalstate);
@@ -71,7 +76,9 @@ public class ProfileFederalstatesBusinessService
 	 * {@inheritDoc}
 	 */
 	@SuppressWarnings("unchecked")
-	public ProfileFederalstates findProfileFederalstate(final Federalstates federalstate, final Users user) {
+	public ProfileFederalstates findProfileFederalstate(final Federalstates federalstate,
+		final Users user)
+	{
 		final String hqlString = "select pf from ProfileFederalstates pf where pf.user=:user and pf.federalstate=:federalstate";
 		final Query query = getQuery(hqlString);
 		query.setParameter("user", user);
@@ -84,7 +91,8 @@ public class ProfileFederalstatesBusinessService
 	 * {@inheritDoc}
 	 */
 	@SuppressWarnings({ "unchecked" })
-	public List<ProfileFederalstates> findProfileFederalstates(final Users user) {
+	public List<ProfileFederalstates> findProfileFederalstates(final Users user)
+	{
 		final String hqlString = "select pf from ProfileFederalstates pf where pf.user=:user";
 		final Query query = getQuery(hqlString);
 		query.setParameter("user", user);
@@ -93,24 +101,31 @@ public class ProfileFederalstatesBusinessService
 	}
 
 	@Autowired
-	public void setProfileFederalstatesDao(ProfileFederalstatesDao profileFederalstatesDao) {
+	public void setProfileFederalstatesDao(ProfileFederalstatesDao profileFederalstatesDao)
+	{
 		setDao(profileFederalstatesDao);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public List<String> toStringList(final List<ProfileFederalstates> profileFederalstates) {
+	public List<String> toStringList(final List<ProfileFederalstates> profileFederalstates)
+	{
 		List<String> selectedFederalstates = new ArrayList<String>();
-		for (ProfileFederalstates profileFederalstate : profileFederalstates) {
+		for (ProfileFederalstates profileFederalstate : profileFederalstates)
+		{
 			Federalstates federalstate = profileFederalstate.getFederalstate();
-			if (federalstate != null) {
+			if (federalstate != null)
+			{
 				Countries country = federalstate.getCountry();
 				String result;
-				if (country == null) {
+				if (country == null)
+				{
 					String federalstateName = federalstate.getName();
 					result = federalstateName;
-				} else {
+				}
+				else
+				{
 					String splitString = "=>";
 					String countryName = country.getName();
 					String iso3166A2code = federalstate.getIso3166A2code();

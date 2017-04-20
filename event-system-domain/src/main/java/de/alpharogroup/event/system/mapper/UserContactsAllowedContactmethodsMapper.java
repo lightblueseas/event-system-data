@@ -35,6 +35,8 @@ import de.alpharogroup.event.system.entities.UserContactsAllowedContactmethods;
  */
 @Component
 public class UserContactsAllowedContactmethodsMapper
-		extends AbstractEntityDOMapper<UserContactsAllowedContactmethods, UserContactsAllowedContactmethod> {
+	extends
+		AbstractEntityDOMapper<UserContactsAllowedContactmethods, UserContactsAllowedContactmethod>
+{
 
 }

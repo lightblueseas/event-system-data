@@ -45,8 +45,12 @@ import de.alpharogroup.user.entities.Users;
 
 @Transactional
 @Service("eventMessagesService")
-public class EventMessagesBusinessService extends
-		AbstractBusinessService<EventMessages, java.lang.Integer, EventMessagesDao> implements EventMessagesService {
+public class EventMessagesBusinessService
+	extends
+		AbstractBusinessService<EventMessages, java.lang.Integer, EventMessagesDao>
+	implements
+		EventMessagesService
+{
 
 	private static final long serialVersionUID = 1L;
 
@@ -54,24 +58,30 @@ public class EventMessagesBusinessService extends
 	 * {@inheritDoc}.
 	 */
 	@SuppressWarnings("unchecked")
-	public List<EventMessages> find(Messages message, EventLocations eventLocation) {
-		String hqlString = HqlStringCreator.forEventMessages(message, eventLocation, EventMessages.class);
+	public List<EventMessages> find(Messages message, EventLocations eventLocation)
+	{
+		String hqlString = HqlStringCreator.forEventMessages(message, eventLocation,
+			EventMessages.class);
 		final Query query = getQuery(hqlString);
-		if (message != null) {
+		if (message != null)
+		{
 			query.setParameter("message", message);
 		}
-		if (eventLocation != null) {
+		if (eventLocation != null)
+		{
 			query.setParameter("eventLocation", eventLocation);
 		}
 		final List<EventMessages> eventMessages = query.getResultList();
 		return eventMessages;
 	}
 
-	public EventMessages findEventMessagesFromEventLocation(final EventLocations eventLocation) {
+	public EventMessages findEventMessagesFromEventLocation(final EventLocations eventLocation)
+	{
 		return ListExtensions.getFirst(find(null, eventLocation));
 	}
 
-	public EventMessages findEventMessagesFromMessage(final Messages message) {
+	public EventMessages findEventMessagesFromMessage(final Messages message)
+	{
 		return ListExtensions.getFirst(find(message, null));
 	}
 
@@ -79,10 +89,12 @@ public class EventMessagesBusinessService extends
 	 * {@inheritDoc}.
 	 */
 	@SuppressWarnings("unchecked")
-	public List<EventMessages> findMessages(final Users provider) {
-		final String hqlString = "select distinct em " + "from EventMessages as em join em.eventLocation as sem, "
-				+ "Userevents as usev join usev.event as usem  " + "where sem.event.id= usem.id "
-				+ "and usev.user=:provider";
+	public List<EventMessages> findMessages(final Users provider)
+	{
+		final String hqlString = "select distinct em "
+			+ "from EventMessages as em join em.eventLocation as sem, "
+			+ "Userevents as usev join usev.event as usem  " + "where sem.event.id= usem.id "
+			+ "and usev.user=:provider";
 		final Query query = getQuery(hqlString);
 		query.setParameter("provider", provider);
 		final List<EventMessages> eventMessages = query.getResultList();
@@ -93,10 +105,13 @@ public class EventMessagesBusinessService extends
 	 * {@inheritDoc}.
 	 */
 	@SuppressWarnings("unchecked")
-	public List<EventMessages> findMessages(final Users user, final MessageState state) {
-		final String hqlString = "select distinct em " + "from EventMessages as em join em.eventLocation as sem, "
-				+ "Userevents as usev join usev.event as usem " + "where sem.event.id=usem.id " + "and usev.user=:user "
-				+ "and em.message.state=:state " + "and em.message.deletedFlag=:deletedFlag";
+	public List<EventMessages> findMessages(final Users user, final MessageState state)
+	{
+		final String hqlString = "select distinct em "
+			+ "from EventMessages as em join em.eventLocation as sem, "
+			+ "Userevents as usev join usev.event as usem " + "where sem.event.id=usem.id "
+			+ "and usev.user=:user " + "and em.message.state=:state "
+			+ "and em.message.deletedFlag=:deletedFlag";
 		final Query query = getQuery(hqlString);
 		query.setParameter("user", user);
 		query.setParameter("state", state);
@@ -106,7 +121,8 @@ public class EventMessagesBusinessService extends
 	}
 
 	@Autowired
-	public void setEventMessagesDao(EventMessagesDao eventMessagesDao) {
+	public void setEventMessagesDao(EventMessagesDao eventMessagesDao)
+	{
 		setDao(eventMessagesDao);
 	}
 

@@ -30,7 +30,8 @@ import de.alpharogroup.db.dao.jpa.JpaEntityManagerDao;
 import de.alpharogroup.event.system.entities.ProfileTopics;
 
 @Repository("profileTopicsDao")
-public class ProfileTopicsDao extends JpaEntityManagerDao<ProfileTopics, java.lang.Integer> {
+public class ProfileTopicsDao extends JpaEntityManagerDao<ProfileTopics, java.lang.Integer>
+{
 	/**
 	 * The serialVersionUID.
 	 */

@@ -37,9 +37,12 @@ import de.alpharogroup.service.domain.AbstractDomainService;
 
 @Transactional
 @Service("ratingDescriptionDomainService")
-public class RatingDescriptionDomainService extends
+public class RatingDescriptionDomainService
+	extends
 		AbstractDomainService<Integer, RatingDescription, RatingDescriptions, RatingDescriptionsDao, RatingDescriptionsMapper>
-		implements RatingDescriptionService {
+	implements
+		RatingDescriptionService
+{
 
 	/**
 	 * Sets the specific {@link RatingDescriptionsMapper}.
@@ -48,7 +51,8 @@ public class RatingDescriptionDomainService extends
 	 *            the new {@link RatingDescriptionsMapper}.
 	 */
 	@Autowired
-	public void setRatingDescriptionsMapper(RatingDescriptionsMapper mapper) {
+	public void setRatingDescriptionsMapper(RatingDescriptionsMapper mapper)
+	{
 		setMapper(mapper);
 	}
 

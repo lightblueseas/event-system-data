@@ -34,13 +34,15 @@ import org.testng.annotations.Test;
 import de.alpharogroup.event.system.entities.ProfileFederalstates;
 
 @ContextConfiguration(locations = "classpath:test-applicationContext.xml")
-public class ProfileFederalstatesDaoTest extends AbstractTestNGSpringContextTests {
+public class ProfileFederalstatesDaoTest extends AbstractTestNGSpringContextTests
+{
 
 	@Autowired
 	private ProfileFederalstatesDao profileFederalstatesDao;
 
-	@Test(enabled=false)
-	public void testFindAll() {
+	@Test(enabled = false)
+	public void testFindAll()
+	{
 		List<ProfileFederalstates> list = profileFederalstatesDao.findAll();
 	}
 

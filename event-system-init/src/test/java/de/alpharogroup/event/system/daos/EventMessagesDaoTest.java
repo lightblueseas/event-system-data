@@ -34,13 +34,15 @@ import org.testng.annotations.Test;
 import de.alpharogroup.event.system.entities.EventMessages;
 
 @ContextConfiguration(locations = "classpath:test-applicationContext.xml")
-public class EventMessagesDaoTest extends AbstractTestNGSpringContextTests {
+public class EventMessagesDaoTest extends AbstractTestNGSpringContextTests
+{
 
 	@Autowired
 	private EventMessagesDao eventMessagesDao;
 
-	@Test(enabled=false)
-	public void testFindAll() {
+	@Test(enabled = false)
+	public void testFindAll()
+	{
 		List<EventMessages> list = eventMessagesDao.findAll();
 	}
 

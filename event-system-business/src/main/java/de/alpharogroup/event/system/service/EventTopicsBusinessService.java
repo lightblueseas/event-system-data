@@ -42,15 +42,20 @@ import de.alpharogroup.event.system.service.api.EventTopicsService;
 
 @Transactional
 @Service("eventTopicsService")
-public class EventTopicsBusinessService extends AbstractBusinessService<EventTopics, java.lang.Integer, EventTopicsDao>
-		implements EventTopicsService {
+public class EventTopicsBusinessService
+	extends
+		AbstractBusinessService<EventTopics, java.lang.Integer, EventTopicsDao>
+	implements
+		EventTopicsService
+{
 
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public boolean contains(final Topics topic, final EventTemplates event) {
+	public boolean contains(final Topics topic, final EventTemplates event)
+	{
 		return findEventTopic(topic, event) != null;
 	}
 
@@ -58,7 +63,8 @@ public class EventTopicsBusinessService extends AbstractBusinessService<EventTop
 	 * {@inheritDoc}
 	 */
 	@SuppressWarnings("unchecked")
-	public EventTopics findEventTopic(final Topics topic, final EventTemplates event) {
+	public EventTopics findEventTopic(final Topics topic, final EventTemplates event)
+	{
 		final String hqlString = "select et from EventTopics et where et.event=:event and et.topic=:topic";
 		final Query query = getQuery(hqlString);
 		query.setParameter("event", event);
@@ -71,7 +77,8 @@ public class EventTopicsBusinessService extends AbstractBusinessService<EventTop
 	 * {@inheritDoc}
 	 */
 	@SuppressWarnings("unchecked")
-	public List<EventTopics> findEventTopics(final EventTemplates event) {
+	public List<EventTopics> findEventTopics(final EventTemplates event)
+	{
 		final String hqlString = "select et from EventTopics et where et.event=:event";
 		final Query query = getQuery(hqlString);
 		query.setParameter("event", event);
@@ -80,7 +87,8 @@ public class EventTopicsBusinessService extends AbstractBusinessService<EventTop
 	}
 
 	@Autowired
-	public void setEventTopicsDao(EventTopicsDao eventTopicsDao) {
+	public void setEventTopicsDao(EventTopicsDao eventTopicsDao)
+	{
 		setDao(eventTopicsDao);
 	}
 

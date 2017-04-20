@@ -30,7 +30,8 @@ import de.alpharogroup.db.dao.jpa.JpaEntityManagerDao;
 import de.alpharogroup.event.system.entities.Categories;
 
 @Repository("categoriesDao")
-public class CategoriesDao extends JpaEntityManagerDao<Categories, java.lang.Integer> {
+public class CategoriesDao extends JpaEntityManagerDao<Categories, java.lang.Integer>
+{
 	/**
 	 * The serialVersionUID.
 	 */

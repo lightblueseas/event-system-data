@@ -34,6 +34,7 @@ import de.alpharogroup.event.system.entities.ProfileTopics;
  * The class {@link ProfileTopicsMapper}.
  */
 @Component
-public class ProfileTopicsMapper extends AbstractEntityDOMapper<ProfileTopics, ProfileTopic> {
+public class ProfileTopicsMapper extends AbstractEntityDOMapper<ProfileTopics, ProfileTopic>
+{
 
 }

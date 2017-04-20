@@ -32,7 +32,8 @@ import de.alpharogroup.event.system.entities.EventTemplates;
 import de.alpharogroup.event.system.entities.RatingDescriptions;
 import de.alpharogroup.user.entities.Users;
 
-public interface EventRatingsService extends BusinessService<EventRatings, java.lang.Integer> {
+public interface EventRatingsService extends BusinessService<EventRatings, java.lang.Integer>
+{
 	/**
 	 * Find all users that gave a rating from the given event.
 	 * 
@@ -61,8 +62,7 @@ public interface EventRatingsService extends BusinessService<EventRatings, java.
 	List<EventRatings> findEventRatings(Users user);
 
 	/**
-	 * Finds the events from the given provider that was rated from the
-	 * subscribers.
+	 * Finds the events from the given provider that was rated from the subscribers.
 	 * 
 	 * @param provider
 	 *            the provider
@@ -97,5 +97,6 @@ public interface EventRatingsService extends BusinessService<EventRatings, java.
 	 *            the subscriber
 	 * @return the event ratings for event from subscriber
 	 */
-	List<EventRatings> getEventRatingsForEventFromSubscriber(EventTemplates event, Users subscriber);
+	List<EventRatings> getEventRatingsForEventFromSubscriber(EventTemplates event,
+		Users subscriber);
 }

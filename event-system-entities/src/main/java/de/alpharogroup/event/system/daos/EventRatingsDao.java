@@ -30,7 +30,8 @@ import de.alpharogroup.db.dao.jpa.JpaEntityManagerDao;
 import de.alpharogroup.event.system.entities.EventRatings;
 
 @Repository("eventRatingsDao")
-public class EventRatingsDao extends JpaEntityManagerDao<EventRatings, java.lang.Integer> {
+public class EventRatingsDao extends JpaEntityManagerDao<EventRatings, java.lang.Integer>
+{
 	/**
 	 * The serialVersionUID.
 	 */

@@ -39,21 +39,20 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * The Entity class {@link ProfileFederalstates} is keeping the information for
- * the connection between the Entity class {@link Users} and the Entity class
- * {@link Federalstates}.
+ * The Entity class {@link ProfileFederalstates} is keeping the information for the connection
+ * between the Entity class {@link Users} and the Entity class {@link Federalstates}.
  */
 @Entity
 @Table(name = "profile_federalstates")
 @Getter
 @Setter
 @NoArgsConstructor
-public class ProfileFederalstates extends BaseEntity<Integer> implements Cloneable {
+public class ProfileFederalstates extends BaseEntity<Integer> implements Cloneable
+{
 	/** The serial Version UID */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The federalstate attribute that references to the Entity class
-	 * {@link Federalstates}.
+	 * The federalstate attribute that references to the Entity class {@link Federalstates}.
 	 */
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "federalstate_id", nullable = true, referencedColumnName = "id", foreignKey = @ForeignKey(name = "FK_PROFILE_FEDERALSTATES_FEDERALSTATE_ID"))

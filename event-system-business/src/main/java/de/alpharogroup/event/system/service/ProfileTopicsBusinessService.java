@@ -42,23 +42,30 @@ import de.alpharogroup.user.entities.Users;
 
 @Transactional
 @Service("profileTopicsService")
-public class ProfileTopicsBusinessService extends
-		AbstractBusinessService<ProfileTopics, java.lang.Integer, ProfileTopicsDao> implements ProfileTopicsService {
+public class ProfileTopicsBusinessService
+	extends
+		AbstractBusinessService<ProfileTopics, java.lang.Integer, ProfileTopicsDao>
+	implements
+		ProfileTopicsService
+{
 
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * {@inheritDoc}.
 	 */
-	public boolean contains(final Topics topic, final Users user) {
+	public boolean contains(final Topics topic, final Users user)
+	{
 		return findProfileTopic(topic, user) != null;
 	}
 
 	/**
 	 * {@inheritDoc}.
 	 */
-	public void deleteWithAllReferences(ProfileTopics profileTopics) {
-		if (profileTopics != null) {
+	public void deleteWithAllReferences(ProfileTopics profileTopics)
+	{
+		if (profileTopics != null)
+		{
 			profileTopics.setUser(null);
 			profileTopics.setTopic(null);
 			profileTopics = merge(profileTopics);
@@ -70,7 +77,8 @@ public class ProfileTopicsBusinessService extends
 	 * {@inheritDoc}.
 	 */
 	@SuppressWarnings("unchecked")
-	public ProfileTopics findProfileTopic(final Topics topic, final Users user) {
+	public ProfileTopics findProfileTopic(final Topics topic, final Users user)
+	{
 		final String hqlString = "select pt from ProfileTopics pt where pt.user=:user and pt.topic=:topic";
 		final Query query = getQuery(hqlString);
 		query.setParameter("user", user);
@@ -83,7 +91,8 @@ public class ProfileTopicsBusinessService extends
 	 * {@inheritDoc}.
 	 */
 	@SuppressWarnings("unchecked")
-	public List<ProfileTopics> findProfileTopics(final Users user) {
+	public List<ProfileTopics> findProfileTopics(final Users user)
+	{
 		final String hqlString = "select pt from ProfileTopics pt where pt.user=:user";
 		final Query query = getQuery(hqlString);
 		query.setParameter("user", user);
@@ -92,7 +101,8 @@ public class ProfileTopicsBusinessService extends
 	}
 
 	@Autowired
-	public void setProfileTopicsDao(ProfileTopicsDao profileTopicsDao) {
+	public void setProfileTopicsDao(ProfileTopicsDao profileTopicsDao)
+	{
 		setDao(profileTopicsDao);
 	}
 

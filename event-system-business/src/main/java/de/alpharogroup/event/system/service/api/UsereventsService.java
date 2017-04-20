@@ -32,7 +32,8 @@ import de.alpharogroup.event.system.entities.Userevents;
 import de.alpharogroup.event.system.enums.UsereventsRelationType;
 import de.alpharogroup.user.entities.Users;
 
-public interface UsereventsService extends BusinessService<Userevents, java.lang.Integer> {
+public interface UsereventsService extends BusinessService<Userevents, java.lang.Integer>
+{
 	/**
 	 * Find user.
 	 * 
@@ -42,7 +43,8 @@ public interface UsereventsService extends BusinessService<Userevents, java.lang
 	 *            the relationtype
 	 * @return the users
 	 */
-	Users findUser(final EventTemplates eventtemplateToFind, final UsereventsRelationType relationtype);
+	Users findUser(final EventTemplates eventtemplateToFind,
+		final UsereventsRelationType relationtype);
 
 	List<Userevents> findUserevents(final EventTemplates event);
 }

@@ -30,6 +30,8 @@ import de.alpharogroup.event.system.service.api.TopicService;
 import de.alpharogroup.service.rs.AbstractRestfulResource;
 
 public class TopicsRestResource extends AbstractRestfulResource<Integer, Topic, TopicService>
-		implements TopicsResource {
+	implements
+		TopicsResource
+{
 
 }

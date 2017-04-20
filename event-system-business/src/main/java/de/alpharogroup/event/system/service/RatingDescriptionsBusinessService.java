@@ -42,8 +42,11 @@ import de.alpharogroup.event.system.service.api.RatingDescriptionsService;
 @Transactional
 @Service("ratingDescriptionsService")
 public class RatingDescriptionsBusinessService
-		extends AbstractBusinessService<RatingDescriptions, java.lang.Integer, RatingDescriptionsDao>
-		implements RatingDescriptionsService {
+	extends
+		AbstractBusinessService<RatingDescriptions, java.lang.Integer, RatingDescriptionsDao>
+	implements
+		RatingDescriptionsService
+{
 
 	private static final long serialVersionUID = 1L;
 
@@ -51,7 +54,8 @@ public class RatingDescriptionsBusinessService
 	 * {@inheritDoc}
 	 */
 	@SuppressWarnings("unchecked")
-	public RatingDescriptions findRatingDescription(final EventRatings eventRatings) {
+	public RatingDescriptions findRatingDescription(final EventRatings eventRatings)
+	{
 		final String hqlString = "select distinct rd from RatingDescriptions rd where rd.eventRatings=:eventRatings";
 		final Query query = getQuery(hqlString);
 		query.setParameter("eventRatings", eventRatings);
@@ -60,7 +64,8 @@ public class RatingDescriptionsBusinessService
 	}
 
 	@Autowired
-	public void setRatingDescriptionsDao(RatingDescriptionsDao ratingDescriptionsDao) {
+	public void setRatingDescriptionsDao(RatingDescriptionsDao ratingDescriptionsDao)
+	{
 		setDao(ratingDescriptionsDao);
 	}
 }

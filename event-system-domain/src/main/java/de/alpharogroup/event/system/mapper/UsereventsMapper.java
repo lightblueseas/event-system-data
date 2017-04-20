@@ -34,6 +34,7 @@ import de.alpharogroup.event.system.entities.Userevents;
  * The class {@link UsereventsMapper}.
  */
 @Component
-public class UsereventsMapper extends AbstractEntityDOMapper<Userevents, Userevent> {
+public class UsereventsMapper extends AbstractEntityDOMapper<Userevents, Userevent>
+{
 
 }

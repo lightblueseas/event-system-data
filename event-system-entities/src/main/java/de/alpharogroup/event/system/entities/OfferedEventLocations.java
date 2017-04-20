@@ -40,15 +40,16 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * The Entity class {@link OfferedEventLocations} is keeping the information for
- * the offered event locations from a provider.
+ * The Entity class {@link OfferedEventLocations} is keeping the information for the offered event
+ * locations from a provider.
  */
 @Entity
 @Table(name = "offered_event_locations")
 @Getter
 @Setter
 @NoArgsConstructor
-public class OfferedEventLocations extends BaseEntity<Integer> implements Cloneable {
+public class OfferedEventLocations extends BaseEntity<Integer> implements Cloneable
+{
 	/** The serial Version UID */
 	private static final long serialVersionUID = 1L;
 	/**
@@ -76,15 +77,14 @@ public class OfferedEventLocations extends BaseEntity<Integer> implements Clonea
 	private Users provider;
 
 	/**
-	 * The Addresses attribute that references to the Entity class
-	 * {@link Addresses}.
+	 * The Addresses attribute that references to the Entity class {@link Addresses}.
 	 */
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "user_address_id", nullable = true, referencedColumnName = "id", foreignKey = @ForeignKey(name = "FK_OFFERED_EVENT_LOCATIONS_USER_ADDRESS_ID"))
 	private Addresses userAddress;
 	/**
-	 * The contactPerson attribute that references to the Entity class
-	 * {@link Users} and is the contact person for this offered event location.
+	 * The contactPerson attribute that references to the Entity class {@link Users} and is the
+	 * contact person for this offered event location.
 	 */
 	@ManyToOne
 	@JoinColumn(name = "user_id", nullable = true, referencedColumnName = "id", foreignKey = @ForeignKey(name = "FK_OFFERED_EVENT_LOCATIONS_CONTACT_PERSON_ID"))

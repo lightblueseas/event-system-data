@@ -43,8 +43,12 @@ import de.alpharogroup.user.entities.Users;
 
 @Transactional
 @Service("usereventsService")
-public class UsereventsBusinessService extends AbstractBusinessService<Userevents, java.lang.Integer, UsereventsDao>
-		implements UsereventsService {
+public class UsereventsBusinessService
+	extends
+		AbstractBusinessService<Userevents, java.lang.Integer, UsereventsDao>
+	implements
+		UsereventsService
+{
 
 	private static final long serialVersionUID = 1L;
 
@@ -52,7 +56,9 @@ public class UsereventsBusinessService extends AbstractBusinessService<Userevent
 	 * {@inheritDoc}
 	 */
 	@SuppressWarnings("unchecked")
-	public Users findUser(final EventTemplates eventtemplateToFind, final UsereventsRelationType relationtype) {
+	public Users findUser(final EventTemplates eventtemplateToFind,
+		final UsereventsRelationType relationtype)
+	{
 		final String hqlString = "select ue.user from Userevents ue where ue.event=:event";
 		final Query query = getQuery(hqlString);
 		query.setParameter("event", eventtemplateToFind);
@@ -61,7 +67,8 @@ public class UsereventsBusinessService extends AbstractBusinessService<Userevent
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Userevents> findUserevents(final EventTemplates event) {
+	public List<Userevents> findUserevents(final EventTemplates event)
+	{
 		final String hqlString = "select ue from Userevents ue where ue.event=:event";
 		final Query query = getQuery(hqlString);
 		query.setParameter("event", event);
@@ -70,7 +77,8 @@ public class UsereventsBusinessService extends AbstractBusinessService<Userevent
 	}
 
 	@Autowired
-	public void setUsereventsDao(UsereventsDao usereventsDao) {
+	public void setUsereventsDao(UsereventsDao usereventsDao)
+	{
 		setDao(usereventsDao);
 	}
 

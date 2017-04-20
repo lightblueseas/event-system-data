@@ -37,8 +37,12 @@ import de.alpharogroup.service.domain.AbstractDomainService;
 
 @Transactional
 @Service("topicDomainService")
-public class TopicDomainService extends AbstractDomainService<Integer, Topic, Topics, TopicsDao, TopicsMapper>
-		implements TopicService {
+public class TopicDomainService
+	extends
+		AbstractDomainService<Integer, Topic, Topics, TopicsDao, TopicsMapper>
+	implements
+		TopicService
+{
 	/**
 	 * Sets the specific {@link TopicsMapper}.
 	 *
@@ -46,7 +50,8 @@ public class TopicDomainService extends AbstractDomainService<Integer, Topic, To
 	 *            the new {@link TopicsMapper}.
 	 */
 	@Autowired
-	public void setTopicsMapper(TopicsMapper mapper) {
+	public void setTopicsMapper(TopicsMapper mapper)
+	{
 		setMapper(mapper);
 	}
 

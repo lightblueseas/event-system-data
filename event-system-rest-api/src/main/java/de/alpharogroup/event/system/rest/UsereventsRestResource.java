@@ -29,7 +29,11 @@ import de.alpharogroup.event.system.rest.api.UsereventsResource;
 import de.alpharogroup.event.system.service.api.UsereventService;
 import de.alpharogroup.service.rs.AbstractRestfulResource;
 
-public class UsereventsRestResource extends AbstractRestfulResource<Integer, Userevent, UsereventService>
-		implements UsereventsResource {
+public class UsereventsRestResource
+	extends
+		AbstractRestfulResource<Integer, Userevent, UsereventService>
+	implements
+		UsereventsResource
+{
 
 }

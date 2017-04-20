@@ -30,7 +30,10 @@ import de.alpharogroup.event.system.service.api.OfferedEventLocationService;
 import de.alpharogroup.service.rs.AbstractRestfulResource;
 
 public class OfferedEventLocationsRestResource
-		extends AbstractRestfulResource<Integer, OfferedEventLocation, OfferedEventLocationService>
-		implements OfferedEventLocationsResource {
+	extends
+		AbstractRestfulResource<Integer, OfferedEventLocation, OfferedEventLocationService>
+	implements
+		OfferedEventLocationsResource
+{
 
 }

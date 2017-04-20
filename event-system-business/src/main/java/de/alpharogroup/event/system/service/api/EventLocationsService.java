@@ -35,7 +35,8 @@ import de.alpharogroup.event.system.entities.EventTemplates;
 import de.alpharogroup.event.system.enums.UsereventsRelationType;
 import de.alpharogroup.user.entities.Users;
 
-public interface EventLocationsService extends BusinessService<EventLocations, java.lang.Integer> {
+public interface EventLocationsService extends BusinessService<EventLocations, java.lang.Integer>
+{
 
 	/**
 	 * Find all contact persons from the given provider.
@@ -75,7 +76,8 @@ public interface EventLocationsService extends BusinessService<EventLocations, j
 	 *            the relationtype
 	 * @return the list
 	 */
-	List<EventLocations> findEventLocations(final Users user, final UsereventsRelationType relationtype);
+	List<EventLocations> findEventLocations(final Users user,
+		final UsereventsRelationType relationtype);
 
 	/**
 	 * Find all event locations from given event.
@@ -124,7 +126,8 @@ public interface EventLocationsService extends BusinessService<EventLocations, j
 	 *            the condition
 	 * @return the list
 	 */
-	List<EventLocations> findEvents(final String eventname, final Categories category, final boolean condition);
+	List<EventLocations> findEvents(final String eventname, final Categories category,
+		final boolean condition);
 
 	/**
 	 * Find events.
@@ -136,11 +139,12 @@ public interface EventLocationsService extends BusinessService<EventLocations, j
 	 * @param end
 	 *            the end
 	 * @param geohash
-	 *            the geohash for range. The geohash should be a substring from
-	 *            the search address geohash to limit the range from the search.
+	 *            the geohash for range. The geohash should be a substring from the search address
+	 *            geohash to limit the range from the search.
 	 * @return the list
 	 */
-	List<EventLocations> findEvents(final String eventname, final Date start, final Date end, final String geohash);
+	List<EventLocations> findEvents(final String eventname, final Date start, final Date end,
+		final String geohash);
 
 	/**
 	 * Find events.

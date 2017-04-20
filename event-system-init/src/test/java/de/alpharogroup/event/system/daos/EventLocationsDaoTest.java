@@ -34,13 +34,15 @@ import org.testng.annotations.Test;
 import de.alpharogroup.event.system.entities.EventLocations;
 
 @ContextConfiguration(locations = "classpath:test-applicationContext.xml")
-public class EventLocationsDaoTest extends AbstractTestNGSpringContextTests {
+public class EventLocationsDaoTest extends AbstractTestNGSpringContextTests
+{
 
 	@Autowired
 	private EventLocationsDao eventLocationsDao;
 
-	@Test(enabled=false)
-	public void testFindAll() {
+	@Test(enabled = false)
+	public void testFindAll()
+	{
 		List<EventLocations> list = eventLocationsDao.findAll();
 	}
 

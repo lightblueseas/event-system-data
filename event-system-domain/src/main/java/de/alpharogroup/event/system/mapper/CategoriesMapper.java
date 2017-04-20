@@ -34,6 +34,7 @@ import de.alpharogroup.event.system.entities.Categories;
  * The class {@link CategoriesMapper}.
  */
 @Component
-public class CategoriesMapper extends AbstractEntityDOMapper<Categories, Category> {
+public class CategoriesMapper extends AbstractEntityDOMapper<Categories, Category>
+{
 
 }

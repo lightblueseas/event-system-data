@@ -29,7 +29,11 @@ import de.alpharogroup.event.system.rest.api.ProfileTopicsResource;
 import de.alpharogroup.event.system.service.api.ProfileTopicService;
 import de.alpharogroup.service.rs.AbstractRestfulResource;
 
-public class ProfileTopicsRestResource extends AbstractRestfulResource<Integer, ProfileTopic, ProfileTopicService>
-		implements ProfileTopicsResource {
+public class ProfileTopicsRestResource
+	extends
+		AbstractRestfulResource<Integer, ProfileTopic, ProfileTopicService>
+	implements
+		ProfileTopicsResource
+{
 
 }

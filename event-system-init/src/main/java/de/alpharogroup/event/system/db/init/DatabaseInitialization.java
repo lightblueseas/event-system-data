@@ -31,14 +31,17 @@ import java.util.Properties;
 
 import de.alpharogroup.db.init.AbstractDatabaseInitialization;
 
-public class DatabaseInitialization extends AbstractDatabaseInitialization {
+public class DatabaseInitialization extends AbstractDatabaseInitialization
+{
 
-	public DatabaseInitialization(Properties databaseProperties) {
+	public DatabaseInitialization(Properties databaseProperties)
+	{
 		super(databaseProperties);
 	}
 
 	@Override
-	protected List<File> getScriptFiles() {
+	protected List<File> getScriptFiles()
+	{
 		final File insertsDir = getInsertDir();
 		List<File> scriptFiles = new ArrayList<>();
 		scriptFiles.add(new File(insertsDir, "insertRoles.sql"));

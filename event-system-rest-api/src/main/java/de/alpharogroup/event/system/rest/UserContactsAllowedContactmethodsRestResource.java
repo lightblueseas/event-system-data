@@ -29,8 +29,11 @@ import de.alpharogroup.event.system.rest.api.UserContactsAllowedContactmethodsRe
 import de.alpharogroup.event.system.service.api.UserContactsAllowedContactmethodService;
 import de.alpharogroup.service.rs.AbstractRestfulResource;
 
-public class UserContactsAllowedContactmethodsRestResource extends
+public class UserContactsAllowedContactmethodsRestResource
+	extends
 		AbstractRestfulResource<Integer, UserContactsAllowedContactmethod, UserContactsAllowedContactmethodService>
-		implements UserContactsAllowedContactmethodsResource {
+	implements
+		UserContactsAllowedContactmethodsResource
+{
 
 }

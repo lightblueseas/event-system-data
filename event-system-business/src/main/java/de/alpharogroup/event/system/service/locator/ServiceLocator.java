@@ -42,11 +42,14 @@ import de.alpharogroup.event.system.service.api.UsereventsService;
 /**
  * The Interface ServiceLocator.
  */
-public interface ServiceLocator extends de.alpharogroup.address.book.service.locator.ServiceLocator,
+public interface ServiceLocator
+	extends
+		de.alpharogroup.address.book.service.locator.ServiceLocator,
 		de.alpharogroup.message.system.service.locator.ServiceLocator,
 		de.alpharogroup.resource.system.service.locator.ServiceLocator,
 		de.alpharogroup.user.management.service.locator.ServiceLocator,
-		de.alpharogroup.scheduler.system.service.locator.ServiceLocator {
+		de.alpharogroup.scheduler.system.service.locator.ServiceLocator
+{
 
 	/**
 	 * Gets the categories service.
@@ -249,7 +252,7 @@ public interface ServiceLocator extends de.alpharogroup.address.book.service.loc
 	 *            the new user contacts allowed contactmethods service
 	 */
 	void setUserContactsAllowedContactmethodsService(
-			UserContactsAllowedContactmethodsService userContactsAllowedContactmethodsService);
+		UserContactsAllowedContactmethodsService userContactsAllowedContactmethodsService);
 
 	/**
 	 * Sets the userevents service.

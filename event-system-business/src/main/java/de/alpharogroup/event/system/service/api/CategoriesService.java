@@ -29,7 +29,8 @@ import java.util.List;
 import de.alpharogroup.db.service.api.BusinessService;
 import de.alpharogroup.event.system.entities.Categories;
 
-public interface CategoriesService extends BusinessService<Categories, java.lang.Integer> {
+public interface CategoriesService extends BusinessService<Categories, java.lang.Integer>
+{
 
 	/**
 	 * Exists category.

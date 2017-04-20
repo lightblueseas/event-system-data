@@ -40,7 +40,8 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class EventLocationData extends BaseDomainObject<Integer> {
+public class EventLocationData extends BaseDomainObject<Integer>
+{
 	/** The serial Version UID */
 	private static final long serialVersionUID = 1L;
 	/** The quantity of the available rooms or places. */

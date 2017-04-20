@@ -75,7 +75,8 @@ import de.alpharogroup.user.management.factories.UserManagementFactory;
 /**
  * A factory for creating DomainObject objects.
  */
-public class DomainObjectFactory implements Serializable {
+public class DomainObjectFactory implements Serializable
+{
 
 	/** The Constant instance. */
 	private static final DomainObjectFactory instance = new DomainObjectFactory();
@@ -90,14 +91,16 @@ public class DomainObjectFactory implements Serializable {
 	 * 
 	 * @return single instance of DomainObjectFactory
 	 */
-	public static DomainObjectFactory getInstance() {
+	public static DomainObjectFactory getInstance()
+	{
 		return instance;
 	}
 
 	/**
 	 * Instantiates a new domain object factory.
 	 */
-	private DomainObjectFactory() {
+	private DomainObjectFactory()
+	{
 		super();
 	}
 
@@ -122,13 +125,15 @@ public class DomainObjectFactory implements Serializable {
 	 *            the zipcode
 	 * @return the addresses
 	 */
-	public Addresses getAddresses(final String addressComment, final Federalstates federalstate, final String geohash,
-			final java.math.BigDecimal latitude, final java.math.BigDecimal longitude, final String street,
-			final String streetnumber, final Zipcodes zipcode) {
+	public Addresses getAddresses(final String addressComment, final Federalstates federalstate,
+		final String geohash, final java.math.BigDecimal latitude,
+		final java.math.BigDecimal longitude, final String street, final String streetnumber,
+		final Zipcodes zipcode)
+	{
 		String lat = (latitude != null) ? latitude.toString() : "";
 		String lng = (longitude != null) ? longitude.toString() : "";
-		return AddressBookFactory.getInstance().newAddresses(addressComment, federalstate, geohash, null, lat, lng,
-				street, streetnumber, zipcode);
+		return AddressBookFactory.getInstance().newAddresses(addressComment, federalstate, geohash,
+			null, lat, lng, street, streetnumber, zipcode);
 	}
 
 	/**
@@ -144,9 +149,11 @@ public class DomainObjectFactory implements Serializable {
 	 *            the starttime
 	 * @return the appointments
 	 */
-	public Appointments getAppointments(final Date endtime, final Date nexttime, final Rhythm rhythm,
-			final Date starttime) {
-		return SchedulerSystemFactory.getInstance().newAppointments(endtime, nexttime, rhythm, starttime);
+	public Appointments getAppointments(final Date endtime, final Date nexttime,
+		final Rhythm rhythm, final Date starttime)
+	{
+		return SchedulerSystemFactory.getInstance().newAppointments(endtime, nexttime, rhythm,
+			starttime);
 	}
 
 	/**
@@ -156,7 +163,8 @@ public class DomainObjectFactory implements Serializable {
 	 *            the name
 	 * @return the categories
 	 */
-	public Categories getCategories(final String name) {
+	public Categories getCategories(final String name)
+	{
 		return EventSystemFactory.getInstance().newCategories(null, name);
 	}
 
@@ -169,8 +177,11 @@ public class DomainObjectFactory implements Serializable {
 	 *            the contactvalue
 	 * @return the contacts
 	 */
-	public Contactmethods getContactmethods(final ContactmethodType contactmethod, final String contactvalue) {
-		return UserManagementFactory.getInstance().newContactmethods(contactmethod, contactvalue, null);
+	public Contactmethods getContactmethods(final ContactmethodType contactmethod,
+		final String contactvalue)
+	{
+		return UserManagementFactory.getInstance().newContactmethods(contactmethod, contactvalue,
+			null);
 	}
 
 	/**
@@ -186,9 +197,11 @@ public class DomainObjectFactory implements Serializable {
 	 *            the name
 	 * @return the countries
 	 */
-	public Countries getCountries(final String iso3166A2name, final String iso3166A3name, final String iso3166Number,
-			final String name) {
-		return AddressBookFactory.getInstance().newCountries(null, iso3166A2name, iso3166A3name, iso3166Number, name);
+	public Countries getCountries(final String iso3166A2name, final String iso3166A3name,
+		final String iso3166Number, final String name)
+	{
+		return AddressBookFactory.getInstance().newCountries(null, iso3166A2name, iso3166A3name,
+			iso3166Number, name);
 	}
 
 	/**
@@ -214,13 +227,14 @@ public class DomainObjectFactory implements Serializable {
 	 *            the seats per room
 	 * @return the event location data
 	 */
-	public EventLocationDatas getEventLocationData(final Integer availableRooms, final Integer cateringAbilities,
-			final Integer nearByRestaurant, final Boolean offeredEvening, final Boolean offeredWeekdays,
-			final Boolean offeredWeekend, final Integer parkingAbilities, final String roomtype,
-			final Integer seatsPerRoom) {
-		return EventSystemFactory.getInstance().newEventLocationData(availableRooms, cateringAbilities, null,
-				nearByRestaurant, offeredEvening, offeredWeekdays, offeredWeekend, parkingAbilities, roomtype,
-				seatsPerRoom);
+	public EventLocationDatas getEventLocationData(final Integer availableRooms,
+		final Integer cateringAbilities, final Integer nearByRestaurant,
+		final Boolean offeredEvening, final Boolean offeredWeekdays, final Boolean offeredWeekend,
+		final Integer parkingAbilities, final String roomtype, final Integer seatsPerRoom)
+	{
+		return EventSystemFactory.getInstance().newEventLocationData(availableRooms,
+			cateringAbilities, null, nearByRestaurant, offeredEvening, offeredWeekdays,
+			offeredWeekend, parkingAbilities, roomtype, seatsPerRoom);
 	}
 
 	/**
@@ -236,9 +250,11 @@ public class DomainObjectFactory implements Serializable {
 	 *            the contactperson
 	 * @return the event locations
 	 */
-	public EventLocations getEventLocations(final Addresses userAddress, final Appointments appointment,
-			final EventTemplates event, final Users contactperson) {
-		return EventSystemFactory.getInstance().newEventLocations(appointment, contactperson, event, null, userAddress);
+	public EventLocations getEventLocations(final Addresses userAddress,
+		final Appointments appointment, final EventTemplates event, final Users contactperson)
+	{
+		return EventSystemFactory.getInstance().newEventLocations(appointment, contactperson, event,
+			null, userAddress);
 	}
 
 	/**
@@ -250,7 +266,8 @@ public class DomainObjectFactory implements Serializable {
 	 *            the message
 	 * @return the event messages
 	 */
-	public EventMessages getEventMessages(final EventLocations event, final Messages message) {
+	public EventMessages getEventMessages(final EventLocations event, final Messages message)
+	{
 		return EventSystemFactory.getInstance().newEventMessages(event, null, message);
 	}
 
@@ -283,12 +300,15 @@ public class DomainObjectFactory implements Serializable {
 	 *            the visibility
 	 * @return the event ratings
 	 */
-	public EventRatings getEventRatings(final Integer contact, final EventTemplates event, final Integer eventlocation,
-			final Integer material, final Integer presentation, final String ratingDescription, final Integer support,
-			final String titleRating, final Integer topic, final Users rater, final Date ratingDate,
-			final RatingVisibility visibility) {
-		return EventSystemFactory.getInstance().newEventRatings(contact, event, eventlocation, null, material,
-				presentation, rater, ratingDate, ratingDescription, support, titleRating, topic, visibility);
+	public EventRatings getEventRatings(final Integer contact, final EventTemplates event,
+		final Integer eventlocation, final Integer material, final Integer presentation,
+		final String ratingDescription, final Integer support, final String titleRating,
+		final Integer topic, final Users rater, final Date ratingDate,
+		final RatingVisibility visibility)
+	{
+		return EventSystemFactory.getInstance().newEventRatings(contact, event, eventlocation, null,
+			material, presentation, rater, ratingDate, ratingDescription, support, titleRating,
+			topic, visibility);
 	}
 
 	/**
@@ -330,14 +350,16 @@ public class DomainObjectFactory implements Serializable {
 	 *            the targetgroup
 	 * @return the events
 	 */
-	public EventTemplates getEvents(final Categories categories, final String consultant, final String content,
-			final Difficulty difficulty, final Integer duration, final EventType eventtype, final String head,
-			final String introduction, final String locale, final Boolean material, final String name,
-			final java.math.BigDecimal price, final Users provider, final String requirements,
-			final Integer subscribermax, final Integer subscribermin, final String targetgroup) {
-		return EventSystemFactory.getInstance().newEventTemplate(categories, consultant, content, difficulty, duration,
-				eventtype, head, null, introduction, locale, material, name, price, provider, requirements,
-				subscribermax, subscribermin, targetgroup);
+	public EventTemplates getEvents(final Categories categories, final String consultant,
+		final String content, final Difficulty difficulty, final Integer duration,
+		final EventType eventtype, final String head, final String introduction,
+		final String locale, final Boolean material, final String name,
+		final java.math.BigDecimal price, final Users provider, final String requirements,
+		final Integer subscribermax, final Integer subscribermin, final String targetgroup)
+	{
+		return EventSystemFactory.getInstance().newEventTemplate(categories, consultant, content,
+			difficulty, duration, eventtype, head, null, introduction, locale, material, name,
+			price, provider, requirements, subscribermax, subscribermin, targetgroup);
 	}
 
 	/**
@@ -349,7 +371,8 @@ public class DomainObjectFactory implements Serializable {
 	 *            the topic
 	 * @return the event topics
 	 */
-	public EventTopics getEventTopics(final EventTemplates event, final Topics topic) {
+	public EventTopics getEventTopics(final EventTemplates event, final Topics topic)
+	{
 		return EventSystemFactory.getInstance().newEventTopics(event, null, topic);
 	}
 
@@ -368,10 +391,11 @@ public class DomainObjectFactory implements Serializable {
 	 *            the subdivision name
 	 * @return the federalstates
 	 */
-	public Federalstates getFederalstates(final Countries country, final String iso3166A2code, final String name,
-			final String subdivisionCategory, final String subdivisionName) {
+	public Federalstates getFederalstates(final Countries country, final String iso3166A2code,
+		final String name, final String subdivisionCategory, final String subdivisionName)
+	{
 		return AddressBookFactory.getInstance().newFederalstates(country, null, iso3166A2code, name,
-				subdivisionCategory, subdivisionName);
+			subdivisionCategory, subdivisionName);
 	}
 
 	/**
@@ -389,11 +413,12 @@ public class DomainObjectFactory implements Serializable {
 	 *            the image
 	 * @return the images
 	 */
-	public Resources getImages(final String description, final String filename, final String filesize,
-			final String filetype, final Byte[] image) {
-		return ResourceSystemFactory.getInstance().newResources(null, description, filename, filesize, filetype, image,
-				CreateDateExtensions.now(), false,
-				ChecksumExtensions.getChecksumQuietly(image, Algorithm.SHA_256.getAlgorithm()));
+	public Resources getImages(final String description, final String filename,
+		final String filesize, final String filetype, final Byte[] image)
+	{
+		return ResourceSystemFactory.getInstance().newResources(null, description, filename,
+			filesize, filetype, image, CreateDateExtensions.now(), false,
+			ChecksumExtensions.getChecksumQuietly(image, Algorithm.SHA_256.getAlgorithm()));
 	}
 
 	/**
@@ -405,7 +430,8 @@ public class DomainObjectFactory implements Serializable {
 	 *            the recipient
 	 * @return the message recipients
 	 */
-	public MessageRecipients getMessageRecipients(final Messages message, final Users recipient) {
+	public MessageRecipients getMessageRecipients(final Messages message, final Users recipient)
+	{
 		return MessageSystemFactory.getInstance().newMessageRecipients(null, message, recipient);
 	}
 
@@ -436,11 +462,13 @@ public class DomainObjectFactory implements Serializable {
 	 *            the subject
 	 * @return the messages
 	 */
-	public Messages getMessages(final Boolean deletedFlag, final Boolean failed2sentemail, final String folder,
-			final String messageContent, final MessageType messagetype, final Boolean readFlag, final Users sender,
-			final Date sentDate, final Boolean spamFlag, final MessageState state, final String subject) {
-		return MessageSystemFactory.getInstance().newMessages(deletedFlag, failed2sentemail, folder, messageContent,
-				messagetype, readFlag, sender, sentDate, spamFlag, state, subject);
+	public Messages getMessages(final Boolean deletedFlag, final Boolean failed2sentemail,
+		final String folder, final String messageContent, final MessageType messagetype,
+		final Boolean readFlag, final Users sender, final Date sentDate, final Boolean spamFlag,
+		final MessageState state, final String subject)
+	{
+		return MessageSystemFactory.getInstance().newMessages(deletedFlag, failed2sentemail, folder,
+			messageContent, messagetype, readFlag, sender, sentDate, spamFlag, state, subject);
 	}
 
 	/**
@@ -460,11 +488,14 @@ public class DomainObjectFactory implements Serializable {
 	 *            the user address
 	 * @return the offered event locations
 	 */
-	public OfferedEventLocations getOfferedEventLocations(final EventLocationDatas eventLocationData,
-			final String locationDescription, final String locationEquipmentDescription,
-			final String offeredFromDescriptioin, final String supportDescription, final Addresses userAddress) {
-		return EventSystemFactory.getInstance().newOfferedEventLocations(eventLocationData, null, locationDescription,
-				locationEquipmentDescription, offeredFromDescriptioin, supportDescription, userAddress);
+	public OfferedEventLocations getOfferedEventLocations(
+		final EventLocationDatas eventLocationData, final String locationDescription,
+		final String locationEquipmentDescription, final String offeredFromDescriptioin,
+		final String supportDescription, final Addresses userAddress)
+	{
+		return EventSystemFactory.getInstance().newOfferedEventLocations(eventLocationData, null,
+			locationDescription, locationEquipmentDescription, offeredFromDescriptioin,
+			supportDescription, userAddress);
 	}
 
 	/**
@@ -478,8 +509,11 @@ public class DomainObjectFactory implements Serializable {
 	 *            the shortcut
 	 * @return the permissions
 	 */
-	public Permissions getPermissions(final String description, final String permission, final String shortcut) {
-		return UserManagementFactory.getInstance().newPermissions(permission, description, shortcut);
+	public Permissions getPermissions(final String description, final String permission,
+		final String shortcut)
+	{
+		return UserManagementFactory.getInstance().newPermissions(permission, description,
+			shortcut);
 	}
 
 	/**
@@ -491,7 +525,9 @@ public class DomainObjectFactory implements Serializable {
 	 *            the user
 	 * @return the profile federalstates
 	 */
-	public ProfileFederalstates getProfileFederalstates(final Federalstates federalstate, final Users user) {
+	public ProfileFederalstates getProfileFederalstates(final Federalstates federalstate,
+		final Users user)
+	{
 		return EventSystemFactory.getInstance().newProfileFederalstates(federalstate, null, user);
 	}
 
@@ -504,7 +540,8 @@ public class DomainObjectFactory implements Serializable {
 	 *            the user
 	 * @return the profile topics
 	 */
-	public ProfileTopics getProfileTopics(final Topics topic, final Users user) {
+	public ProfileTopics getProfileTopics(final Topics topic, final Users user)
+	{
 		return EventSystemFactory.getInstance().newProfileTopics(null, topic, user);
 	}
 
@@ -523,10 +560,12 @@ public class DomainObjectFactory implements Serializable {
 	 *            the event ratings
 	 * @return the rating descriptions
 	 */
-	public RatingDescriptions getRatingDescriptions(final String lessLikeRating, final String mostLikeRating,
-			final String recommendConsultant, final String recommendEvent, final EventRatings eventRatings) {
-		return EventSystemFactory.getInstance().newRatingDescriptions(eventRatings, null, lessLikeRating,
-				mostLikeRating, recommendConsultant, recommendEvent);
+	public RatingDescriptions getRatingDescriptions(final String lessLikeRating,
+		final String mostLikeRating, final String recommendConsultant, final String recommendEvent,
+		final EventRatings eventRatings)
+	{
+		return EventSystemFactory.getInstance().newRatingDescriptions(eventRatings, null,
+			lessLikeRating, mostLikeRating, recommendConsultant, recommendEvent);
 	}
 
 	/**
@@ -538,15 +577,18 @@ public class DomainObjectFactory implements Serializable {
 	 *            the replyornote
 	 * @return the repliesandnotes
 	 */
-	public Messages getRepliesandnotes(final Messages message, final Messages replyornote) {
+	public Messages getRepliesandnotes(final Messages message, final Messages replyornote)
+	{
 		replyornote.setParent(message);
 		replyornote.setMessagetype(MessageType.REPLY);
 		return replyornote;
 	}
 
-	public ResetPasswords getResetPasswords(final Date expiryDate, final String generatedPassword, final Date starttime,
-			final Users user) {
-		return UserManagementFactory.getInstance().newResetPasswords(expiryDate, generatedPassword, starttime, user);
+	public ResetPasswords getResetPasswords(final Date expiryDate, final String generatedPassword,
+		final Date starttime, final Users user)
+	{
+		return UserManagementFactory.getInstance().newResetPasswords(expiryDate, generatedPassword,
+			starttime, user);
 	}
 
 	/**
@@ -558,7 +600,8 @@ public class DomainObjectFactory implements Serializable {
 	 *            the rolename
 	 * @return the roles
 	 */
-	public Roles getRoles(final String description, final String rolename) {
+	public Roles getRoles(final String description, final String rolename)
+	{
 		return UserManagementFactory.getInstance().newRoles(rolename, description);
 	}
 
@@ -573,7 +616,8 @@ public class DomainObjectFactory implements Serializable {
 	 *            the parent
 	 * @return the topics
 	 */
-	public Topics getTopics(final String name, final Boolean node, final Topics parent) {
+	public Topics getTopics(final String name, final Boolean node, final Topics parent)
+	{
 		return EventSystemFactory.getInstance().newTopics(null, name, node, parent);
 	}
 
@@ -586,10 +630,11 @@ public class DomainObjectFactory implements Serializable {
 	 *            the user contactmethod
 	 * @return the user contacts allowed contactmethods
 	 */
-	public UserContactsAllowedContactmethods getUserContactsAllowedContactmethods(final Users userContact,
-			final Contactmethods userContactmethod) {
-		return EventSystemFactory.getInstance().newUserContactsAllowedContactmethods(null, userContact,
-				userContactmethod);
+	public UserContactsAllowedContactmethods getUserContactsAllowedContactmethods(
+		final Users userContact, final Contactmethods userContactmethod)
+	{
+		return EventSystemFactory.getInstance().newUserContactsAllowedContactmethods(null,
+			userContact, userContactmethod);
 	}
 
 	/**
@@ -603,8 +648,9 @@ public class DomainObjectFactory implements Serializable {
 	 *            the user
 	 * @return the user events
 	 */
-	public Userevents getUserEvents(final EventTemplates event, final UsereventsRelationType relationtype,
-			final Users user) {
+	public Userevents getUserEvents(final EventTemplates event,
+		final UsereventsRelationType relationtype, final Users user)
+	{
 		return EventSystemFactory.getInstance().newUserevents(event, null, relationtype, user);
 	}
 
@@ -617,7 +663,8 @@ public class DomainObjectFactory implements Serializable {
 	 *            the user
 	 * @return the user images
 	 */
-	public Users getUserImages(final Resources image, final UserDatas user) {
+	public Users getUserImages(final Resources image, final UserDatas user)
+	{
 		user.getResources().add(image);
 		return null;
 	}
@@ -669,7 +716,8 @@ public class DomainObjectFactory implements Serializable {
 	 *            the zipcode
 	 * @return the zipcodes
 	 */
-	public Zipcodes getZipcodes(final String city, final String zipcode) {
+	public Zipcodes getZipcodes(final String city, final String zipcode)
+	{
 		return AddressBookFactory.getInstance().newZipcodes(null, city, zipcode);
 	}
 

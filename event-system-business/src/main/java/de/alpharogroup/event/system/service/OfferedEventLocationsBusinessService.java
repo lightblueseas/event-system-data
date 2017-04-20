@@ -42,13 +42,17 @@ import de.alpharogroup.user.entities.Users;
 @Transactional
 @Service("offeredEventLocationsService")
 public class OfferedEventLocationsBusinessService
-		extends AbstractBusinessService<OfferedEventLocations, java.lang.Integer, OfferedEventLocationsDao>
-		implements OfferedEventLocationsService {
+	extends
+		AbstractBusinessService<OfferedEventLocations, java.lang.Integer, OfferedEventLocationsDao>
+	implements
+		OfferedEventLocationsService
+{
 
 	private static final long serialVersionUID = 1L;
 
 	@SuppressWarnings("unchecked")
-	public List<OfferedEventLocations> findOfferedEventLocationsFromUser(Users user) {
+	public List<OfferedEventLocations> findOfferedEventLocationsFromUser(Users user)
+	{
 		String hqlString = "select distinct oel from OfferedEventLocations oel where oel.provider=:user";
 		final Query query = getQuery(hqlString);
 		query.setParameter("user", user);
@@ -57,26 +61,34 @@ public class OfferedEventLocationsBusinessService
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<OfferedEventLocations> findOfferedEventLocationsFromZipcodeAndCity(String zipcode, String city) {
+	public List<OfferedEventLocations> findOfferedEventLocationsFromZipcodeAndCity(String zipcode,
+		String city)
+	{
 		StringBuilder sb = new StringBuilder();
 		sb.append("select distinct oel from OfferedEventLocations oel");
-		if (StringUtils.isNotEmpty(zipcode) || StringUtils.isNotEmpty(city)) {
+		if (StringUtils.isNotEmpty(zipcode) || StringUtils.isNotEmpty(city))
+		{
 			sb.append(" where");
 		}
-		if (StringUtils.isNotEmpty(zipcode)) {
+		if (StringUtils.isNotEmpty(zipcode))
+		{
 			sb.append(" oel.userAddress.zipcode.zipcode=:zipcode");
 		}
-		if (StringUtils.isNotEmpty(zipcode) && StringUtils.isNotEmpty(city)) {
+		if (StringUtils.isNotEmpty(zipcode) && StringUtils.isNotEmpty(city))
+		{
 			sb.append(" or");
 		}
-		if (StringUtils.isNotEmpty(city)) {
+		if (StringUtils.isNotEmpty(city))
+		{
 			sb.append(" oel.userAddress.zipcode.city=:city");
 		}
 		final Query query = getQuery(sb.toString());
-		if (StringUtils.isNotEmpty(zipcode)) {
+		if (StringUtils.isNotEmpty(zipcode))
+		{
 			query.setParameter("zipcode", zipcode);
 		}
-		if (StringUtils.isNotEmpty(city)) {
+		if (StringUtils.isNotEmpty(city))
+		{
 			query.setParameter("city", city);
 		}
 		final List<OfferedEventLocations> offeredEventLocations = query.getResultList();
@@ -84,7 +96,8 @@ public class OfferedEventLocationsBusinessService
 	}
 
 	@Autowired
-	public void setOfferedEventLocationsDao(OfferedEventLocationsDao offeredEventLocationsDao) {
+	public void setOfferedEventLocationsDao(OfferedEventLocationsDao offeredEventLocationsDao)
+	{
 		setDao(offeredEventLocationsDao);
 	}
 

@@ -34,14 +34,17 @@ import org.testng.annotations.Test;
 import de.alpharogroup.event.system.entities.UserContactsAllowedContactmethods;
 
 @ContextConfiguration(locations = "classpath:test-applicationContext.xml")
-public class UserContactsAllowedContactmethodsDaoTest extends AbstractTestNGSpringContextTests {
+public class UserContactsAllowedContactmethodsDaoTest extends AbstractTestNGSpringContextTests
+{
 
 	@Autowired
 	private UserContactsAllowedContactmethodsDao userContactsAllowedContactmethodsDao;
 
-	@Test(enabled=false)
-	public void testFindAll() {
-		List<UserContactsAllowedContactmethods> list = userContactsAllowedContactmethodsDao.findAll();
+	@Test(enabled = false)
+	public void testFindAll()
+	{
+		List<UserContactsAllowedContactmethods> list = userContactsAllowedContactmethodsDao
+			.findAll();
 	}
 
 }

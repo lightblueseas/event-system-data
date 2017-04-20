@@ -34,6 +34,7 @@ import de.alpharogroup.event.system.entities.Topics;
  * The class {@link TopicsMapper}.
  */
 @Component
-public class TopicsMapper extends AbstractEntityDOMapper<Topics, Topic> {
+public class TopicsMapper extends AbstractEntityDOMapper<Topics, Topic>
+{
 
 }

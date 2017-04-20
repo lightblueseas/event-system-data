@@ -34,13 +34,15 @@ import org.testng.annotations.Test;
 import de.alpharogroup.event.system.entities.Userevents;
 
 @ContextConfiguration(locations = "classpath:test-applicationContext.xml")
-public class UsereventsDaoTest extends AbstractTestNGSpringContextTests {
+public class UsereventsDaoTest extends AbstractTestNGSpringContextTests
+{
 
 	@Autowired
 	private UsereventsDao usereventsDao;
 
-	@Test(enabled=false)
-	public void testFindAll() {
+	@Test(enabled = false)
+	public void testFindAll()
+	{
 		List<Userevents> list = usereventsDao.findAll();
 	}
 

@@ -58,12 +58,17 @@ import de.alpharogroup.user.entities.Users;
 
 @Transactional
 @Service("eventTemplatesService")
-public class EventTemplatesBusinessService extends
-		AbstractBusinessService<EventTemplates, java.lang.Integer, EventTemplatesDao> implements EventTemplatesService {
+public class EventTemplatesBusinessService
+	extends
+		AbstractBusinessService<EventTemplates, java.lang.Integer, EventTemplatesDao>
+	implements
+		EventTemplatesService
+{
 
 	private static final long serialVersionUID = 1L;
 	/** The Constant logger. */
-	private static final Logger logger = Logger.getLogger(EventTemplatesBusinessService.class.getName());
+	private static final Logger logger = Logger
+		.getLogger(EventTemplatesBusinessService.class.getName());
 
 	/** The event locations business service. */
 	@Autowired
@@ -85,11 +90,13 @@ public class EventTemplatesBusinessService extends
 	private UsereventsService userEventsService;
 	@Autowired
 	private EventMessagesService eventMessagesService;
+
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
-	public EventTemplates deleteEventAndAllReferences(final EventTemplates event) {
+	public EventTemplates deleteEventAndAllReferences(final EventTemplates event)
+	{
 
 		event.setCategories(null);
 		merge(event);
@@ -103,8 +110,10 @@ public class EventTemplatesBusinessService extends
 		final List<Userevents> userevents = userEventsService.findUserevents(event);
 
 		// delete all references from event_topics...
-		if (!ListExtensions.isEmpty(eventTopics)) {
-			for (EventTopics eventTopic : eventTopics) {
+		if (!ListExtensions.isEmpty(eventTopics))
+		{
+			for (EventTopics eventTopic : eventTopics)
+			{
 				eventTopic.setTopic(null);
 				eventTopic.setEvent(null);
 				eventTopic = eventTopicsService.merge(eventTopic);
@@ -112,19 +121,24 @@ public class EventTemplatesBusinessService extends
 			}
 		}
 
-		if (!ListExtensions.isEmpty(userevents)) {
-			for (Userevents userevent : userevents) {
+		if (!ListExtensions.isEmpty(userevents))
+		{
+			for (Userevents userevent : userevents)
+			{
 				userevent.setEvent(null);
 				userevent.setUser(null);
 				userevent = userEventsService.merge(userevent);
 				userEventsService.delete(userevent);
 			}
 		}
-		if (!ListExtensions.isEmpty(eventRatings)) {
-			for (EventRatings eventRating : eventRatings) {
+		if (!ListExtensions.isEmpty(eventRatings))
+		{
+			for (EventRatings eventRating : eventRatings)
+			{
 				// Get related RatingDescriptions if exists...
 				RatingDescriptions rd = eventRatingsService.findRatingDescription(eventRating);
-				if (rd != null) {
+				if (rd != null)
+				{
 					rd.setEventRatings(null);
 					rd = ratingDescriptionsService.merge(rd);
 					ratingDescriptionsService.delete(rd);
@@ -137,9 +151,12 @@ public class EventTemplatesBusinessService extends
 		}
 
 		// delete all references from event_locations...
-		if (!ListExtensions.isEmpty(eventLocations)) {
-			for (EventLocations eventLocation : eventLocations) {
-				if (eventMessagesService.findEventMessagesFromEventLocation(eventLocation) != null) {
+		if (!ListExtensions.isEmpty(eventLocations))
+		{
+			for (EventLocations eventLocation : eventLocations)
+			{
+				if (eventMessagesService.findEventMessagesFromEventLocation(eventLocation) != null)
+				{
 					// delete only...
 					eventLocation.setAppointment(null);
 					eventLocation.setEvent(null);
@@ -147,14 +164,16 @@ public class EventTemplatesBusinessService extends
 					continue;
 				}
 
-				if (eventLocation.getAppointment() != null) {
+				if (eventLocation.getAppointment() != null)
+				{
 					final Appointments appointment = eventLocation.getAppointment();
 					eventLocation.setAppointment(null);
 					eventLocation.setEvent(null);
 					eventLocation.setEventLocation(null);
 					eventLocation.setContactperson(null);
 					eventLocation = eventLocationsService.merge(eventLocation);
-					if (appointment != null) {
+					if (appointment != null)
+					{
 						appointmentsService.delete(appointment);
 					}
 					eventLocation = eventLocationsService.merge(eventLocation);
@@ -163,12 +182,18 @@ public class EventTemplatesBusinessService extends
 			}
 		}
 		final Integer id = event.getId();
-		if (exists(id)) {
-			try {
+		if (exists(id))
+		{
+			try
+			{
 				this.delete(event);
-			} catch (final Exception e) {
-				if (event != null && event.getId() != null) {
-					logger.info("Exception thrown by tryin delete an event with id:" + event.getId());
+			}
+			catch (final Exception e)
+			{
+				if (event != null && event.getId() != null)
+				{
+					logger
+						.info("Exception thrown by tryin delete an event with id:" + event.getId());
 					logger.info(e.getMessage());
 				}
 				return event;
@@ -182,13 +207,14 @@ public class EventTemplatesBusinessService extends
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	public EventTemplates findEvent(final Users provider, final Integer id) {
+	public EventTemplates findEvent(final Users provider, final Integer id)
+	{
 		final String hqlString = "select s from Events as s where s.provider=:provider and s.id=:id";
 		final Query query = getQuery(hqlString);
 		query.setParameter("provider", provider);
 		query.setParameter("id", id);
 		final List<EventTemplates> events = new ArrayList<EventTemplates>(
-				new HashSet<EventTemplates>(query.getResultList()));
+			new HashSet<EventTemplates>(query.getResultList()));
 		return ListExtensions.getFirst(events);
 	}
 
@@ -197,23 +223,32 @@ public class EventTemplatesBusinessService extends
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	public List<EventTemplates> findEvents(final String eventname, final Categories category, final boolean condition) {
+	public List<EventTemplates> findEvents(final String eventname, final Categories category,
+		final boolean condition)
+	{
 		final StringBuilder hqlString = new StringBuilder();
-		if (null != category) {
-			if (condition) {
+		if (null != category)
+		{
+			if (condition)
+			{
 				hqlString.append(
-						"select s from Events as s where s.name like :eventname and s.categories.name=':category'");
-			} else {
-				hqlString.append(
-						"select s from Events as s where s.name like :eventname or s.categories.name=':category'");
+					"select s from Events as s where s.name like :eventname and s.categories.name=':category'");
 			}
-		} else {
+			else
+			{
+				hqlString.append(
+					"select s from Events as s where s.name like :eventname or s.categories.name=':category'");
+			}
+		}
+		else
+		{
 			hqlString.append("select s from Events as s where s.name like :eventname");
 		}
 
 		final Query query = getQuery(hqlString.toString());
 		query.setParameter("eventname", eventname);
-		if (null != category) {
+		if (null != category)
+		{
 			query.setParameter("category", category);
 		}
 		final List<EventTemplates> foundEvents = query.getResultList();
@@ -225,18 +260,20 @@ public class EventTemplatesBusinessService extends
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	public List<EventTemplates> findEvents(final Users provider) {
-		final String hqlString = "select distinct ue.event from Userevents ue" + " where ue.user=:provider"
-				+ " and ue.relationtype='PROVIDED'";
+	public List<EventTemplates> findEvents(final Users provider)
+	{
+		final String hqlString = "select distinct ue.event from Userevents ue"
+			+ " where ue.user=:provider" + " and ue.relationtype='PROVIDED'";
 		final Query query = getQuery(hqlString);
 		query.setParameter("provider", provider);
 		final List<EventTemplates> events = new ArrayList<EventTemplates>(
-				new HashSet<EventTemplates>(query.getResultList()));
+			new HashSet<EventTemplates>(query.getResultList()));
 		return events;
 	}
 
 	@Autowired
-	public void setEventTemplateDao(final EventTemplatesDao eventTemplateDao) {
+	public void setEventTemplateDao(final EventTemplatesDao eventTemplateDao)
+	{
 		setDao(eventTemplateDao);
 	}
 

@@ -34,6 +34,7 @@ import de.alpharogroup.event.system.entities.EventTemplates;
  * The class {@link EventTemplatesMapper}.
  */
 @Component
-public class EventTemplatesMapper extends AbstractEntityDOMapper<EventTemplates, EventTemplate> {
+public class EventTemplatesMapper extends AbstractEntityDOMapper<EventTemplates, EventTemplate>
+{
 
 }

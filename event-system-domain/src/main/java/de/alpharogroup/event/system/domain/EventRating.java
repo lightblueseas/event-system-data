@@ -40,14 +40,14 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class EventRating extends Rating<Integer> {
+public class EventRating extends Rating<Integer>
+{
 	/** The serial Version UID */
 	private static final long serialVersionUID = 1L;
 	/** The rating for the contact. */
 	private Integer contact;
 	/**
-	 * The event attribute that references to the domain class
-	 * {@link EventTemplate}.
+	 * The event attribute that references to the domain class {@link EventTemplate}.
 	 */
 	private EventTemplate event;
 	/** The rating for the event location. */

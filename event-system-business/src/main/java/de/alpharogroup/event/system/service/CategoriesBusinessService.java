@@ -41,21 +41,28 @@ import de.alpharogroup.event.system.service.util.HqlStringCreator;
 
 @Transactional
 @Service("categoriesService")
-public class CategoriesBusinessService extends AbstractBusinessService<Categories, java.lang.Integer, CategoriesDao>
-		implements CategoriesService {
+public class CategoriesBusinessService
+	extends
+		AbstractBusinessService<Categories, java.lang.Integer, CategoriesDao>
+	implements
+		CategoriesService
+{
 
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	public boolean existsCategory(String name) {
+	public boolean existsCategory(String name)
+	{
 		return findCategory(name) != null;
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Categories> find(String name) {
+	public List<Categories> find(String name)
+	{
 		String hqlString = HqlStringCreator.forCategories(name, Categories.class);
 		final Query query = getQuery(hqlString);
-		if (name != null) {
+		if (name != null)
+		{
 			query.setParameter("name", name);
 		}
 		final List<Categories> categories = query.getResultList();
@@ -63,12 +70,14 @@ public class CategoriesBusinessService extends AbstractBusinessService<Categorie
 	}
 
 	@Override
-	public Categories findCategory(String name) {
+	public Categories findCategory(String name)
+	{
 		return ListExtensions.getFirst(find(name));
 	}
 
 	@Autowired
-	public void setCategoriesDao(CategoriesDao categoriesDao) {
+	public void setCategoriesDao(CategoriesDao categoriesDao)
+	{
 		setDao(categoriesDao);
 	}
 

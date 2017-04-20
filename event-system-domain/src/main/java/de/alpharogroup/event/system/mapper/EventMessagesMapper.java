@@ -34,6 +34,7 @@ import de.alpharogroup.event.system.entities.EventMessages;
  * The class {@link EventMessagesMapper}.
  */
 @Component
-public class EventMessagesMapper extends AbstractEntityDOMapper<EventMessages, EventMessage> {
+public class EventMessagesMapper extends AbstractEntityDOMapper<EventMessages, EventMessage>
+{
 
 }

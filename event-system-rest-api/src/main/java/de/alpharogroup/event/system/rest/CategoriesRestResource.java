@@ -29,7 +29,11 @@ import de.alpharogroup.event.system.rest.api.CategoriesResource;
 import de.alpharogroup.event.system.service.api.CategoryService;
 import de.alpharogroup.service.rs.AbstractRestfulResource;
 
-public class CategoriesRestResource extends AbstractRestfulResource<Integer, Category, CategoryService>
-		implements CategoriesResource {
+public class CategoriesRestResource
+	extends
+		AbstractRestfulResource<Integer, Category, CategoryService>
+	implements
+		CategoriesResource
+{
 
 }

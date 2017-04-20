@@ -41,7 +41,8 @@ import de.alpharogroup.event.system.rest.api.UserContactsAllowedContactmethodsRe
 import de.alpharogroup.event.system.rest.api.UsereventsResource;
 import lombok.Getter;
 
-public class EventSystemRestClient extends AbstractRestClient {
+public class EventSystemRestClient extends AbstractRestClient
+{
 	/**
 	 * The {@link CategoriesResource}.
 	 */
@@ -127,10 +128,10 @@ public class EventSystemRestClient extends AbstractRestClient {
 	private final UsereventsResource usereventsResource;
 
 	/**
-	 * Instantiates a new {@link EventSystemRestClient} with the default base
-	 * url.
+	 * Instantiates a new {@link EventSystemRestClient} with the default base url.
 	 */
-	public EventSystemRestClient() {
+	public EventSystemRestClient()
+	{
 		this(DEFAULT_BASE_HTTPS_URL);
 	}
 
@@ -140,7 +141,8 @@ public class EventSystemRestClient extends AbstractRestClient {
 	 * @param baseUrl
 	 *            the base url
 	 */
-	public EventSystemRestClient(final String baseUrl) {
+	public EventSystemRestClient(final String baseUrl)
+	{
 		super(baseUrl);
 		categoriesResource = newResource(CategoriesResource.class);
 		eventLocationDatasResource = newResource(EventLocationDatasResource.class);
@@ -154,7 +156,8 @@ public class EventSystemRestClient extends AbstractRestClient {
 		profileTopicsResource = newResource(ProfileTopicsResource.class);
 		ratingDescriptionsResource = newResource(RatingDescriptionsResource.class);
 		topicsResource = newResource(TopicsResource.class);
-		userContactsAllowedContactmethodsResource = newResource(UserContactsAllowedContactmethodsResource.class);
+		userContactsAllowedContactmethodsResource = newResource(
+			UserContactsAllowedContactmethodsResource.class);
 		usereventsResource = newResource(UsereventsResource.class);
 	}
 

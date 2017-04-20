@@ -40,12 +40,12 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class RatingDescription extends BaseDomainObject<Integer> {
+public class RatingDescription extends BaseDomainObject<Integer>
+{
 	/** The serial Version UID */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The eventRatings attribute that references to the domain class
-	 * {@link EventRating}.
+	 * The eventRatings attribute that references to the domain class {@link EventRating}.
 	 */
 	private EventRating eventRatings;
 	/** A description what the user liked less from the event. */

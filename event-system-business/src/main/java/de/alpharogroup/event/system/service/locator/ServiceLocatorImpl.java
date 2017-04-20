@@ -74,7 +74,8 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Service("serviceLocator")
-public class ServiceLocatorImpl implements ServiceLocator {
+public class ServiceLocatorImpl implements ServiceLocator
+{
 	/** The AppointmentsService. */
 	@Autowired
 	private AppointmentsService appointmentsService;

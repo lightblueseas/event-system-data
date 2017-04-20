@@ -30,7 +30,10 @@ import de.alpharogroup.event.system.service.api.ProfileFederalstateService;
 import de.alpharogroup.service.rs.AbstractRestfulResource;
 
 public class ProfileFederalstatesRestResource
-		extends AbstractRestfulResource<Integer, ProfileFederalstate, ProfileFederalstateService>
-		implements ProfileFederalstatesResource {
+	extends
+		AbstractRestfulResource<Integer, ProfileFederalstate, ProfileFederalstateService>
+	implements
+		ProfileFederalstatesResource
+{
 
 }

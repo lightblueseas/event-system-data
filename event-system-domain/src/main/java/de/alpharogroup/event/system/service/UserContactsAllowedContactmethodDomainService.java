@@ -37,9 +37,12 @@ import de.alpharogroup.service.domain.AbstractDomainService;
 
 @Transactional
 @Service("userContactsAllowedContactmethodDomainService")
-public class UserContactsAllowedContactmethodDomainService extends
+public class UserContactsAllowedContactmethodDomainService
+	extends
 		AbstractDomainService<Integer, UserContactsAllowedContactmethod, UserContactsAllowedContactmethods, UserContactsAllowedContactmethodsDao, UserContactsAllowedContactmethodsMapper>
-		implements UserContactsAllowedContactmethodService {
+	implements
+		UserContactsAllowedContactmethodService
+{
 	/**
 	 * Sets the specific {@link UserContactsAllowedContactmethodsMapper}.
 	 *
@@ -47,7 +50,9 @@ public class UserContactsAllowedContactmethodDomainService extends
 	 *            the new {@link UserContactsAllowedContactmethodsMapper}.
 	 */
 	@Autowired
-	public void setUserContactsAllowedContactmethodsMapper(UserContactsAllowedContactmethodsMapper mapper) {
+	public void setUserContactsAllowedContactmethodsMapper(
+		UserContactsAllowedContactmethodsMapper mapper)
+	{
 		setMapper(mapper);
 	}
 

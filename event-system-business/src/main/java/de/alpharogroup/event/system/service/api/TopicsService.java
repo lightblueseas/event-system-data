@@ -34,7 +34,8 @@ import de.alpharogroup.tree.ifaces.ITreeNode;
 /**
  * The Interface TopicsService.
  */
-public interface TopicsService extends BusinessService<Topics, java.lang.Integer> {
+public interface TopicsService extends BusinessService<Topics, java.lang.Integer>
+{
 
 	/**
 	 * Finds a list from the given name, node and parent parameters.

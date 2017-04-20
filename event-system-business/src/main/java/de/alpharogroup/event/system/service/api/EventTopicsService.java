@@ -31,7 +31,8 @@ import de.alpharogroup.event.system.entities.EventTemplates;
 import de.alpharogroup.event.system.entities.EventTopics;
 import de.alpharogroup.event.system.entities.Topics;
 
-public interface EventTopicsService extends BusinessService<EventTopics, java.lang.Integer> {
+public interface EventTopicsService extends BusinessService<EventTopics, java.lang.Integer>
+{
 
 	/**
 	 * Contains.

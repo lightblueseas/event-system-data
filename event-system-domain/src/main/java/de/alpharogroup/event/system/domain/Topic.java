@@ -40,7 +40,8 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Topic extends BaseDomainObject<Integer> {
+public class Topic extends BaseDomainObject<Integer>
+{
 	/** The serial Version UID */
 	private static final long serialVersionUID = 1L;
 	/** The name from the topic. */

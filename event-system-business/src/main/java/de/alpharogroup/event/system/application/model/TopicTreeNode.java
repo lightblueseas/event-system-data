@@ -32,7 +32,8 @@ import de.alpharogroup.tree.TreeNode;
  * 
  * @author Asterios Raptis
  */
-public class TopicTreeNode extends TreeNode<Topics> {
+public class TopicTreeNode extends TreeNode<Topics>
+{
 
 	/**
 	 * The serialVersionUID.
@@ -45,7 +46,8 @@ public class TopicTreeNode extends TreeNode<Topics> {
 	 * @param value
 	 *            the value
 	 */
-	public TopicTreeNode(final Topics value) {
+	public TopicTreeNode(final Topics value)
+	{
 		super(value);
 	}
 
@@ -53,7 +55,8 @@ public class TopicTreeNode extends TreeNode<Topics> {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public boolean isNode() {
+	public boolean isNode()
+	{
 		return getValue().getNode();
 	}
 
@@ -61,8 +64,10 @@ public class TopicTreeNode extends TreeNode<Topics> {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public String toString() {
-		if (getDisplayValue() != null) {
+	public String toString()
+	{
+		if (getDisplayValue() != null)
+		{
 			return getDisplayValue();
 		}
 		return getValue().getName();

@@ -36,13 +36,17 @@ import de.alpharogroup.event.system.service.api.EventLocationDatasService;
 @Transactional
 @Service("eventLocationDatasService")
 public class EventLocationDatasBusinessService
-		extends AbstractBusinessService<EventLocationDatas, java.lang.Integer, EventLocationDatasDao>
-		implements EventLocationDatasService {
+	extends
+		AbstractBusinessService<EventLocationDatas, java.lang.Integer, EventLocationDatasDao>
+	implements
+		EventLocationDatasService
+{
 
 	private static final long serialVersionUID = 1L;
 
 	@Autowired
-	public void setEventLocationDataDao(final EventLocationDatasDao eventLocationDataDao) {
+	public void setEventLocationDataDao(final EventLocationDatasDao eventLocationDataDao)
+	{
 		setDao(eventLocationDataDao);
 	}
 

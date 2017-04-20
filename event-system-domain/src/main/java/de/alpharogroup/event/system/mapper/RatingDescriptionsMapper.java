@@ -34,6 +34,9 @@ import de.alpharogroup.event.system.entities.RatingDescriptions;
  * The class {@link RatingDescriptionsMapper}.
  */
 @Component
-public class RatingDescriptionsMapper extends AbstractEntityDOMapper<RatingDescriptions, RatingDescription> {
+public class RatingDescriptionsMapper
+	extends
+		AbstractEntityDOMapper<RatingDescriptions, RatingDescription>
+{
 
 }

@@ -45,7 +45,8 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class OfferedEventLocation extends BaseDomainObject<Integer> {
+public class OfferedEventLocation extends BaseDomainObject<Integer>
+{
 	/** The serial Version UID */
 	private static final long serialVersionUID = 1L;
 	/**
@@ -65,13 +66,12 @@ public class OfferedEventLocation extends BaseDomainObject<Integer> {
 	private User provider;
 
 	/**
-	 * The Address attribute that references to the Entity class
-	 * {@link Addresses}.
+	 * The Address attribute that references to the Entity class {@link Addresses}.
 	 */
 	private Address userAddress;
 	/**
-	 * The contactPerson attribute that references to the Entity class
-	 * {@link Users} and is the contact person for this offered event location.
+	 * The contactPerson attribute that references to the Entity class {@link Users} and is the
+	 * contact person for this offered event location.
 	 */
 	private User contactPerson;
 }

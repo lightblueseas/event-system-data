@@ -34,7 +34,8 @@ import de.alpharogroup.user.entities.Users;
 /**
  * The Interface ProfileTopicsService.
  */
-public interface ProfileTopicsService extends BusinessService<ProfileTopics, java.lang.Integer> {
+public interface ProfileTopicsService extends BusinessService<ProfileTopics, java.lang.Integer>
+{
 	/**
 	 * Contains.
 	 * 

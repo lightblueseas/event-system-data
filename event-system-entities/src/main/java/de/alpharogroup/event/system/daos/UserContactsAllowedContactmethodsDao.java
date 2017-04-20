@@ -31,7 +31,9 @@ import de.alpharogroup.event.system.entities.UserContactsAllowedContactmethods;
 
 @Repository("userContactsAllowedContactmethodsDao")
 public class UserContactsAllowedContactmethodsDao
-		extends JpaEntityManagerDao<UserContactsAllowedContactmethods, java.lang.Integer> {
+	extends
+		JpaEntityManagerDao<UserContactsAllowedContactmethods, java.lang.Integer>
+{
 	/**
 	 * The serialVersionUID.
 	 */

@@ -43,7 +43,8 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class EventTemplate extends BaseDomainObject<Integer> {
+public class EventTemplate extends BaseDomainObject<Integer>
+{
 	/** The serial Version UID */
 	private static final long serialVersionUID = 1L;
 	/** The category of the event. */
@@ -65,8 +66,7 @@ public class EventTemplate extends BaseDomainObject<Integer> {
 	/** The locale language from the event when it is registred. */
 	private String locale;
 	/**
-	 * A flag that signals if the provider have material for the event like
-	 * books etc.
+	 * A flag that signals if the provider have material for the event like books etc.
 	 */
 	private Boolean material;
 	/** The name from this event. */

@@ -39,42 +39,39 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * The Entity class {@link EventLocations} is keeping the information for the
- * event locations with the appointments.
+ * The Entity class {@link EventLocations} is keeping the information for the event locations with
+ * the appointments.
  */
 @Entity
 @Table(name = "event_locations")
 @Getter
 @Setter
 @NoArgsConstructor
-public class EventLocations extends BaseEntity<Integer> implements Cloneable {
+public class EventLocations extends BaseEntity<Integer> implements Cloneable
+{
 	/** The serial Version UID */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The appointment attribute that references to the Entity class
-	 * {@link Appointments}.
+	 * The appointment attribute that references to the Entity class {@link Appointments}.
 	 */
 	@ManyToOne
 	@JoinColumn(name = "appointment_id", nullable = true, referencedColumnName = "id", foreignKey = @ForeignKey(name = "FK_EVENTLOCATIONS_APPOINTMENT_ID"))
 	private Appointments appointment;
 
 	/**
-	 * The contactperson attribute that references to the Entity class
-	 * {@link Users }.
+	 * The contactperson attribute that references to the Entity class {@link Users }.
 	 */
 	@ManyToOne
 	@JoinColumn(name = "contactperson_id", nullable = true, referencedColumnName = "id", foreignKey = @ForeignKey(name = "FK_EVENTLOCATIONS_CONTACTPERSON_ID"))
 	private Users contactperson;
 	/**
-	 * The event attribute that references to the Entity class
-	 * {@link EventTemplates}.
+	 * The event attribute that references to the Entity class {@link EventTemplates}.
 	 */
 	@ManyToOne
 	@JoinColumn(name = "event_id", nullable = true, referencedColumnName = "id", foreignKey = @ForeignKey(name = "FK_EVENTLOCATIONS_EVENT_ID"))
 	private EventTemplates event;
 	/**
-	 * The eventLocation attribute that references to the Entity class
-	 * {@link Addresses}.
+	 * The eventLocation attribute that references to the Entity class {@link Addresses}.
 	 */
 	@ManyToOne
 	@JoinColumn(name = "event_location_id", nullable = true, referencedColumnName = "id", foreignKey = @ForeignKey(name = "FK_EVENT_LOCATION_ID"))

@@ -34,15 +34,16 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * The Entity class {@link Categories} is keeping the information for the
- * categories from the events.
+ * The Entity class {@link Categories} is keeping the information for the categories from the
+ * events.
  */
 @Entity
 @Table(name = "categories")
 @Getter
 @Setter
 @NoArgsConstructor
-public class Categories extends BaseEntity<Integer> implements Cloneable {
+public class Categories extends BaseEntity<Integer> implements Cloneable
+{
 	/** The serial Version UID */
 	private static final long serialVersionUID = 1L;
 	/** The name from the catecory. */

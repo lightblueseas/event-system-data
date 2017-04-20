@@ -47,10 +47,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * The Entity class {@link Userevents} is keeping the information for the
- * connection between the Entity class {@link Users} and the Entity class
- * {@link EventTemplates}. It holds information from providers that have
- * 'provided' the event and from subscribers that have 'requested' the event.
+ * The Entity class {@link Userevents} is keeping the information for the connection between the
+ * Entity class {@link Users} and the Entity class {@link EventTemplates}. It holds information from
+ * providers that have 'provided' the event and from subscribers that have 'requested' the event.
  */
 @Entity
 @Table(name = "userevents")
@@ -60,12 +59,12 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Userevents extends BaseEntity<Integer> implements Cloneable {
+public class Userevents extends BaseEntity<Integer> implements Cloneable
+{
 	/** The serial Version UID */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The event attribute that references to the Entity class
-	 * {@link EventTemplates}.
+	 * The event attribute that references to the Entity class {@link EventTemplates}.
 	 */
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "event_id", nullable = true, referencedColumnName = "id", foreignKey = @ForeignKey(name = "FK_USEREVENTS_USER_ID"))

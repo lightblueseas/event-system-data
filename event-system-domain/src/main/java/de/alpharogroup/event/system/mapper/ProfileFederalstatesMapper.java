@@ -34,6 +34,9 @@ import de.alpharogroup.event.system.entities.ProfileFederalstates;
  * The class {@link ProfileFederalstatesMapper}.
  */
 @Component
-public class ProfileFederalstatesMapper extends AbstractEntityDOMapper<ProfileFederalstates, ProfileFederalstate> {
+public class ProfileFederalstatesMapper
+	extends
+		AbstractEntityDOMapper<ProfileFederalstates, ProfileFederalstate>
+{
 
 }

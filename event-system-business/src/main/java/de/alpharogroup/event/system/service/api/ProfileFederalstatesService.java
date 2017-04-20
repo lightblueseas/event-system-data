@@ -34,7 +34,10 @@ import de.alpharogroup.user.entities.Users;
 /**
  * The Interface ProfileFederalstatesService.
  */
-public interface ProfileFederalstatesService extends BusinessService<ProfileFederalstates, java.lang.Integer> {
+public interface ProfileFederalstatesService
+	extends
+		BusinessService<ProfileFederalstates, java.lang.Integer>
+{
 
 	/**
 	 * Contains.
@@ -64,7 +67,8 @@ public interface ProfileFederalstatesService extends BusinessService<ProfileFede
 	 *            the user
 	 * @return the profile federalstates
 	 */
-	ProfileFederalstates findProfileFederalstate(final Federalstates federalstate, final Users user);
+	ProfileFederalstates findProfileFederalstate(final Federalstates federalstate,
+		final Users user);
 
 	/**
 	 * Find profile federalstates.
@@ -76,8 +80,7 @@ public interface ProfileFederalstatesService extends BusinessService<ProfileFede
 	List<ProfileFederalstates> findProfileFederalstates(final Users user);
 
 	/**
-	 * Converts the given ProfileFederalstates list to a string list needed from
-	 * the view.
+	 * Converts the given ProfileFederalstates list to a string list needed from the view.
 	 * 
 	 * @param profileFederalstates
 	 *            the profile federalstates

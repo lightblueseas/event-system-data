@@ -24,7 +24,8 @@
  */
 package de.alpharogroup.event.system.enums;
 
-public enum UsereventsRelationType {
+public enum UsereventsRelationType
+{
 
 	REQUESTED, PROVIDED, SUBSCRIBED;
 

@@ -42,17 +42,18 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class UserContactsAllowedContactmethod extends BaseDomainObject<Integer> {
+public class UserContactsAllowedContactmethod extends BaseDomainObject<Integer>
+{
 	/** The serial Version UID */
 	private static final long serialVersionUID = 1L;
 	/**
-	 * The userContact attribute that references to the Entity class
-	 * {@link User} and is the contact from the user.
+	 * The userContact attribute that references to the Entity class {@link User} and is the contact
+	 * from the user.
 	 */
 	private User userContact;
 	/**
-	 * The userContactmethod attribute that references to the Entity class
-	 * {@link Contactmethod} and is the allowed contact method from the user.
+	 * The userContactmethod attribute that references to the Entity class {@link Contactmethod} and
+	 * is the allowed contact method from the user.
 	 */
 	private Contactmethod userContactmethod;
 }

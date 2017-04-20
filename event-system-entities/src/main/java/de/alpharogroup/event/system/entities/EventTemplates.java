@@ -49,8 +49,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * The Entity class {@link EventTemplates} is keeping the information for the
- * events.
+ * The Entity class {@link EventTemplates} is keeping the information for the events.
  */
 @Entity
 @Table(name = "events")
@@ -63,7 +62,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class EventTemplates extends BaseEntity<Integer> implements Cloneable {
+public class EventTemplates extends BaseEntity<Integer> implements Cloneable
+{
 	/** The serial Version UID */
 	private static final long serialVersionUID = 1L;
 	/** The category of the event. */
@@ -98,8 +98,7 @@ public class EventTemplates extends BaseEntity<Integer> implements Cloneable {
 	@Column(name = "locale", length = 64)
 	private String locale;
 	/**
-	 * A flag that signals if the provider have material for the event like
-	 * books etc.
+	 * A flag that signals if the provider have material for the event like books etc.
 	 */
 	@Column(name = "material")
 	private Boolean material;
