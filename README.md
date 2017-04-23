@@ -8,7 +8,7 @@ The project holds backend data for event data management.
 
 The source code comes under the liberal MIT License, making event-system-data great for all types of applications for event data management.
 
-# Build status and latest maven version
+# Build status
 [![Build Status](https://travis-ci.org/lightblueseas/event-system-data.svg?branch=master)](https://travis-ci.org/lightblueseas/event-system-data)
 
 ## Maven Central
