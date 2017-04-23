@@ -1,8 +1,14 @@
-# event-system-data
+# Overview
 
 Parent project that holds module projects for the persistence of event data.
 
 The project holds backend data for event data management.
+
+# ERD-Diagramm
+
+The erd-diagramm for this database looks as follows: ![erd-diagramm](https://raw.githubusercontent.com/lightblueseas/event-system-data/develop/event-system-init/src/main/resources/erd/erd-diagramm-event-system.jpa.png)
+
+This erd-diagramm was created with [Jeddict plugin from netbeans as JPA Modeler](http://plugins.netbeans.org/plugin/53057/jpa-modeler)  and [Jeddict](https://jeddict.github.io/)
 
 ## License
 
@@ -121,6 +127,9 @@ Add the following maven dependency to your project `pom.xml` if you want to impo
 			</dependency>
 			...
 		</dependencies>
+		 
+## Open Issues
+[![Open Issues](https://img.shields.io/github/issues/astrapi69/event-system-data.svg?style=flat)](https://github.com/astrapi69/event-system-data/issues) 
 
 ## Want to Help and improve it? ###
 
