@@ -32,7 +32,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import de.alpharogroup.collections.ListExtensions;
+import de.alpharogroup.collections.list.ListExtensions;
 import de.alpharogroup.db.service.jpa.AbstractBusinessService;
 import de.alpharogroup.event.system.daos.UsereventsDao;
 import de.alpharogroup.event.system.entities.EventTemplates;
@@ -55,6 +55,7 @@ public class UsereventsBusinessService
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public Users findUser(final EventTemplates eventtemplateToFind,
 		final UsereventsRelationType relationtype)
@@ -66,6 +67,7 @@ public class UsereventsBusinessService
 		return ListExtensions.getFirst(users);
 	}
 
+	@Override
 	@SuppressWarnings("unchecked")
 	public List<Userevents> findUserevents(final EventTemplates event)
 	{

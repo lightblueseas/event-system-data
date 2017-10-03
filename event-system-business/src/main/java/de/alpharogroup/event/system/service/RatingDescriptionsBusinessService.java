@@ -32,7 +32,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import de.alpharogroup.collections.ListExtensions;
+import de.alpharogroup.collections.list.ListExtensions;
 import de.alpharogroup.db.service.jpa.AbstractBusinessService;
 import de.alpharogroup.event.system.daos.RatingDescriptionsDao;
 import de.alpharogroup.event.system.entities.EventRatings;
@@ -53,13 +53,14 @@ public class RatingDescriptionsBusinessService
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public RatingDescriptions findRatingDescription(final EventRatings eventRatings)
 	{
 		final String hqlString = "select distinct rd from RatingDescriptions rd where rd.eventRatings=:eventRatings";
 		final Query query = getQuery(hqlString);
 		query.setParameter("eventRatings", eventRatings);
-		List<RatingDescriptions> ratingDescriptions = query.getResultList();
+		final List<RatingDescriptions> ratingDescriptions = query.getResultList();
 		return ListExtensions.getFirst(ratingDescriptions);
 	}
 

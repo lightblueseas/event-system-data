@@ -32,7 +32,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import de.alpharogroup.collections.ListExtensions;
+import de.alpharogroup.collections.list.ListExtensions;
 import de.alpharogroup.db.service.jpa.AbstractBusinessService;
 import de.alpharogroup.event.system.daos.EventRatingsDao;
 import de.alpharogroup.event.system.entities.EventRatings;
@@ -56,45 +56,49 @@ public class EventRatingsBusinessService
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public List<Users> findAllUsersForRatedEvent(final EventTemplates event)
 	{
 		final String hqlString = "select distinct er.rater from EventRatings er where er.event=:event";
 		final Query query = getQuery(hqlString);
 		query.setParameter("event", event);
-		List<Users> foundUsers = query.getResultList();
+		final List<Users> foundUsers = query.getResultList();
 		return foundUsers;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public List<EventRatings> findEventRatings(final EventTemplates event)
 	{
 		final String hqlString = "select er from EventRatings er where er.event=:event";
 		final Query query = getQuery(hqlString);
 		query.setParameter("event", event);
-		List<EventRatings> foundEventRatings = query.getResultList();
+		final List<EventRatings> foundEventRatings = query.getResultList();
 		return foundEventRatings;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public List<EventRatings> findEventRatings(final Users subscriber)
 	{
 		final String hqlString = "select er from EventRatings er where er.rater=:rater";
 		final Query query = getQuery(hqlString);
 		query.setParameter("rater", subscriber);
-		List<EventRatings> foundEventRatings = query.getResultList();
+		final List<EventRatings> foundEventRatings = query.getResultList();
 		return foundEventRatings;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public List<EventRatings> findRatedEvents(final Users provider)
 	{
@@ -103,20 +107,21 @@ public class EventRatingsBusinessService
 		final Query query = getQuery(hqlString);
 		query.setParameter("provider", provider);
 		query.setParameter("visibility", RatingVisibility.INVISIBLE);
-		List<EventRatings> eventRatings = query.getResultList();
+		final List<EventRatings> eventRatings = query.getResultList();
 		return eventRatings;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public RatingDescriptions findRatingDescription(final EventRatings eventRating)
 	{
 		final String hqlString = "select rd from RatingDescriptions rd where rd.eventRatings=:eventRating";
 		final Query query = getQuery(hqlString);
 		query.setParameter("eventRating", eventRating);
-		List<RatingDescriptions> ratingDescriptions = query.getResultList();
+		final List<RatingDescriptions> ratingDescriptions = query.getResultList();
 
 		return ListExtensions.getFirst(ratingDescriptions);
 	}
@@ -124,19 +129,21 @@ public class EventRatingsBusinessService
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public List<EventRatings> getEventRatingsForEvent(final EventTemplates event)
 	{
 		final String hqlString = "select distinct er from EventRatings er where er.event=:event";
 		final Query query = getQuery(hqlString);
 		query.setParameter("event", event);
-		List<EventRatings> foundEventRatings = query.getResultList();
+		final List<EventRatings> foundEventRatings = query.getResultList();
 		return foundEventRatings;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public List<EventRatings> getEventRatingsForEventFromSubscriber(final EventTemplates event,
 		final Users subscriber)
@@ -145,7 +152,7 @@ public class EventRatingsBusinessService
 		final Query query = getQuery(hqlString);
 		query.setParameter("event", event);
 		query.setParameter("subscriber", subscriber);
-		List<EventRatings> foundEventRatings = query.getResultList();
+		final List<EventRatings> foundEventRatings = query.getResultList();
 		return foundEventRatings;
 	}
 

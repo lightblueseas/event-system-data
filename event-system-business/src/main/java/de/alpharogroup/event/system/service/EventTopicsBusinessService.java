@@ -32,7 +32,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import de.alpharogroup.collections.ListExtensions;
+import de.alpharogroup.collections.list.ListExtensions;
 import de.alpharogroup.db.service.jpa.AbstractBusinessService;
 import de.alpharogroup.event.system.daos.EventTopicsDao;
 import de.alpharogroup.event.system.entities.EventTemplates;
@@ -54,6 +54,7 @@ public class EventTopicsBusinessService
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean contains(final Topics topic, final EventTemplates event)
 	{
 		return findEventTopic(topic, event) != null;
@@ -62,6 +63,7 @@ public class EventTopicsBusinessService
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public EventTopics findEventTopic(final Topics topic, final EventTemplates event)
 	{
@@ -69,20 +71,21 @@ public class EventTopicsBusinessService
 		final Query query = getQuery(hqlString);
 		query.setParameter("event", event);
 		query.setParameter("topic", topic);
-		List<EventTopics> eventTopics = query.getResultList();
+		final List<EventTopics> eventTopics = query.getResultList();
 		return ListExtensions.getFirst(eventTopics);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public List<EventTopics> findEventTopics(final EventTemplates event)
 	{
 		final String hqlString = "select et from EventTopics et where et.event=:event";
 		final Query query = getQuery(hqlString);
 		query.setParameter("event", event);
-		List<EventTopics> eventTopics = query.getResultList();
+		final List<EventTopics> eventTopics = query.getResultList();
 		return eventTopics;
 	}
 

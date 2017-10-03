@@ -32,7 +32,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import de.alpharogroup.collections.ListExtensions;
+import de.alpharogroup.collections.list.ListExtensions;
 import de.alpharogroup.db.service.jpa.AbstractBusinessService;
 import de.alpharogroup.event.system.daos.CategoriesDao;
 import de.alpharogroup.event.system.entities.Categories;
@@ -56,10 +56,11 @@ public class CategoriesBusinessService
 		return findCategory(name) != null;
 	}
 
+	@Override
 	@SuppressWarnings("unchecked")
 	public List<Categories> find(String name)
 	{
-		String hqlString = HqlStringCreator.forCategories(name, Categories.class);
+		final String hqlString = HqlStringCreator.forCategories(name, Categories.class);
 		final Query query = getQuery(hqlString);
 		if (name != null)
 		{

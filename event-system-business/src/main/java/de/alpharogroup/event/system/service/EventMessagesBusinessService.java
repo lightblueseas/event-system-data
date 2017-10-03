@@ -32,7 +32,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import de.alpharogroup.collections.ListExtensions;
+import de.alpharogroup.collections.list.ListExtensions;
 import de.alpharogroup.db.service.jpa.AbstractBusinessService;
 import de.alpharogroup.event.system.daos.EventMessagesDao;
 import de.alpharogroup.event.system.entities.EventLocations;
@@ -57,10 +57,11 @@ public class EventMessagesBusinessService
 	/**
 	 * {@inheritDoc}.
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public List<EventMessages> find(Messages message, EventLocations eventLocation)
 	{
-		String hqlString = HqlStringCreator.forEventMessages(message, eventLocation,
+		final String hqlString = HqlStringCreator.forEventMessages(message, eventLocation,
 			EventMessages.class);
 		final Query query = getQuery(hqlString);
 		if (message != null)
@@ -75,11 +76,13 @@ public class EventMessagesBusinessService
 		return eventMessages;
 	}
 
+	@Override
 	public EventMessages findEventMessagesFromEventLocation(final EventLocations eventLocation)
 	{
 		return ListExtensions.getFirst(find(null, eventLocation));
 	}
 
+	@Override
 	public EventMessages findEventMessagesFromMessage(final Messages message)
 	{
 		return ListExtensions.getFirst(find(message, null));
@@ -88,6 +91,7 @@ public class EventMessagesBusinessService
 	/**
 	 * {@inheritDoc}.
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public List<EventMessages> findMessages(final Users provider)
 	{
@@ -104,6 +108,7 @@ public class EventMessagesBusinessService
 	/**
 	 * {@inheritDoc}.
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public List<EventMessages> findMessages(final Users user, final MessageState state)
 	{

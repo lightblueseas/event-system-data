@@ -38,7 +38,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import de.alpharogroup.address.book.entities.Addresses;
-import de.alpharogroup.collections.ListExtensions;
+import de.alpharogroup.collections.list.ListExtensions;
 import de.alpharogroup.date.CalculateDateExtensions;
 import de.alpharogroup.db.service.jpa.AbstractBusinessService;
 import de.alpharogroup.event.system.daos.EventLocationsDao;
@@ -69,6 +69,7 @@ public class EventLocationsBusinessService
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public List<Users> findContactPersonsFromProvider(final Users provider)
 	{
@@ -76,7 +77,7 @@ public class EventLocationsBusinessService
 			+ "where ue.user=:provider and el.event.id=ue.event.id";
 		final Query query = getQuery(hqlString);
 		query.setParameter("provider", provider);
-		final List<Users> contactPersons = new ArrayList<Users>(
+		final List<Users> contactPersons = new ArrayList<>(
 			new HashSet<Users>(query.getResultList()));
 		return contactPersons;
 	}
@@ -84,6 +85,7 @@ public class EventLocationsBusinessService
 	/**
 	 * {@inheritDoc}.
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public EventLocations findEvent(final Users provider, final EventTemplates event)
 	{
@@ -99,13 +101,14 @@ public class EventLocationsBusinessService
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public List<EventLocations> findEventLocations(final Addresses userAddress)
 	{
 		final String hqlString = "select ev from EventLocations ev where ev.eventLocation=:userAddress";
 		final Query query = getQuery(hqlString);
 		query.setParameter("userAddress", userAddress);
-		final List<EventLocations> eventLocations = new ArrayList<EventLocations>(
+		final List<EventLocations> eventLocations = new ArrayList<>(
 			new HashSet<EventLocations>(query.getResultList()));
 		return eventLocations;
 	}
@@ -113,6 +116,7 @@ public class EventLocationsBusinessService
 	/**
 	 * {@inheritDoc}.
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public List<EventLocations> findEventLocations(final Users user,
 		final UsereventsRelationType relationtype)
@@ -130,13 +134,14 @@ public class EventLocationsBusinessService
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public List<EventLocations> findEventLocationsFromEvent(final EventTemplates event)
 	{
 		final String hqlString = "select ev from EventLocations ev where ev.event=:event";
 		final Query query = getQuery(hqlString);
 		query.setParameter("event", event);
-		final List<EventLocations> eventLocations = new ArrayList<EventLocations>(
+		final List<EventLocations> eventLocations = new ArrayList<>(
 			new HashSet<EventLocations>(query.getResultList()));
 		return eventLocations;
 	}
@@ -144,6 +149,7 @@ public class EventLocationsBusinessService
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public List<Addresses> findEventLocationsFromProvider(final Users provider)
 	{
 		// String hqlString =
@@ -151,14 +157,15 @@ public class EventLocationsBusinessService
 		// ev.event.provider=:provider";
 		// final Query query = getQuery(hqlString);
 		// query.setParameter("provider", provider);
-		UserDatas userData = userDataService.findBy(provider);
-		final List<Addresses> userAdresses = new ArrayList<Addresses>(userData.getAddresses());
+		final UserDatas userData = userDataService.findBy(provider);
+		final List<Addresses> userAdresses = new ArrayList<>(userData.getAddresses());
 		return userAdresses;
 	}
 
 	/**
 	 * {@inheritDoc}.
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public List<EventLocations> findEvents(final EventTemplates event)
 	{
@@ -166,7 +173,7 @@ public class EventLocationsBusinessService
 			+ " where ue.event=:event " + " and el.event=:event";
 		final Query query = getQuery(hqlString);
 		query.setParameter("event", event);
-		final List<EventLocations> eventLocations = new ArrayList<EventLocations>(
+		final List<EventLocations> eventLocations = new ArrayList<>(
 			new HashSet<EventLocations>(query.getResultList()));
 		return eventLocations;
 	}
@@ -174,31 +181,33 @@ public class EventLocationsBusinessService
 	/**
 	 * {@inheritDoc}.
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public List<EventLocations> findEvents(final String eventname)
 	{
 		final StringBuilder sb = new StringBuilder();
-		Date systime = new Date();
-		Date start = CalculateDateExtensions.addDays(systime, 0);
-		Date end = CalculateDateExtensions.addDays(systime, 30);
+		final Date systime = new Date();
+		final Date start = CalculateDateExtensions.addDays(systime, 0);
+		final Date end = CalculateDateExtensions.addDays(systime, 30);
 
 		sb.append("select el from EventLocations el " + "where el.event.name like :eventname "
 			+ "or el.event.head like :eventname "
 			+ "and el.appointment.starttime between :start and :end");
-		String hqlString = sb.toString();
+		final String hqlString = sb.toString();
 		final Query query = getQuery(hqlString);
 		query.setParameter("eventname", "%" + eventname + "%");
 		query.setParameter("start", start);
 		query.setParameter("end", end);
-		List<EventLocations> result = query.getResultList();
-		final List<EventLocations> foundEventLocations = new ArrayList<EventLocations>(
-			new HashSet<EventLocations>(result));
+		final List<EventLocations> result = query.getResultList();
+		final List<EventLocations> foundEventLocations = new ArrayList<>(
+			new HashSet<>(result));
 		return foundEventLocations;
 	}
 
 	/**
 	 * {@inheritDoc}.
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public List<EventLocations> findEvents(final String eventname, final Categories category,
 		final boolean condition)
@@ -229,7 +238,7 @@ public class EventLocationsBusinessService
 		{
 			query.setParameter("category", category);
 		}
-		final List<EventLocations> foundEventLocations = new ArrayList<EventLocations>(
+		final List<EventLocations> foundEventLocations = new ArrayList<>(
 			new HashSet<EventLocations>(query.getResultList()));
 		return foundEventLocations;
 	}
@@ -237,6 +246,7 @@ public class EventLocationsBusinessService
 	/**
 	 * {@inheritDoc}.
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public List<EventLocations> findEvents(final String eventname, final Date start, final Date end,
 		final String geohash)
@@ -248,7 +258,7 @@ public class EventLocationsBusinessService
 		}
 		else
 		{
-			return new ArrayList<EventLocations>();
+			return new ArrayList<>();
 		}
 
 		final StringBuilder hqlString = new StringBuilder();
@@ -265,16 +275,16 @@ public class EventLocationsBusinessService
 				+ "or address.geohash like :center " +
 				// Subselect end...
 				")");
-		String queryString = hqlString.toString();
+		final String queryString = hqlString.toString();
 		final Query query = getQuery(queryString);
 		query.setParameter("eventname", "%" + eventname + "%");
 		query.setParameter("start", start);
 		query.setParameter("end", end);
-		for (Entry<String, String> entry : adjacentAreas.entrySet())
+		for (final Entry<String, String> entry : adjacentAreas.entrySet())
 		{
 			query.setParameter(entry.getKey(), entry.getValue() + "%");
 		}
-		final List<EventLocations> foundEventLocations = new ArrayList<EventLocations>(
+		final List<EventLocations> foundEventLocations = new ArrayList<>(
 			new HashSet<EventLocations>(query.getResultList()));
 		return foundEventLocations;
 	}
@@ -282,6 +292,7 @@ public class EventLocationsBusinessService
 	/**
 	 * {@inheritDoc}.
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public List<EventLocations> findEvents(final Users provider)
 	{
@@ -289,7 +300,7 @@ public class EventLocationsBusinessService
 			+ " where ue.user=:provider" + " and el.event.id=ue.event.id";
 		final Query query = getQuery(hqlString);
 		query.setParameter("provider", provider);
-		final List<EventLocations> eventLocations = new ArrayList<EventLocations>(
+		final List<EventLocations> eventLocations = new ArrayList<>(
 			new HashSet<EventLocations>(query.getResultList()));
 		return eventLocations;
 	}

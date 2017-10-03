@@ -35,7 +35,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import de.alpharogroup.collections.ListExtensions;
+import de.alpharogroup.collections.list.ListExtensions;
 import de.alpharogroup.db.service.jpa.AbstractBusinessService;
 import de.alpharogroup.event.system.daos.EventTemplatesDao;
 import de.alpharogroup.event.system.entities.Categories;
@@ -213,7 +213,7 @@ public class EventTemplatesBusinessService
 		final Query query = getQuery(hqlString);
 		query.setParameter("provider", provider);
 		query.setParameter("id", id);
-		final List<EventTemplates> events = new ArrayList<EventTemplates>(
+		final List<EventTemplates> events = new ArrayList<>(
 			new HashSet<EventTemplates>(query.getResultList()));
 		return ListExtensions.getFirst(events);
 	}
@@ -266,7 +266,7 @@ public class EventTemplatesBusinessService
 			+ " where ue.user=:provider" + " and ue.relationtype='PROVIDED'";
 		final Query query = getQuery(hqlString);
 		query.setParameter("provider", provider);
-		final List<EventTemplates> events = new ArrayList<EventTemplates>(
+		final List<EventTemplates> events = new ArrayList<>(
 			new HashSet<EventTemplates>(query.getResultList()));
 		return events;
 	}
